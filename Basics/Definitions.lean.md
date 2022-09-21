@@ -1,0 +1,40 @@
+
+# Definitions and Statements
+
+We start our journey by studying the basics of Lean, without carrying out any
+proofs yet. We review how to define new types and functions and how to state
+their expected properties as lemmas.
+
+Lean’s logical foundation is a rich formalism called the calculus of inductive
+constructions, which supports dependent types. In this chapter, we restrict our
+attention to its simply (i.e., nondependently) typed fragment. It is inspired by
+the λ-calculus and resembles typed functional programming languages such as
+Haskell, OCaml, and Standard ML. Even if you have not been exposed to these
+languages, you will recognize many of the concepts from modern languages (e.g.,
+Python, C++11, Java 8). In a first approximation:
+
+> Lean = functional programming + logid
+
+If your background is in mathematics, you probably already know most of
+the key concepts underlying functional programming, sometimes under different
+names. For example, the Haskell program:
+
+```haskell
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n - 2) + fib (n - 1)
+```
+
+closely matches the mathematical definition:
+
+\\( fib(n) = \\begin{cases} 0 & \\text{if } n = 0 \\\\ 1 & \\text{if } n = 1 \\\\ fib(n - 2) + fib(n - 1) & \\text{if } n ≥ 2 \\end{cases} \\)
+
+and which can be written in Lean as:
+
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fib</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div><span class="nv">fib</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Nat</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Nat</span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token">     <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">     <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">
+<span class="bp">|</span> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"><span class="bp">+</span><span class="mi">2</span>) <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fib</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div><span class="nv">fib</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fib</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div><span class="nv">fib</span></span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"><span class="bp">+</span></span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">)
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="Definitions-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="Definitions-lean-chk0"><span class="alectryon-token"><span class="k">#eval</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="mi">55</span>
+</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fib</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div>fib</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>10</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div><span class="mi">10</span></span><span class="alectryon-token">    <span class="c1">-- 55</span></span></span></pre>
