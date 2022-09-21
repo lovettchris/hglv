@@ -17,8 +17,8 @@ proof is as follow:
 - To prove `a`, we use `a`.
 
 The telltale sign of a backward proof is the phrase “it suffices to.” Notice how we
-progress from one goal to another ( `⊢ c`, `⊢ b`, `⊢ a`) until no goal is lean to prove. By
-contrast, a forward proof would start from the lemma a and progress, one theorem
+progress from one goal to another ( `⊢ c`, `⊢ b`, `⊢ a`) until no goal is left to prove. By
+contrast, a forward proof would start from the lemma `a` and progress, one theorem
 at a time, towards the desired theorem `c`:
 
 - From `a` and `a → b`, we have `b`.
