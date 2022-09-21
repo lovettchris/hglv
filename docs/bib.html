@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Bibliography - The Hitchhiker’s Guide to Logical Verification</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="alectryon.css">
+        <link rel="stylesheet" href="pygments.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme && theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar && sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="cover.html">Cover</a></li><li class="chapter-item affix "><a href="preface.html">Preface</a></li><li class="chapter-item "><a href="Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="BackwardProofs/BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item expanded "><a href="bib.html" class="active"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hitchhiker’s Guide to Logical Verification</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/leanprover/HitchikersGuide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="bibliography"><a class="header" href="#bibliography">Bibliography</a></h1>
+<h3 id="1"><a class="header" href="#1">1</a></h3>
+<p>J. Avigad, L. de Moura, and S. Kong. Theorem Proving in Lean: Release 3.20.0.
+2020. https://leanprover.github.io/theorem_proving_in_lean/.</p>
+<h3 id="2"><a class="header" href="#2">2</a></h3>
+<p>J. Avigad, L. de Moura, and J. Roesch. Programming in Lean. 2016.
+https://leanprover.github.io/programming_in_lean/.</p>
+<h3 id="3"><a class="header" href="#3">3</a></h3>
+<p>J. Avigad, G. Ebner, and S. Ullrich. The Lean Reference Manual: Release 3.3.0.
+2018. https://leanprover.github.io/reference/.</p>
+<h3 id="4"><a class="header" href="#4">4</a></h3>
+<p>A. Baanen. A Lean tactic for normalising ring expressions with exponents
+(short paper). In N. Peltier and V. Sofronie-Stokkermans, editors, IJCAR 2020,
+volume 12167 of Lecture Notes in Computer Science, pages 21–27. Springer,
+2020. https://lean-forward.github.io/ring_exp/paper.pdf.</p>
+<h3 id="5"><a class="header" href="#5">5</a></h3>
+<p>H. P. Barendregt, W. Dekkers, and R. Statman. Lambda Calculus with Types.
+Perspectives in logic. Cambridge University Press, 2013.</p>
+<h3 id="6"><a class="header" href="#6">6</a></h3>
+<p>M. Carneiro. The type theory of Lean. MSc thesis, Carnegie Mellon
+University, 2019. https://github.com/digama0/lean-typetheory/releases/download/v1.0/main.pdf.</p>
+<h3 id="7"><a class="header" href="#7">7</a></h3>
+<p>G. Ebner, S. Ullrich, J. Roesch, J. Avigad, and L. de Moura. A metaprogramming
+framework for formal verification. PACMPL, 1(ICFP):34:1–34:29, 2017.
+https://leanprover.github.io/papers/tactic.pdf.</p>
+<h3 id="8"><a class="header" href="#8">8</a></h3>
+<p>G. Gonthier. Formal proof—the Four-Color Theorem. Notices AMS,
+55(11):1382–1393, 2008.
+https://www.ams.org/notices/200811/tx081101382p.pdf.</p>
+<h3 id="9"><a class="header" href="#9">9</a></h3>
+<p>G. Gonthier, A. Asperti, J. Avigad, Y. Bertot, C. Cohen, F. Garillot, S. L. Roux,
+A. Mahboubi, R. O’Connor, S. O. Biha, I. Pasca, L. Rideau, A. Solovyev, E. Tassi,
+and L. Théry. A machine-checked proof of the Odd Order Theorem. In
+S. Blazy, C. Paulin-Mohring, and D. Pichardie, editors, ITP 2013, volume 7998
+of Lecture Notes in Computer Science, pages 163–179. Springer, 2013.
+https://hal.inria.fr/hal-00816699/document.</p>
+<h3 id="10-k-gopinathan-and-i-sergey-certifying-certainty-and-uncertainty-in"><a class="header" href="#10-k-gopinathan-and-i-sergey-certifying-certainty-and-uncertainty-in">10 K. Gopinathan and I. Sergey. Certifying certainty and uncertainty in</a></h3>
+<p>approximate membership query structures. In S. Lahiri and C. Wang, editors,
+CAV 2020, Lecture Notes in Computer Science. Springer, 2020.
+https://ilyasergey.net/papers/ceramist-draft.pdf.</p>
+<h3 id="11"><a class="header" href="#11">11</a></h3>
+<p>R. Gu, Z. Shao, H. Chen, X. N. Wu, J. Kim, V. Sjöberg, and D. Costanzo.
+CertiKOS: An extensible architecture for building certified concurrent OS
+kernels. In K. Keeton and T. Roscoe, editors, OSDI 2016, pages 653–669.
+USENIX Association, 2016. https:
+//www.usenix.org/system/files/conference/osdi16/osdi16-gu.pdf.</p>
+<h3 id="12"><a class="header" href="#12">12</a></h3>
+<p>T. C. Hales, M. Adams, G. Bauer, D. T. Dang, J. Harrison, T. L. Hoang, C. Kaliszyk,
+V. Magron, S. McLaughlin, T. T. Nguyen, T. Q. Nguyen, T. Nipkow, S. Obua,
+J. Pleso, J. Rute, A. Solovyev, A. H. T. Ta, T. N. Tran, D. T. Trieu, J. Urban, K. K. Vu,
+and R. Zumkeller. A formal proof of the Kepler conjecture. CoRR,
+abs/1501.02155, 2015. http://arxiv.org/abs/1501.02155.</p>
+<h3 id="13"><a class="header" href="#13">13</a></h3>
+<p>J. Harrison. Formal verification at Intel. In LICS 2003, pages 45–54. IEEE
+Computer Society, 2003.
+https://ieeexplore.ieee.org/document/1210044.</p>
+<h3 id="14"><a class="header" href="#14">14</a></h3>
+<p>J. Harrison, J. Urban, and F. Wiedijk. History of interactive theorem proving.
+In J. H. Siekmann, editor, Computational Logic, volume 9 of Handbook of the
+History of Logic, pages 135–214. Elsevier, 2014.
+https://www.cl.cam.ac.uk/~jrh13/papers/joerg.pdf.</p>
+<h3 id="15"><a class="header" href="#15">15</a></h3>
+<p>J. R. Hindley. The principal type-scheme of an object in combinatory logic.
+Trans. Amer. Math. Soc., 146:29–60, 1969. https://www.jstor.org/stable/
+pdf/1995158.pdf?casa_token=zeSppXjXzUsAAAAA:
+fzvl6NKVjcL0iVXjyrMSbh_bq0sxtY4iPeoX5NMC6FvlOdMDxYG1paIiqrc6P2Q7UTaT46PVHByMTWrpox4SKwOhbcxjLIm-FxWRDx-FtdyWwHa0ueG.</p>
+<h3 id="16"><a class="header" href="#16">16</a></h3>
+<p>G. Klein, J. Andronick, K. Elphinstone, G. Heiser, D. Cock, P. Derrin,
+D. Elkaduwe, K. Engelhardt, R. Kolanski, M. Norrish, T. Sewell, H. Tuch, and
+S. Winwood. seL4: Formal verification of an operating-system kernel.
+Commun. ACM, 53(6):107–115, 2010. https://www.researchgate.net/
+profile/Gernot_Heiser/publication/220910193_SeL4_Formal_
+verification_of_an_OS_kernel/links/09e4150f00292a0329000000/SeL4-
+Formal-verification-of-an-OS-kernel.pdf.</p>
+<h3 id="17"><a class="header" href="#17">17</a></h3>
+<p>D. E. Knuth. The TEXbook. Addison-Wesley, 1986.
+http://www.ctex.org/documents/shredder/src/texbook.pdf.</p>
+<h3 id="18"><a class="header" href="#18">18</a></h3>
+<p>R. Kumar, M. O. Myreen, M. Norrish, and S. Owens. CakeML: A verified
+implementation of ML. In S. Jagannathan and P. Sewell, editors, POPL 2014,
+pages 179–192. ACM, 2014. https://cakeml.org/popl14.pdf.</p>
+<h3 id="19"><a class="header" href="#19">19</a></h3>
+<p>X. Leroy. A formally verified compiler back-end. J. Automated Reasoning,
+43(4):363–446, 2009. https://arxiv.org/pdf/0902.2137.pdf.</p>
+<h3 id="20"><a class="header" href="#20">20</a></h3>
+<p>R. Y. Lewis. A formal proof of Hensel’s lemma over the p-adic integers. In
+A. Mahboubi and M. O. Myreen, editors, CPP 2019, pages 15–26. ACM, 2019.
+https://arxiv.org/pdf/1909.11342.pdf.</p>
+<h3 id="21"><a class="header" href="#21">21</a></h3>
+<p>J. Limperg. A novice-friendly induction tactic for Lean. In C. Hritcu and
+A. Popescu, editors, CPP ’21, pages 199–211. ACM, 2021.
+https://arxiv.org/pdf/2012.08990.pdf.</p>
+<h3 id="22"><a class="header" href="#22">22</a></h3>
+<p>M. Lipovaca. Learn You a Haskell for Great Good!: A Beginner’s Guide. No
+Starch Press, 1st edition, 2011. http://learnyouahaskell.com/.</p>
+<h3 id="23"><a class="header" href="#23">23</a></h3>
+<p>A. Lochbihler. Verifying a compiler for Java threads. In A. D. Gordon, editor,
+ESOP 2010, volume 6012 of Lecture Notes in Computer Science, pages
+427–447. Springer, 2010. https:
+//link.springer.com/content/pdf/10.1007/978-3-642-11957-6_23.pdf.</p>
+<h3 id="24"><a class="header" href="#24">24</a></h3>
+<p>The mathlib Community. The Lean mathematical library. In J. Blanchette
+and C. Hrit,cu, editors, CPP 2020, pages 367–381. ACM, 2020.
+https://arxiv.org/pdf/1910.09336.pdf.</p>
+<h3 id="25"><a class="header" href="#25">25</a></h3>
+<p>R. Milner. A theory of type polymorphism in programming. J. Comput. Syst.
+Sci., 17(3):348–375, 1978.
+https://www.sciencedirect.com/science/article/pii/0022000078900144/pdf?md5=cdcf7cdb7cfd2e1e4237f4f779ca0df7&amp;pid=1-s2.0-0022000078900144-main.pdf&amp;_valck=1.</p>
+<h3 id="26"><a class="header" href="#26">26</a></h3>
+<p>R. Nederpelt and H. Geuvers. Type Theory and Formal Proof: An Introduction.
+Cambridge University Press, 2014.</p>
+<h3 id="27"><a class="header" href="#27">27</a></h3>
+<p>T. Nipkow and G. Klein. Concrete Semantics: With Isabelle/HOL. Springer,
+2014. http://www.concrete-semantics.org/concrete-semantics.pdf.</p>
+<h3 id="28"><a class="header" href="#28">28</a></h3>
+<p>B. O’Sullivan, D. Stewart, and J. Goerzen. Real World Haskell. O’Reilly, 2008.
+http://book.realworldhaskell.org/read/.</p>
+<h3 id="29"><a class="header" href="#29">29</a></h3>
+<p>A. J. Perlis. Epigrams on programming. SIGPLAN Notices, 17(9):7–13, 1982.
+https://dl.acm.org/doi/pdf/10.1145/947955.1083808?asa_token=Z_grmOD_yAYAAAAA:dvMu7thQc-8XmGJCZ1ARQ24_XB1qel3M1jYUmBPAKfuBaZrryxmKiKValMrwpunJ0dv9vhr2kDvMxA.</p>
+<h3 id="30"><a class="header" href="#30">30</a></h3>
+<p>B. C. Pierce. Types and Programming Languages. MIT Press, 2002.</p>
+<h3 id="31"><a class="header" href="#31">31</a></h3>
+<p>F. van Raamsdonk. Logical Verification: Course Notes. 2011.
+https://www.cs.vu.nl/~jbe248/lv2017/notes.pdf.</p>
+<h3 id="32"><a class="header" href="#32">32</a></h3>
+<p>D. M. Russino. A mechanically checked proof of correctness of the AMD K5
+floating point square root microcode. Formal Methods in System Design,
+14(1):75–125, 1999. https://link.springer.com/content/pdf/10.1023/A:
+1008669628911.pdf.</p>
+<h3 id="33"><a class="header" href="#33">33</a></h3>
+<p>D. Selsam and L. de Moura. Congruence closure in intensional type theory.
+In N. Olivetti and A. Tiwari, editors, IJCAR 2016, volume 9706 of Lecture Notes
+in Computer Science, pages 99–115. Springer, 2016.
+https://arxiv.org/pdf/1701.04391.pdf.</p>
+<h3 id="34"><a class="header" href="#34">34</a></h3>
+<p>C. Watt. Mechanising and verifying the WebAssembly specification. In
+J. Andronick and A. P. Felty, editors, CPP 2018, pages 53–65. ACM, 2018.
+https://www.cl.cam.ac.uk/~caw77/papers/mechanising-and-verifyingthe-webassembly-specification.pd</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="BackwardProofs/Summary.lean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="BackwardProofs/Summary.lean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" charset="utf-8"></script>
+        <script src="mark.min.js" charset="utf-8"></script>
+        <script src="searcher.js" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" charset="utf-8"></script>
+        <script src="highlight.js" charset="utf-8"></script>
+        <script src="book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="alectryon.js"></script>
+
+
+    </body>
+</html>

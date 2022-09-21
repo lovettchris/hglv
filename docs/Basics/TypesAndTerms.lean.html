@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Types and Terms - The Hitchhiker’s Guide to Logical Verification</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../alectryon.css">
+        <link rel="stylesheet" href="../pygments.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme && theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar && sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Basics/TypesAndTerms.lean.html" class="active"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs/BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hitchhiker’s Guide to Logical Verification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/leanprover/HitchikersGuide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="types-and-terms"><a class="header" href="#types-and-terms">Types and Terms</a></h2>
+<p><em>Simple type theory</em> (also called higher-order logic) corresponds roughly to the
+<a href="../bib.html#5">simply typed λ-calculus</a> extended with an equality operator (=). It is an abstract,
+extremely simplified version of a programming language with a function-calling
+mechanism that prefigures functional programming. It can also be viewed as a
+generalization of first-order logic (also called predicate logic).</p>
+<h3 id="types"><a class="header" href="#types">Types</a></h3>
+<p>Types are either basic types such as <code>ℤ</code>, <code>ℚ</code>, and bool or total functions <code>σ → τ</code>, where
+<code>σ</code> and <code>τ</code> are themselves types. Types indicate which values an expression may
+evaluate to. They introduce a discipline that is followed somewhat implicitly in
+mathematics. In principle, nothing prevents a mathematician from stating <code>1 ∈ 2</code>,
+but a typing discipline would mark this as the error it likely is.</p>
+<p>Semantically, types can be viewed as sets. We would normally define the types
+<code>ℤ</code>, <code>ℚ</code>, and <code>bool</code> so that they faithfully capture the mathematicians’ <code>ℤ</code> and <code>ℚ</code> and
+the computer scientists’ Booleans, and similarly for the function arrow (<code>→</code>). But
+despite their similarities, Lean and mathematics are distinct languages. Lean’s
+types may be interpreted as sets, but they are not sets.</p>
+<p>Higher-order types are types containing left-nested <code>→</code> arrows. Values of such
+types are functions that take other functions as arguments. Accordingly, the type
+<code>(ℤ → ℤ) → ℚ</code>  is the type of unary functions that take a function of type <code>ℤ → ℤ</code> as
+argument and that return a value of type <code>ℚ</code>.</p>
+<h3 id="terms"><a class="header" href="#terms">Terms</a></h3>
+<p>The <em>terms</em>, or expressions, of simple type theory consist of</p>
+<ul>
+<li><em>constants</em> c;</li>
+<li><em>variables</em> x;</li>
+<li><em>applications</em> t u;</li>
+<li><em>λ-expressions</em> λx =&gt; t.</li>
+</ul>
+<p>Above, <code>t</code> and <code>u</code> denote arbitrary terms. We can also write <code>t : σ</code> to indicate that the
+term <code>t</code> has the type <code>σ</code>.</p>
+<p>A constant <code>c : σ</code> is a symbol of type <code>σ</code> whose meaning is fixed in the current
+global context. For example, an arithmetic theory might contain constants such
+as <code>0 : ℤ</code>, <code>1 : ℤ</code>, <code>abs : ℤ → ℕ</code>, <code>square : ℕ → ℕ</code>, and <code>prime : ℕ → Bool</code>. Constants
+include functions (e.g., <code>abs</code>) and predicates (e.g., <code>prime</code>).</p>
+<p>A variable <code>x : σ</code> is either bound or free. A bound variable refers back to the
+input of a λ-expression <code>λ x : σ =&gt; t</code> enclosing it. In <code>λ x : ℤ =&gt; square (abs x)</code>
+the second <code>x</code> is a variable that refers back to the λ binder’s input <code>x</code>. By contrast, a free
+variable is declared in the local context—a concept that will be explained below.</p>
+<p>An application <code>t u</code>, where <code>t : σ → τ</code> and <code>u : σ</code>, is a term of type <code>τ</code> denoting the
+result of applying the function <code>t</code> to the argument <code>u</code>—e.g., <code>abs 0</code>. No parentheses
+are needed around the argument, unless it is a complex term—e.g., <code>prime (abs 0)</code>.</p>
+<p>Given a term <code>t : τ</code>, a λ-expression <code>λ x : σ =&gt; t</code> denotes the total function of type
+<code>σ → τ</code> that maps each input value <code>x</code> of type <code>σ</code> to the function body <code>t</code>, where <code>t</code> may
+contain <code>x</code>. For example, <code>λ x : ℤ =&gt; square (abs x)</code> denotes the function that maps
+(the value denoted by) <code>0</code> to (the value denoted by) <code>square (abs 0)</code>, that maps <code>1</code> to
+<code>square (abs 1)</code>, and so on. A more intuitive syntax might have been
+<code>x ↦ square (abs x)</code>, but this is not supported by Lean.</p>
+<p>Applications and λ-expressions mirror each other: A λ-expression “builds” a
+function; an application “destructs” a function. Although our functions are unary
+(i.e., they take one argument), we can build <em>n</em>-ary functions by nesting λs, using
+an ingenious technique called <em>currying</em>. For example, <code>λ x : σ =&gt; (λy : τ, x)</code> denotes
+the function of type <code>σ → (τ → σ)</code> that takes two arguments and returns the first
+one. Strictly speaking, <code>σ → (τ → σ)</code> takes a single argument and returns a function,
+which in turn takes an argument. Applications work in the same way: If
+<code>K := (λx : ℤ =&gt; (λ y : Z =&gt; x))</code>, then <code>K 1 = (λ y : Z =&gt; 1)</code> and <code>(K 1) 0 = 1</code>.
+The function <code>K</code> in <code>K 1</code>, which is applied to a single argument, is said to be <em>partially applied</em>.</p>
+<p>Currying is so useful a concept that we will omit most parentheses, writing</p>
+<ul>
+<li><code>σ → τ → υ</code> for <code>σ → (τ → υ)</code></li>
+<li><code>t u v</code> for <code>(t u) v</code></li>
+<li><code>λ x : σ =&gt; λ y : τ =&gt; t</code> for <code>λ x : σ =&gt; </code>(λ y : τ =&gt; t)`</li>
+</ul>
+<p>and also</p>
+<ul>
+<li><code>λ (x : σ) (y : τ) =&gt; t</code> for <code>λ x : σ =&gt; λ y : τ =&gt; t</code></li>
+<li><code>λ x y : σ =&gt; t</code> for <code>λ (x : σ) (y : σ) =&gt; t</code></li>
+</ul>
+<p>In mathematics, it is customary to write binary operators in infix syntax—e.g.,
+<code>x + y</code>. Such notations are also possible in Lean, as syntactic sugar for <code>Add.add x y</code>.
+Partial application is possible with this syntax. For example,  <code>Add.add 1</code>
+denotes the unary function that adds one to its argument. Other ways to write
+this function are <code>λ x =&gt; Add.add 1 x</code> and <code>λ x =&gt; 1 + x</code>.</p>
+<p>No we can move some of this into the Lean language, declaring some simple
+typed values and functions using the <code>def</code> command as follows:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">notation</span></span><span class="alectryon-token"> <span class="s2">&quot;ℤ&quot;</span> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Int</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Int</span><span class="alectryon-token">   <span class="c1">-- associates the notation ℤ with Integer type.</span>
+</span><span class="alectryon-token"><span class="kd">notation</span></span><span class="alectryon-token"> <span class="s2">&quot;ℕ&quot;</span> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Nat</span><span class="alectryon-token">   <span class="c1">-- associates the notation ℕ with Nat type for natural numbers.</span>
+
+</span><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">
+</span><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>2</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="mi">2</span></span><span class="alectryon-token">
+</span><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>f</var><b>: </b><span>ℤ → ℤ</span></span></div></blockquote></div></small></div><span class="nv">f</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token">  := <span class="bp">λ</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">
+</span><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div><span class="nv">g</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> := <span class="bp">λ</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>y</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">y</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>y</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">y</span></span><span class="alectryon-token">
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypesAndTerms-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="TypesAndTerms-lean-chk0"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="k">fun</span> x <span class="bp">=&gt;</span> g (f (g a x)) (g x b) : ℤ <span class="bp">→</span> ℤ</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> <span class="bp">λ</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div>g</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>f</var><b>: </b><span>ℤ → ℤ</span></span></div></blockquote></div></small></div>f</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div>g</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div>a</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token">)) (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div>g</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div>b</span><span class="alectryon-token">)   <span class="c1">-- ℤ → ℤ</span>
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypesAndTerms-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="TypesAndTerms-lean-chk1"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="k">fun</span> x <span class="bp">=&gt;</span> g (f (g a x)) (g x b) : ℤ <span class="bp">→</span> ℤ</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> <span class="bp">λ</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div>g</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>f</var><b>: </b><span>ℤ → ℤ</span></span></div></blockquote></div></small></div>f</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div>g</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div>a</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token">)) (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>g</var><b>: </b><span>ℤ → ℤ → ℤ</span></span></div></blockquote></div></small></div>g</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>x</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">x</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div>b</span><span class="alectryon-token">)       <span class="c1">-- ℤ → ℤ</span></span></span></pre>
+<p>The first two lines declare tow constants (a, b), both of type Integer with
+the respective value of 1 and 2.  The definition for <code>f</code> defines a funciton
+of type <code>ℤ → ℤ</code> implemented by a lambda expression that adds 1 to its argument.
+The definition for <code>g</code> defines a function of type <code>ℤ → ℤ → ℤ</code> implemented by a
+lambda expression that takes two arguments and adds them together.</p>
+<p>The last two lines use the <code>#check</code> command to type-check some terms and
+show their types. The # prefix identifies interactive commands: commands that are
+useful for debugging but that we would normally not keep in a Lean program.</p>
+<p>The <code>abbrev</code> command can be used to define a new name for an existing type:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="k">abbrev</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>foo</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">foo</span></span><span class="alectryon-token"> := </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Int</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Int</span><span class="alectryon-token">
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypesAndTerms-lean-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="TypesAndTerms-lean-chk2"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">foo : <span class="kt">Type</span></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>foo</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>foo</span><span class="alectryon-token"> <span class="c1">-- foo : Type</span>
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypesAndTerms-lean-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="TypesAndTerms-lean-chk3"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="mi">5</span> : foo</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>5</var><b>: </b><span>foo</span></span></div></blockquote></div></small></div><span class="mi">5</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>foo</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>foo</span><span class="alectryon-token">)    <span class="c1">-- 5 : foo</span>
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypesAndTerms-lean-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="TypesAndTerms-lean-chk4"><span class="alectryon-token"><span class="k">#reduce</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Int.ofNat <span class="mi">5</span></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>5</var><b>: </b><span>foo</span></span></div></blockquote></div></small></div><span class="mi">5</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>foo</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>foo</span><span class="alectryon-token">)   <span class="c1">-- Int.ofNat 5</span></span></span></pre>
+<p>Here we see that <code>foo</code> is a <code>Type</code> and it is synonymous for the type <code>Int</code>.</p>
+<h3 id="type-checking-and-type-inference"><a class="header" href="#type-checking-and-type-inference">Type Checking and Type Inference</a></h3>
+<p>When Lean parses a term, it checks whether the term is well typed. In the process,
+it tries to infer the types of bound variables if those are omitted—e.g., the type of
+<code>x</code> in <code>λ x =&gt; 1 + x</code>. Type inference lightens notations and saves some typing.</p>
+<p>For simple type theory, type checking and type inference are decidable problems.
+Advanced features such as overloading (the possibility to reuse the same
+name for several constants—e.g., <code>0 : ℕ</code>  and <code>0 : ℝ</code>) can lead to <a href="../bib.html#30">undecidability</a>.
+Lean takes a pragmatic, computer-science-oriented approach and assumes that
+numerals <code>0, 1, 2, . . .</code> are of type <code>Nat</code> if several types are possible.</p>
+<p>Lean’s type system can be expressed as a formal system. A formal system
+consists of judgments and of (derivation) rules for producing judgments. A typing
+judgment has the form <code>C ⊢ t : σ</code>, meaning that term <code>t</code> has type <code>σ</code> in local context <code>C</code>.
+The local context gives the types of the variables in <code>t</code> that are not bound by a <code>λ</code>.
+The local context is used to keep track of the variables bound by λ’s outside <code>t</code>.
+For a function definition, it will consist of the function’s parameters. For example,
+in Lean, the right-hand side of the last equation of fib’s above would be type-checked
+in a local context consisting of <code>n : ℕ</code>.</p>
+<p>For simple type theory, there are four typing rules, one per kind of term:</p>
+<p>\( \cfrac{}{C ⊢ c : σ} {\large C}{\normalsize ST} \quad \text{if c is declared with type σ } \)</p>
+<p>\( \cfrac{}{C ⊢ x : σ} {\large V}{\normalsize AR} \quad \text{if x : σ is the last occurrence of x in C } \)</p>
+<p>\( \cfrac{C ⊢ t : σ → τ \quad C ⊢ u : σ }{C ⊢ t\enspace{u} : τ} {\large A}{\normalsize PP} \)</p>
+<p>\( \cfrac{C, x : σ ⊢ t : τ }{C ⊢ (λ\enspace{x} : σ =&gt; t) : σ → τ} {\large L}{\normalsize AM} \)</p>
+<p>Each rule has zero or more premises (above the horizontal bar), a conclusion
+(below the bar), and possibly a side condition. The premises are typing judgments,
+whereas the side conditions are arbitrary mathematical conditions on the mathematical
+variables occurring in the rule. To discharge the premises, we need to
+continue performing a derivation upward, as we will see in a moment. As for the
+side conditions, we can use the entire arsenal of mathematics to show that they
+are true.</p>
+<p>The first two rules, labeled <code>CST</code> and <code>VAR</code>, have no premises, but they have side
+conditions that must be satisfied for the rules to apply. The last two rules take
+one or two judgments as premises and produce a new judgment. <code>LAM</code> is the only
+rule that modifies the local context: As we enter the body <code>t</code> of a λ-expression, we
+need to record the existence of the bound variable <code>x</code> and its type to be ready when
+we meet <code>x</code> in <code>t</code></p>
+<p>We can use this rule system to prove that a given term is well typed by working our way backwards
+(i.e., upwards) and applying the rules, building a formal derivation of a typing judgment. Like
+natural trees, derivation trees are drawn with the root at the bottom. The derived judgment appears
+at the root, and each branch ends with the application of a premise-less rule. Rule applications are
+indicated by a horizontal bar and a label. The following typing derivation establishes that the term
+<code>λ x : ℤ =&gt; abs x</code> has type <code>ℤ → ℕ</code>  in an arbitrary local context <code>C</code>:</p>
+<p>\( \cfrac{ \cfrac{}{C, x : ℤ ⊢ abs : ℤ → ℕ} {\large C}{\normalsize ST} \quad \cfrac{}{C, x : ℤ ⊢ x : ℤ } {\large V}{\normalsize AR}} { \cfrac{C, x : ℤ ⊢ abs\enspace{x} : ℕ}{C ⊢ (λ\enspace{x} : ℤ =&gt; abs\enspace{x}): ℤ → ℕ} {\large C}{\normalsize ST} } {\large A}{\normalsize PP}\)</p>
+<p>Reading the proof from the root upwards, notice how the local context is threaded
+through and how it is extended by the <code>LAM</code> rule. The rule moves the variable bound
+by the λ-expression to the local context, making an application of <code>VAR</code> possible
+further up the tree. If the variable <code>x</code> is already declared in <code>C</code>, it becomes shadowed
+by <code>x : ℤ</code> after entering the λ-expression.</p>
+<p>The above type system only checks that terms are well typed. It does not check
+that types are well formed. For example, <code>List ℤ</code>  is well formed, whereas <code>ℤ List</code>
+and <code>List List</code> are ill-formed. For simple type theory, well-formedness is easy
+to check: Only declared type constructors should be used, and each <em>n</em>-ary type
+constructor should be passed exactly <em>n</em> type arguments.</p>
+<p>As a side note, type inference is a generalization of type checking where the
+types on the right-hand side of the colon (<code>:</code>) in judgments may be replaced by
+placeholders. Lean’s type inference is based on an algorithm due to <a href="../bib.html#15">Hindley</a>
+and <a href="../bib.html#25">Milner</a>, which also forms the basis of Haskell, OCaml, and Standard ML.
+The algorithm generates type constraints involving type variables <code>?α, ?β, ?γ, . . .</code>,
+and attempts to solve them using a type unification procedure. For example, when
+inferring the type <code>?α</code> of <code>λ x =&gt; abs x</code>, Lean would perform the following schematic
+type derivation:</p>
+<p>\( \cfrac{ \cfrac{}{x :\thinspace{?β} ⊢ abs :\thinspace{?β} → γ} {\large C}{\normalsize ST} \quad \cfrac{}{x :\thinspace{?β} ⊢ x :\thinspace{?β}} {\large V}{\normalsize AR}} { \cfrac{x :\thinspace{?β} ⊢ abs\enspace{x}:\thinspace{?γ}}{⊢ (λ\enspace{x} =&gt; abs\enspace{x}) :\thinspace{?α}} {\large C}{\normalsize ST} } {\large A}{\normalsize PP}\)</p>
+<p>In addition, Lean would generate the following constraints to ensure that all the
+rule applications are legal:</p>
+<ol>
+<li>For the application of <code>LAM</code>, the type of <code>λ x =&gt; abs x</code> must be of the form <code>?β → ?γ</code>,
+for some types <code>?β</code> and <code>?γ</code>. Thus, Lean would generate the constraint <code>?α = ?β → ?γ</code></li>
+<li>For the application of <code>CST</code>, the type of <code>abs</code> must correspond to the declaration as <code>ℤ → ℕ</code>.
+Thus, Lean would generate the constraint <code>?β → ?γ = ℤ → ℕ</code></li>
+</ol>
+<p>Solving the two constraints yields <code>?α := ℤ → ℕ</code>, which is indeed the type that Lean
+infers for <code>λ x =&gt; abs x</code>.</p>
+<h3 id="type-inhabitation"><a class="header" href="#type-inhabitation">Type Inhabitation</a></h3>
+<p>Given a type <code>σ</code>, the type inhabitation problem consists of finding an “inhabitant”
+of that type—a term of type <code>σ</code>—within the empty local context. It may seem like a
+pointless exercise, but as we will see in Chapter 3, this problem is closely related
+to that of finding a proof of a proposition. Seemingly silly exercises of the form
+“find a term of type <code>σ</code>” are good practice towards mastery of theorem proving.</p>
+<p>To create a term of a given type, start with the placeholder _ and recursively
+apply a combination of the following two steps:</p>
+<ol>
+<li>
+<p>If the type is of the form <code>σ → τ</code>, a possible inhabitant is an anonymous function,
+of the form <code>λ x : σ =&gt; _</code>, where <code>_</code> is a placeholder for a missing term of
+type <code>τ</code>. Lean will mark <code>_</code> as an error; if you hover over it in Visual Studio
+Code, a tooltip will show the missing term’s type as well as any variables
+declared in the local context.</p>
+</li>
+<li>
+<p>Given a type <code>σ</code> (which may be a function type), you can use any constant <code>c</code>
+or variable <code>x : τ₁ → · · · → τₙ → σ</code> to build a term of that type. For each
+argument, you need to put a placeholder, yielding <code>c _ . . . _</code> or <code>x _ . . . _</code></p>
+</li>
+</ol>
+<p>The placeholders can be eliminated recursively using the same procedure.
+As an example, we will apply the procedure to find a term of type
+<code>(α → β → γ) → ((β → α) → β) → α → γ</code>.</p>
+<p>Initially, only step 1 is applicable, with <code>σ := α → β → γ</code> and <code>τ := ((β → α) → β) → α → γ</code>.
+(Recall that <code>→</code> is right-associative: <code>σ → τ → υ</code> stands for <code>σ → (τ → υ)</code>.)
+This results in the term <code>λ f =&gt; _</code>, which has the right type but has a placeholder left.
+Since the argument <code>f</code> has type <code>σ</code>, a function type, it makes sense to use the name
+<code>f</code> for it. Then we continue recursively with the placeholder, of type <code>τ</code>. Again, only
+step 1 is possible, so we end up with the term <code>λ f =&gt; λ g =&gt; _</code>, where <code>g</code> has type
+<code>(β → α) → β</code> and the placeholder has type <code>α → γ</code>. A third application of step 1 yields
+<code>λ f =&gt; λ g =&gt; λ a =&gt; _</code>, where <code>a</code> has type <code>α</code> and the placeholder has type <code>γ</code>.</p>
+<p>At this point, step 1 is no longer possible. Let us see if step 2 is applicable. The
+context surrounding the placeholder contains the following variables:</p>
+<pre><code class="language-lean">f : α → β → γ
+g : (β → α) → β
+a : α</code></pre>
+<p>Recall that we are trying to build a term of type <code>γ</code>. The only variable we can use
+to achieve this is <code>f</code>: It takes two arguments and returns a value of type <code>γ</code>. So
+we replace the placeholder with the term <code>f _ _</code>, where the two new placeholders
+stand for the two missing arguments. Putting everything together, we now have
+the term <code>λ f =&gt; λ g =&gt; λ a =&gt; f _ _</code>.</p>
+<p>Following f’s type, the placeholders are of type <code>α</code> and <code>β</code>, respectively. The first
+placeholder is easy to fill, using step 2 again, by simply supplying <code>a</code>, of type <code>α</code>, with
+no arguments. For the second placeholder, we apply step 2 with the variable <code>g</code>,
+which is the only source of βs. Since <code>g</code> takes an argument, we must supply a
+placeholder. This means our current term is <code>λ f =&gt; λ g =&gt; λ a =&gt; f a (g _)</code>.</p>
+<p>We are almost done. The only placeholder left has type <code>β → α</code>, which is g’s
+argument type. Applying step 1, we replace the placeholder with <code>λ b =&gt; _</code>, where <code>_</code>
+has type <code>α</code>. Here, we can simply supply <code>a</code>. Our final term is
+<code>λ f =&gt; λ g =&gt; λ a =&gt; f a (g (λ b, a))</code>—i.e., <code>λ f g a =&gt; f a (g (λb, a))</code>.</p>
+<p>The above derivation was tedious but deterministic: At each point, either step
+1 or 2 was applicable, but not both. In general, this will not always be the case.
+For some other types, we might encounter dead ends and need to backtrack. We
+might also fail altogether, with nowhere to backtrack to. Notably, with an empty
+local context, it is impossible to supply a witness for <code>α</code>.</p>
+<p>The key idea is that the term should be syntactically correct at all times. The
+only red underlining we should see in Visual Studio Code should appear under the
+placeholders. In general, a good principle for software development is to start
+with a program that compiles, perform the smallest change possible to obtain a
+new compiling program, and repeat until the program is complete.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Basics/Definitions.lean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Basics/TypeDefinitions.lean.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Basics/Definitions.lean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Basics/TypeDefinitions.lean.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" charset="utf-8"></script>
+        <script src="../mark.min.js" charset="utf-8"></script>
+        <script src="../searcher.js" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" charset="utf-8"></script>
+        <script src="../highlight.js" charset="utf-8"></script>
+        <script src="../book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../alectryon.js"></script>
+
+
+    </body>
+</html>

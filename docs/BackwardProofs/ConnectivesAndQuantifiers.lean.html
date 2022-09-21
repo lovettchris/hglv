@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Reasoning about Connectives and Quantifiers - The Hitchhiker’s Guide to Logical Verification</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../alectryon.css">
+        <link rel="stylesheet" href="../pygments.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme && theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar && sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item expanded "><a href="../BackwardProofs/BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item expanded "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html" class="active"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hitchhiker’s Guide to Logical Verification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/leanprover/HitchikersGuide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic
+<span class="kn">import</span> BackwardProofs.BasicTactics</span></span></pre>
+<h2 id="reasoning-about-connectives-and-quantifiers"><a class="header" href="#reasoning-about-connectives-and-quantifiers">Reasoning about Connectives and Quantifiers</a></h2>
+<p>Before we learn to reason about natural numbers, lists, or other data types, we
+must first learn to reason about the logical connectives and quantifiers of Lean’s
+logic. Let us start with a simple example: commutativity of conjunction (<code>∧</code>).</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>and_swap</var><b>: </b><span>∀ (a b : Prop), a ∧ b → b ∧ a</span></span></div></blockquote></div></small></div><span class="nv">and_swap</span></span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Prop</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="kt">Prop</span></span><span class="alectryon-token">) :
+</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> <span class="bp">∧</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> <span class="bp">∧</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> := </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk0"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a <span class="bp">∧</span> b <span class="bp">→</span> b <span class="bp">∧</span> a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk1"><span class="alectryon-token"><span class="k">intro</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>hab</var><b>: </b><span>a ∧ b</span></span></div></blockquote></div></small></div><span class="nv">hab</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">b <span class="bp">∧</span> a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk2"><span class="alectryon-token"><span class="k">apply</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>And.intro</var><b>: </b><span>∀ {a b : Prop}, a → b → a ∧ b</span></span></div></blockquote></div></small></div>And.intro</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">left</span></span><div class="goal-conclusion">b</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="ConnectivesAndQuantifiers-lean-chk3" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><label class="goal-separator" for="ConnectivesAndQuantifiers-lean-chk3"><hr><span class="goal-name">right</span></label><div class="goal-conclusion">a</div></blockquote></div></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk4"><span class="alectryon-token"><span class="k">apply</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>And.right</var><b>: </b><span>∀ {a b : Prop}, a ∧ b → b</span></span></div></blockquote></div></small></div>And.right</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">left.self</span></span><div class="goal-conclusion"><span class="bp">?</span>left.a <span class="bp">∧</span> b</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="ConnectivesAndQuantifiers-lean-chk5" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><label class="goal-separator" for="ConnectivesAndQuantifiers-lean-chk5"><hr><span class="goal-name">left.a</span></label><div class="goal-conclusion"><span class="kt">Prop</span></div></blockquote><input class="alectryon-extra-goal-toggle" id="ConnectivesAndQuantifiers-lean-chk6" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><label class="goal-separator" for="ConnectivesAndQuantifiers-lean-chk6"><hr><span class="goal-name">right</span></label><div class="goal-conclusion">a</div></blockquote></div></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk7"><span class="alectryon-token"><span class="k">exact</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>hab</var><b>: </b><span>a ∧ b</span></span></div></blockquote></div></small></div><span class="nv">hab</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">right</span></span><div class="goal-conclusion">a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk8"><span class="alectryon-token"><span class="k">apply</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>And.left</var><b>: </b><span>∀ {a b : Prop}, a ∧ b → a</span></span></div></blockquote></div></small></div>And.left</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">right.self</span></span><div class="goal-conclusion">a <span class="bp">∧</span> <span class="bp">?</span>right.b</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="ConnectivesAndQuantifiers-lean-chk9" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><label class="goal-separator" for="ConnectivesAndQuantifiers-lean-chk9"><hr><span class="goal-name">right.b</span></label><div class="goal-conclusion"><span class="kt">Prop</span></div></blockquote></div></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chka" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chka"><span class="alectryon-token"><span class="k">exact</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>hab</var><b>: </b><span>a ∧ b</span></span></div></blockquote></div></small></div><span class="nv">hab</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span></pre>
+<p>At this point, we recommend that you move the cursor over each line in the above example to see the
+sequence of proof states. By putting the cursor over each bubble at the end of the line, you can see
+the effect of the command on that line. At the end of the last line Lean simply reports “goals
+accomplished 🎉” meaning that no subgoals remain to be proved.</p>
+<p>The proof is a typical <code>intro–apply–exact</code> mixture. It uses the lemmas</p>
+<pre><code>And.intro : ?a → ?b → ?a ∧ ?b
+And.left : ?a ∧ ?b → ?a
+And.right : ?a ∧ ?b → ?b
+</code></pre>
+<p>where the question marks (?) indicate variables that can be instantiated—for example, by matching
+the goal’s target against the conclusion of a lemma.</p>
+<p>The three lemmas above are the introduction rule and the two elimination
+rules associated with conjunction. An introduction rule for a symbol (e.g., <code>∧</code>) is
+a lemma whose conclusion contains that symbol. Dually, an elimination rule has
+the symbol in an assumption. In the above proof, we apply the introduction rule
+associated with <code>∧</code> to prove the goal <code>⊢ b ∧ a</code>, and we apply the two elimination
+rules to extract <code>b</code> and <code>a</code> from the hypothesis <code>a ∧ b</code>.</p>
+<p>Question marks can also arise in goals. They indicate variables that can be
+instantiated arbitrarily. In the middle of the proof above, right after the tactic
+apply <code>And.right</code>, we have the goal</p>
+<pre><code class="language-lean">a b : Prop, hab : a ∧ b ⊢ ?left.a ∧ b</code></pre>
+<p>The tactic exact <code>hab</code> matches <code>?left.a</code> (in the target) with <code>a</code> (in <code>hab</code>). Because variables can
+occur both in the hypothesis or lemma that is <code>apply</code>d and in the target, in general the procedure
+used to instantiate variables to make two terms syntactically equal is called <em>unification</em>. Matching
+is a special case of unification where one of the two terms contains no variables. In practice,
+goals with variables are rare, so Lean’s unification usually amounts to matching.</p>
+<pre><code>-- BUGBUG: no idea what most of that paragraph means.
+</code></pre>
+<p>In Lean, unification is performed up to computation. For example, the terms
+<code>(λ x =&gt; ?left.a) a</code> and <code>b</code> can be unified by taking <code>?left.a := b</code>,
+because <code>(λ x =&gt; b) a</code> and <code>b</code> are syntactically equal up to β-conversion.</p>
+<p>The following is an alternative proof of the lemma <code>and_swap</code>:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>and_swap2</var><b>: </b><span>∀ (a b : Prop), a ∧ b → b ∧ a</span></span></div></blockquote></div></small></div><span class="nv">and_swap2</span></span><span class="alectryon-token"> :
+<span class="bp">∀</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Prop</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="kt">Prop</span></span><span class="alectryon-token">, </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> <span class="bp">∧</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> <span class="bp">∧</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> := </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chkb"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="bp">∀</span> (a b : <span class="kt">Prop</span>), a <span class="bp">∧</span> b <span class="bp">→</span> b <span class="bp">∧</span> a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chkc"><span class="alectryon-token"><span class="k">intros</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>Prop</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>hab</var><b>: </b><span>a ∧ b</span></span></div></blockquote></div></small></div><span class="nv">hab</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">b <span class="bp">∧</span> a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chkd" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chkd"><span class="alectryon-token"><span class="k">apply</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>And.intro</var><b>: </b><span>∀ {a b : Prop}, a → b → a ∧ b</span></span></div></blockquote></div></small></div>And.intro</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">left</span></span><div class="goal-conclusion">b</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="ConnectivesAndQuantifiers-lean-chke" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><label class="goal-separator" for="ConnectivesAndQuantifiers-lean-chke"><hr><span class="goal-name">right</span></label><div class="goal-conclusion">a</div></blockquote></div></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chkf"><span class="alectryon-token">{</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">left</span></span><div class="goal-conclusion">b</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk10" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk10"><span class="alectryon-token"><span class="k">exact</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>And.right</var><b>: </b><span>∀ {a b : Prop}, a ∧ b → b</span></span></div></blockquote></div></small></div>And.right</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>hab</var><b>: </b><span>a ∧ b</span></span></div></blockquote></div></small></div><span class="nv">hab</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk11" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk11"><span class="alectryon-token">}</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">right</span></span><div class="goal-conclusion">a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk12" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk12"><span class="alectryon-token">{</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a, b</var><span class="hyp-type"><b>: </b><span><span class="kt">Prop</span></span></span></span><br><span><var>hab</var><span class="hyp-type"><b>: </b><span>a <span class="bp">∧</span> b</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">right</span></span><div class="goal-conclusion">a</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk13" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk13"><span class="alectryon-token"><span class="k">exact</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>And.left</var><b>: </b><span>∀ {a b : Prop}, a ∧ b → a</span></span></div></blockquote></div></small></div>And.left</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>hab</var><b>: </b><span>a ∧ b</span></span></div></blockquote></div></small></div><span class="nv">hab</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk14" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk14"><span class="alectryon-token">}</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span></pre>
+<p>The lemma is stated differently, with <code>a</code> and <code>b</code> as ∀-quantified variables instead of
+parameters of the lemma. Logically, this is equivalent, but in the proof we must
+then introduce <code>a</code> and <code>b</code> in addition to <code>hab</code>.</p>
+<p>Another difference is the use of curly braces <code>{ }</code>. When we face two or more goals to prove, it is
+generally good style to put each proof in its own block enclosed in curly braces. The <code>{ }</code> tactic
+combinator focuses on the first subgoal; the tactic inside must prove it. In our example, the
+<code>apply And.intro</code> tactic creates two subgoals, <code>⊢ b</code> and <code>⊢ a</code>.</p>
+<p>A third difference is that we now apply, by juxtaposition, <code>And.right</code> and
+<code>And.left</code> directly to the hypothesis <code>a ∧ b</code> to obtain <code>b</code> and <code>a</code>, respectively,
+instead of waiting for the lemmas’ assumptions to emerge as new subgoals. This
+is a small forward step in an otherwise backward proof. The same syntax is used
+both to discharge (i.e., prove) a hypothesis and to instantiate a ∀-quantifier. One
+benefit of this approach is that we avoid the potentially confusing <code>?left.a</code> variable.</p>
+<p>The introduction and elimination rules for disjunction (∨) are as follows:</p>
+<pre><code class="language-lean">Or.intro_left : ∀ b : Prop, ?a → ?a ∨ b
+Or.intro_right : ∀ b : Prop, ?a → b ∨ ?a
+Or.elim : ?a ∨ ?b → (?a → ?c) → (?b → ?c) → ?c</code></pre>
+<p>--BUGBUG: what are all these question marks? Are they supposed to look like
+unresolved metavariables?</p>
+<p>The ∀-quantifiers in <code>Or.intro_left</code> and <code>Or.intro_right</code> can be instantiated
+directly by applying the lemma name to the value we want to instantiate with,
+via simple juxtaposition. Thus, <code>Or.intro_left false</code> corresponds to the lemma
+<code>?a → ?a ∨ false</code>. This is the forward style.</p>
+<p>Alternatively, we can invoke apply <code>Or.intro_left</code> on a goal of the form
+<code>. . . ⊢ c ∨ d</code>. This instantiates the lemma with <code>?a := c</code> and <code>b := d</code>.
+The new subgoal is <code>. . . ⊢ c</code>. This is the backward style.</p>
+<p>Both <code>Or.intro_left</code> and <code>Or.intro_right</code> are unsafe: If you apply the wrong
+one of the two, or either of them too early in a proof, you might end up with an
+unprovable subgoal. This is easy to see if you consider the provable goal
+<code>⊢ true ∨ false</code>: applying <code>Or.intro_right</code> yields the unprovable subgoal
+<code>⊢ false</code>.</p>
+<p>The <code>Or.elim</code> rule may seem counterintuitive at a first glance. In essence, it
+states that if we have <code>a ∨ b</code>, then to prove an arbitrary <code>c</code>, it suffices to prove <code>c</code>
+when <code>a</code> holds and when <code>b</code> holds. You can think of <code>(?a → ?c) → (?b → ?c) → ?c</code>
+as a clever trick to express the concept of disjunction using only implication.</p>
+<p>The introduction and elimination rules for equivalence (<code>↔</code>) are as follows:</p>
+<pre><code class="language-lean">Iff.intro : (?a → ?b) → (?b → ?a) → (?a ↔ ?b)
+Iff.mp : (?a ↔ ?b) → ?a → ?b
+Iff.mpr : (?a ↔ ?b) → ?b → ?a</code></pre>
+<p>The introduction and elimination rules for existential quantification (<code>∃</code>) are</p>
+<pre><code class="language-lean">Exists.intro : ∀ w, (?p w → (∃x, ?p x))
+Exists.elim : (∃ x, ?p x) → (∀a, ?p a → ?c) → ?c</code></pre>
+<p>The introduction rule for <code>∃</code> can be used to instantiate an existential quantifier
+with a witness. For example:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>nat_exists_double_iden</var><b>: </b><span>∃ n, double n = n</span></span></div></blockquote></div></small></div><span class="nv">nat_exists_double_iden</span></span><span class="alectryon-token"> :
+  <span class="bp">∃</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">, </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>double</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div>double</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">=</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> := </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk15" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk15"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="bp">∃</span> n, double n <span class="bp">=</span> n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk16" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk16"><span class="alectryon-token"><span class="k">apply</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Exists.intro</var><b>: </b><span>∀ {α : Type} {p : α → Prop} (w : α), p w → Exists p</span></span></div></blockquote></div></small></div>Exists.intro</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">double <span class="mi">0</span> <span class="bp">=</span> <span class="mi">0</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="ConnectivesAndQuantifiers-lean-chk17" style="display: none" type="checkbox"><label class="alectryon-input" for="ConnectivesAndQuantifiers-lean-chk17"><span class="alectryon-token"><span class="k">rfl</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span></pre>
+<p>Again, we instantiate a ∀-quantifier in a forward fashion: <code>Exists.intro 0</code> is the
+lemma <code>?p 0 → (∃x, ?p x)</code>. The rule is unsafe: Choosing the wrong witness for <code>x</code>
+will result in an unprovable goal. For example, if the goal is <code>⊢ ∃ n, n &gt; 5</code> and we
+take 3 as the witness, we end up with the unprovable subgoal <code>⊢ 3 &gt; 5</code>.</p>
+<p>The elimination rule for <code>∃</code> is reminiscent of <code>∨</code>. Indeed, a fruitful way to think
+of a quantification <code>∃ n, ?p n</code> is as a possibly infinitary disjunction <code>?p 0 ∨ ?p 1 ∨ · · · </code>.
+Similarly, <code>∀ n, ?p n</code> can be thought of as <code>?p 0 ∧ ?p 1 ∧ · · · </code>.
+For truth (<code>true</code>), there is only an introduction rule:</p>
+<pre><code class="language-lean">True.intro : true</code></pre>
+<p>Truth holds no information whatsoever. If it appears as a hypothesis, it is completely useless, and
+there is no elimination rule that will succeed at extracting any information from it. The <code>clear</code>
+tactic, described in Section 2.8 below, can be used to remove such useless hypotheses.</p>
+<p>Dually, for falsehood (<code>false</code>), there is only an elimination rule</p>
+<pre><code class="language-lean">False.elim : false → ?a</code></pre>
+<p>There is no way to prove falsehood, but if we somehow have it from somewhere
+(e.g., from a hypothesis), then we can derive <code>?a</code>nything.</p>
+<p>Negation (<code>not</code>) is defined in terms of implication and falsehood:
+<code>¬ a</code> abbreviates <code>a → false</code>. Lean’s logic is classical, with support for the law of excluded
+middle and proof by contradiction:</p>
+<p>-- BUGBUG is this still true statemetn or is classical lean just one option now as per:
+https://leanprover.github.io/theorem_proving_in_lean4/propositions_and_proofs.html?highlight=classical#classical-logic</p>
+<pre><code class="language-lean">Classical.em : ∀ a : Prop, a ∨ ¬ a
+Classical.byContradiction : (¬ ?a → false) → ?a</code></pre>
+<p>Finally, implication (<code>→</code>) and universal quantification (<code>∀</code>) are the proverbial dogs
+that did not bark. For both of them, the <code>intro</code> tactic is the introduction principle,
+and application is the elimination principle. For example, given the lemmas
+<code>hab : a → b</code> and <code>ha : a</code>, the juxtaposition <code>hab ha</code> is a lemma stating <code>b</code>.</p>
+<p>For proving logic puzzles involving connectives and quantifiers, we advocate
+a “mindless,” “video game” style of reasoning that relies mostly on basic tactics
+such as <code>intro</code>(s) and <code>apply</code>. Here are some strategies that often work:</p>
+<ul>
+<li>
+<p>If the goal’s target is an implication <code>P → Q</code>, invoke <code>intro hP</code> to move <code>P</code> into your
+hypotheses: <code>. . ., hP : P ⊢ Q</code>.</p>
+</li>
+<li>
+<p>If the goal’s target is a universal quantification <code>∀ x : σ, Q</code>, invoke <code>intro x</code> to move <code>x</code> into
+the local context: <code>. . ., x : σ ⊢ Q</code>.</p>
+</li>
+<li>
+<p>Look for a lemma or hypothesis whose conclusion has the same shape as the goal’s target (possibly
+containing variables that can be matched), and apply it. For example, if the goal’s target is <code>Q</code>
+and you have a lemma or hypothesis of the form <code>hPQ : P → Q</code>, try <code>apply hPQ</code>.</p>
+</li>
+<li>
+<p>A negated goal <code>⊢ ¬ P</code> is syntactically equal to <code>⊢ P → false</code> up to computation, so you can
+invoke <code>intro hP</code> to produce the subgoal <code>hP : P ⊢ false</code>. Expanding negation’s definition by
+invoking <code>rw not_def</code> (described in Section 2.5) is often a good strategy.</p>
+</li>
+<li>
+<p>Sometimes you can make progress by replacing the goal by <code>false</code>, by entering apply <code>False.elim</code>. As
+next step, you would typically apply a lemma or hypothesis of the form <code>P → false</code> or <code>¬ P</code>.</p>
+</li>
+<li>
+<p>When you face several choices (e.g., between <code>Or.intro_left</code> and <code>Or.intro_right</code>), remember which
+choices you have made, and backtrack when you reach a dead end or have the impression you are not
+making any progress.</p>
+</li>
+<li>
+<p>If you suspect that you might have reached a dead end, check whether the goal actually is provable
+under the given assumptions. Even if you started with a provable lemma statement, the current goal
+might be unprovable (e.g., if you used unsafe rules such as <code>Or.intro_left</code>)</p>
+</li>
+</ul>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --></pre>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../BackwardProofs/BasicTactics.lean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../BackwardProofs/Equality.lean.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../BackwardProofs/BasicTactics.lean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../BackwardProofs/Equality.lean.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" charset="utf-8"></script>
+        <script src="../mark.min.js" charset="utf-8"></script>
+        <script src="../searcher.js" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" charset="utf-8"></script>
+        <script src="../highlight.js" charset="utf-8"></script>
+        <script src="../book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../alectryon.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Types Definitions - The Hitchhiker’s Guide to Logical Verification</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../alectryon.css">
+        <link rel="stylesheet" href="../pygments.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme && theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar && sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item expanded "><a href="../Basics/TypeDefinitions.lean.html" class="active"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs/BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hitchhiker’s Guide to Logical Verification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/leanprover/HitchikersGuide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="type-definitions"><a class="header" href="#type-definitions">Type Definitions</a></h2>
+<p>A distinguishing feature of Lean’s calculus of inductive constructions is its built-in
+support for inductive types. An <em>inductive type</em> is a type whose values are built by
+applying special constants called <em>constructors</em>. Inductive types are a concise way
+of representing acyclic data in a program. You may know them under some other,
+largely synonymous names, including algebraic data types, inductive data types,
+freely generated data types, recursive data types, and data types.</p>
+<h3 id="natural-numbers"><a class="header" href="#natural-numbers">Natural Numbers</a></h3>
+<p>The “Hello, World!” example of inductive types is the type <code>Nat</code> natural numbers.
+In Lean, it can be defined as follows:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> my_nat
+
+</span><span class="alectryon-token"><span class="kd">inductive</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>zero</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div>zero</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>succ</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div>succ</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token">
+
+</span><span class="alectryon-token"><span class="kd">end</span></span><span class="alectryon-token"> my_nat</span></span></pre>
+<p>Note: we are placing this in a new nameapce <code>my_nat</code> so it does not conflict with the
+built-in type.</p>
+<p>The first line of the <code>inductive</code> type announces to the world that we are introducing a new type
+called <code>Nat</code>, intended to represent the natural numbers. The second and third line declare two new
+constructors, <code>Nat.zero</code> which is of type <code>Nat</code> and <code>Nat.succ</code> which has the function type <code>Nat → Nat</code>, that can be used to build values of type <code>Nat</code>. Following an established convention in
+computer science and logic, counting starts at zero. The second constructor is what makes this
+inductive definition interesting—it requires an argument of type <code>Nat</code> to produce a value of type
+<code>Nat</code>. The terms</p>
+<pre><code class="language-lean">Nat.zero
+Nat.succ Nat.zero
+Nat.succ (Nat.succ Nat.zero)
+...</code></pre>
+<p>denote the different values of type nat—zero, its successor, its successor’s successor, and so on.
+This notation is called <em>unary</em>, or <em>Peano</em>, after the logician Giuseppe Peano. For an alternative
+explanation of Peano numbers in Lean (and some groovy video game graphics), see Kevin Buzzard’s
+article <a href="http://chalkdustmagazine.com/features/can-computers-prove-theorems/">Can computers prove theorems?</a>.</p>
+<p>The general format of type declarations is</p>
+<pre><code class="language-lean">inductive type-name (params₁ : type₁) . . . (paramsₖ : typeₖ) : Type
+| constructor-name₁ : constructor-type₁
+.
+.
+.
+| constructor-nameₙ : constructor-typeₙ</code></pre>
+<p>For the natural numbers, it is possible to convince Lean to use the familiar name <code>ℕ</code> by declaring
+notation for it as follows:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">notation</span></span><span class="alectryon-token"> <span class="s2">&quot;ℕ&quot;</span> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Nat</span><span class="alectryon-token">
+</span><span class="alectryon-token"><span class="kd">notation</span></span><span class="alectryon-token"> <span class="s2">&quot;ℤ &quot;</span> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Int</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Int</span><span class="alectryon-token"></span></span></pre>
+<p>You can also use literals <code>0, 1, 2, . . .</code> and Lean will be able to infer that they are of type <code>Nat</code>
+when they are used in that context.</p>
+<p>We can inspect an earlier definition at any point in Lean by using the <code>#print</code> command. For example,
+<code>#print Nat</code> within the <code>my_nat</code> namespace displays the following information:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypeDefinitions-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="TypeDefinitions-lean-chk0"><span class="alectryon-token"><span class="k">#print</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="kd">inductive</span> my_nat.Nat : <span class="kt">Type</span>
+number of <span class="kd">parameters</span>: <span class="mi">0</span>
+constructors:
+my_nat.Nat.zero : my_nat.Nat
+my_nat.Nat.succ : my_nat.Nat <span class="bp">→</span> my_nat.Nat</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>my_nat.Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>my_nat.Nat</span><span class="alectryon-token"></span></span></pre>
+<pre><code>inductive my_nat.Nat : Type
+number of parameters: 0
+constructors:
+my_nat.Nat.zero : my_nat.Nat
+my_nat.Nat.succ : my_nat.Nat → my_nat.Nat
+</code></pre>
+<p>The focus on natural numbers is one of the many features of this guide that reveal a bias towards
+computer science. Number theorists would be more interested in the integers <code>ℤ</code> and the rational
+numbers <code>ℚ</code>; analysts would want to work with the real numbers <code>ℝ</code> and the complex numbers <code>ℂ</code>. But the
+natural numbers are ubiquitous in computer science and enjoy a very simple definition as an
+inductive type. They can also be used to build other types, as we will see in Chapter 13.</p>
+<h3 id="arithmetic-expressions"><a class="header" href="#arithmetic-expressions">Arithmetic Expressions</a></h3>
+<p>If we were to specify a calculator program or a programming language, we would
+likely need to define a type to represent arithmetic expressions. The next example
+shows how this could be done in Lean:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">inductive</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">  </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>num</var><b>: </b><span>ℤ → aexp</span></span></div></blockquote></div></small></div>num</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Int</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Int</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>var</var><b>: </b><span>String → aexp</span></span></div></blockquote></div></small></div>var</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>String</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>String</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add</var><b>: </b><span>aexp → aexp → aexp</span></span></div></blockquote></div></small></div>add</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>sub</var><b>: </b><span>aexp → aexp → aexp</span></span></div></blockquote></div></small></div>sub</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>mul</var><b>: </b><span>aexp → aexp → aexp</span></span></div></blockquote></div></small></div>mul</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>div</var><b>: </b><span>aexp → aexp → aexp</span></span></div></blockquote></div></small></div>div</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">aexp</span></span><span class="alectryon-token">
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypeDefinitions-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="TypeDefinitions-lean-chk1"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">aexp.num <span class="mi">1</span> : aexp</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>aexp.num</var><b>: </b><span>ℤ → aexp</span></span></div></blockquote></div></small></div>aexp.num</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">     <span class="c1">-- aexp.num 1 : aexp</span></span></span></pre>
+<p>Mathematically, this definition is equivalent to defining the type <code>aexp</code> inductively
+by the following formation rules:</p>
+<ol>
+<li>For every integer <code>i</code>, we have that <code>aexp.num i</code> is an <code>aexp</code> value.</li>
+<li>For every character string <code>x</code>, we have that <code>aexp.var x</code> is an <code>aexp</code> value.</li>
+<li>If <code>e1</code> and <code>e2</code> are <code>aexp</code> values, then so are <code>aexp.add e1 e2</code>, <code>aexp.sub e1 e2</code>,
+<code>aexp.mul e1 e2</code>, and <code>aexp.div e1 e2</code>.</li>
+</ol>
+<p>The above definition is exhaustive. The only possible values for <code>aexp</code> are those built using
+formation rules 1 to 3. Moreover, <code>aexp</code> values built using different formation rules are distinct.
+These two properties of inductive types are captured by the motto “No junk, no confusion,” due to
+Joseph Goguen.</p>
+<h3 id="comparison-with-java"><a class="header" href="#comparison-with-java">Comparison with Java</a></h3>
+<p>It may be instructive to compare the concise Lean specification of <code>aexp</code> above with a Java program
+that achieves the same. The program consists of one interface and six classes that implement it,
+corresponding to the <code>aexp</code> type and its six constructors:</p>
+<pre><code class="language-java">public interface AExp { }
+public class Num implements AExp {
+  public int num;
+  public Num(int num) { this.num = num; }
+}
+public class Var implements AExp {
+  public String var;
+  public Var(String var) { this.var = var; }
+}
+public class Add implements AExp {
+  public AExp left;
+  public AExp right;
+  public Add(AExp left, AExp right)
+  { this.left = left; this.right = right; }
+}
+public class Sub implements AExp {
+  public AExp left;
+  public AExp right;
+  public Sub(AExp left, AExp right)
+  { this.left = left; this.right = right; }
+}
+public class Mul implements AExp {
+  public AExp left;
+  public AExp right;
+  public Mul(AExp left, AExp right)
+  { this.left = left; this.right = right; }
+}
+public class Div implements AExp {
+  public AExp left;
+  public AExp right;
+  public Div(AExp left, AExp right)
+  { this.left = left; this.right = right; }
+}
+</code></pre>
+<h3 id="comparison-with-c"><a class="header" href="#comparison-with-c">Comparison with C</a></h3>
+<p>In C, the natural counterpart of an inductive type is a tagged union. The type
+declarations would be as follows:</p>
+<pre><code class="language-C">#include &lt;stddef.h&gt;
+#include &lt;stdlib.h&gt;
+enum AExpKind {
+  AET_NUM, AET_VAR, AET_ADD, AET_SUB, AET_MUL, AET_DIV
+};
+struct aexp;
+struct aexp_num {
+  int num;
+};
+struct aexp_var {
+  char var[1024];
+};
+struct aexp_binop {
+  struct aexp *left;
+  struct aexp *right;
+};
+struct aexp {
+  enum AExpKind kind;
+  union {
+    struct aexp_num anum;
+    struct aexp_var avar;
+    struct aexp_binop abinop;
+  } data;
+};
+</code></pre>
+<p>Corresponding to each constructor in Lean, we would need to write a function
+to allocate an <code>aexp</code> object of the right size in memory. Here is the definition of the
+function corresponding to the first constructor, <code>aexp.num</code>:</p>
+<pre><code class="language-C">struct aexp *create_num(int num)
+{
+  struct aexp *res = malloc(offsetof(struct aexp, data) +
+  sizeof(struct aexp_num));
+  res-&gt;kind = AET_NUM;
+  res-&gt;data.anum.num = num;
+  return res;
+}
+</code></pre>
+<p>The subtle pointer arithmetic for the <code>malloc</code> call is needed to allocate exactly the
+right amount of memory.</p>
+<h3 id="lists"><a class="header" href="#lists">Lists</a></h3>
+<p>The next type we consider is that of finite lists (shown here in a temporary namespace
+so it doesn't conflict with the same built-in type):</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> my_list
+
+</span><span class="alectryon-token"><span class="kd">inductive</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div><span class="nv">List</span></span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>α</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">α</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Type</var><b>: </b><span>Type 1</span></span></div></blockquote></div></small></div><span class="kt">Type</span></span><span class="alectryon-token">) </span><span class="alectryon-token"><span class="k">where</span></span><span class="alectryon-token">
+  <span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>nil</var><b>: </b><span>{α : Type} → List α</span></span></div></blockquote></div></small></div>nil</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div><span class="nv">List</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>α</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">α</span></span><span class="alectryon-token">
+  <span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>cons</var><b>: </b><span>{α : Type} → α → List α → List α</span></span></div></blockquote></div></small></div>cons</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>head</var><b>: </b><span>α</span></span></div></blockquote></div></small></div><span class="nv">head</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>α</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">α</span></span><span class="alectryon-token">) (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>tail</var><b>: </b><span>List α</span></span></div></blockquote></div></small></div><span class="nv">tail</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div><span class="nv">List</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>α</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">α</span></span><span class="alectryon-token">) : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List</var><b>: </b><span>Type → Type</span></span></div></blockquote></div></small></div><span class="nv">List</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>α</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">α</span></span><span class="alectryon-token">
+
+</span><span class="alectryon-token"><span class="kd">end</span></span><span class="alectryon-token"> my_list</span></span></pre>
+<p>The type is <em>polymorphic</em>: It is parameterized by a type α, which we can instantiate with concrete
+types. For example, <code>List ℤ</code>  is the type of lists over integers, and <code>List (List ℝ)</code> is the type of
+lists of lists of real numbers. The type constructor <code>List</code> takes a type as argument and returns a
+type. Polymorphism is related to generics (in Java) and templates (in C++). The general idea in all
+cases is to have parameterized types.</p>
+<p>The following commands display the constructors’ types:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypeDefinitions-lean-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="TypeDefinitions-lean-chk2"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">[] : List <span class="bp">?</span>m.4805</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List.nil</var><b>: </b><span>{α : Type u_1} → List α</span></span></div></blockquote></div></small></div>List.nil</span><span class="alectryon-token">       <span class="c1">-- [] : List ?m.6639</span>
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypeDefinitions-lean-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="TypeDefinitions-lean-chk3"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">List.cons : <span class="bp">?</span>m.4807 <span class="bp">→</span> List <span class="bp">?</span>m.4807 <span class="bp">→</span> List <span class="bp">?</span>m.4807</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List.cons</var><b>: </b><span>{α : Type u_1} → α → List α → List α</span></span></div></blockquote></div></small></div>List.cons</span><span class="alectryon-token">      <span class="c1">-- List.cons : ?m.6641 → List ?m.6641 → List ?m.6641</span></span></span></pre>
+<p>Informally:</p>
+<ul>
+<li>The <code>nil</code> constructor takes a type α as argument and produces a result of type
+<code>List α</code>. The type was not defined here so you see <code>?m.6639</code> which represents
+an unresolved metavariable in the Lean compilation.</li>
+<li>The <code>cons</code> constructor takes an element (the <em>head</em>) of some arbitrary type
+<code>?m.6641</code> as argument and a list over <code>?m.6641</code> (the tail) and produces a result of
+type list <code>?m.6641</code>. Unlike for nil, there is no need to pass a type argument to
+cons—the type is inferred from the first argument. If we want to pass the type
+argument explicitly, we need to write an at sign (@) in front of the constant:
+<code>@List.cons</code>.</li>
+</ul>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="TypeDefinitions-lean-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="TypeDefinitions-lean-chk4"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">List.cons : ℕ <span class="bp">→</span> List ℕ <span class="bp">→</span> List ℕ</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> <span class="bp">@</span></span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>List.cons</var><b>: </b><span>{α : Type} → α → List α → List α</span></span></div></blockquote></div></small></div>List.cons</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Nat</span><span class="alectryon-token">   <span class="c1">-- List.cons : ℕ → List ℕ → List ℕ</span></span></span></pre>
+<p>Even if we try to restrict ourselves to a fragment of Lean’s language, Lean often
+exposes us to more advanced constructs in the output, such as <code>?m.6641</code> above, <code>Sort u</code>,
+or <code>Type 1</code>. Our advice is to adopt a sporty attitude: Do not worry if you do not
+always understand everything the first time. Use your common sense and your
+imagination. And, above all, do not hesitate to ask.</p>
+<p>Lean’s built-in lists offer syntactic sugar for writing lists:</p>
+<ul>
+<li><code>[]</code> for <code>List.nil</code></li>
+<li><code>x :: xs</code> for <code>List.cons x xs</code></li>
+<li><code>[x₁, . . ., xₙ]</code> for <code>x₁ :: . . . :: xₙ :: []</code></li>
+</ul>
+<p>The <code>::</code> operator, like all other binary operators, binds less tightly than function
+application. Thus, <code>f x :: reverse ys</code> is parsed as <code>(f x) :: (reverse ys)</code>. It is good
+practice to avoid needless parentheses. They can quickly impair readability. In
+addition, it is important to put spaces around infix operators, to suggest the right
+precedence; it is all too easy to misread <code>f x::reverse ys</code> as <code>f (x::reverse) ys</code> otherwise.</p>
+<p>Functional programmers often use plural names such as <code>xs</code>, <code>ys</code>, <code>zs</code> for lists
+(or more generally collections). A list contains many elements, so a plural form is natural.
+A list of <code>cat</code> objects might be called <code>cats</code>; a list of list of <code>cat</code> objects, <code>catss</code>.
+When a nonempty list is presented as a head and a tail, we usually write, say, <code>x :: xs</code> or <code>cat :: cats</code>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Basics/TypesAndTerms.lean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Basics/FunctionDefinitions.lean.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Basics/TypesAndTerms.lean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Basics/FunctionDefinitions.lean.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" charset="utf-8"></script>
+        <script src="../mark.min.js" charset="utf-8"></script>
+        <script src="../searcher.js" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" charset="utf-8"></script>
+        <script src="../highlight.js" charset="utf-8"></script>
+        <script src="../book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../alectryon.js"></script>
+
+
+    </body>
+</html>
