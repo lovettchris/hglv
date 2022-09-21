@@ -1,5 +1,5 @@
 @echo off
-for %%i in ("Basics", "BackwardProofs") do (
+for %%i in (".", "Basics", "BackwardProofs") do (
    call :processFolder %%i
 )
 

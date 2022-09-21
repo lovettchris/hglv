@@ -34,17 +34,17 @@
         <link rel="stylesheet" href="../pygments.css">
 
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script>
+        <script type="text/javascript">
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
+        <script type="text/javascript">
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -60,7 +60,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
+        <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -72,7 +72,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
+        <script type="text/javascript">
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../Basics/Definitions.lean.html" class="active"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs/BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../Basics/Definitions.lean.html" class="active"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,7 +139,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
+                <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -212,21 +212,21 @@ fib n = fib (n - 2) + fib (n - 1)
 
 
 
-        <script>
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" charset="utf-8"></script>
-        <script src="../mark.min.js" charset="utf-8"></script>
-        <script src="../searcher.js" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" charset="utf-8"></script>
-        <script src="../highlight.js" charset="utf-8"></script>
-        <script src="../book.js" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../alectryon.js"></script>
+        <script type="text/javascript" src="../alectryon.js"></script>
 
 
     </body>

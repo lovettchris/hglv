@@ -1,3 +1,4 @@
+import Basics.TypesAndTerms
 /-!
 ## Type Definitions
 
@@ -51,12 +52,7 @@ inductive type-name (params₁ : type₁) . . . (paramsₖ : typeₖ) : Type
 .
 | constructor-nameₙ : constructor-typeₙ
 ```
-For the natural numbers, it is possible to convince Lean to use the familiar name `ℕ` by declaring
-notation for it as follows:
--/
-notation "ℕ" => Nat
-notation "ℤ " => Int
-/-!
+
 You can also use literals `0, 1, 2, . . .` and Lean will be able to infer that they are of type `Nat`
 when they are used in that context.
 

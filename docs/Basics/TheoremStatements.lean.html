@@ -34,17 +34,17 @@
         <link rel="stylesheet" href="../pygments.css">
 
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script>
+        <script type="text/javascript">
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
+        <script type="text/javascript">
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -60,7 +60,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
+        <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -72,7 +72,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
+        <script type="text/javascript">
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item expanded "><a href="../Basics/TheoremStatements.lean.html" class="active"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs/BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Types Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item expanded "><a href="../Basics/TheoremStatements.lean.html" class="active"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">3.</strong> Bibliography</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,7 +139,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
+                <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -188,7 +188,8 @@ operations defined in <a href="./FunctionDefinitions.lean.html">Function Definit
 <p>The general format is</p>
 <pre><code class="language-lean">theorem name (params1 : type1) . . . (paramsm : typem) :
   statement :=
-  proof</code></pre>
+  proof
+</code></pre>
 <p>The <code>:=</code> symbol separates the theorem’s statement and its proof. The syntax of theorem is very
 similar to that of a <code>def</code> command without pattern matching, with <code>statement</code> instead of <code>type</code> and
 <code>proof</code> instead of <code>result</code>. In the examples above, we put the marker <code>sorry</code> as a placeholder for
@@ -199,11 +200,12 @@ and 3, we will see how to achieve this.</p>
 provable, but I have not carried out the proof yet—sorry.” Sometimes, we want to express a related
 idea, namely, “Let us assume this proposition holds.” Lean provides the axiom command for this,
 which is often used in conjunction with constant(s). For example:</p>
-<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">axiom</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a_less_b</var><b>: </b><span>∀ (a b : ℤ ), a &lt; b</span></span></div></blockquote></div></small></div>a_less_b</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token">) : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> <span class="bp">&lt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"></span></span></pre>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">axiom</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a_less_b</var><b>: </b><span>∀ (a b : ℤ), a &lt; b</span></span></div></blockquote></div></small></div>a_less_b</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℤ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℤ</span><span class="alectryon-token">) : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>a</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">a</span></span><span class="alectryon-token"> <span class="bp">&lt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>b</var><b>: </b><span>ℤ</span></span></div></blockquote></div></small></div><span class="nv">b</span></span><span class="alectryon-token"></span></span></pre>
 <p>Here we have no information about a and b beyond their type. The axiom specifies the desired
 property about them. The general format of the command is</p>
 <pre><code class="language-lean">axiom name (params₁ : type₁) . . . (paramsₘ : typeₘ) :
-  statement</code></pre>
+  statement
+</code></pre>
 <p>Axioms are dangerous, because they rapidly can lead to an inconsistent logic, in which we can derive
 false. For example, if we added a second axiom stating that <code>a = b</code>, we could easily derive <code>b &lt; b</code>,
 from which we could derive <code>false</code> is true. The history of interactive theorem proving is paved with
@@ -244,21 +246,21 @@ combination of <code>def</code> and <code>theorem</code> to the more dangerous <
 
 
 
-        <script>
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" charset="utf-8"></script>
-        <script src="../mark.min.js" charset="utf-8"></script>
-        <script src="../searcher.js" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" charset="utf-8"></script>
-        <script src="../highlight.js" charset="utf-8"></script>
-        <script src="../book.js" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../alectryon.js"></script>
+        <script type="text/javascript" src="../alectryon.js"></script>
 
 
     </body>
