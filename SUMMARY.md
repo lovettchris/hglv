@@ -10,7 +10,7 @@
   - [Theorem Statements](./Basics/TheoremStatements.lean.md)
   - [Summary of New Lean Constructs](./Basics/Summary.md)
 
-- [Backward Proofs](./BackwardProofs/BackwardProofs.lean.md)
+- [Backward Proofs](./BackwardProofs.lean.md)
   - [Tactic Mode](./BackwardProofs/TacticMode.lean.md)
   - [Basic Tactics](./BackwardProofs/BasicTactics.lean.md)
   - [Reasoning about Connectives and Quantifiers](./BackwardProofs/ConnectivesAndQuantifiers.lean.md)

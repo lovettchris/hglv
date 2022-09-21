@@ -7,7 +7,7 @@ Lean tactics. A _tactic_ is a procedure that operates on the goal— the proposi
 either fully proves it or produces new subgoals (or fails). When we state a lemma, the lemma
 statement is the initial goal. A proof is complete once all (sub)goals have been eliminated using
 suitable tactics. The tactics described here are documented in more detail in Chapter 5 of [Theorem
-Proving in Lean](../bib.md#1) and Chapter 6 of [The Lean Reference Manual](../bib.md/#3). Tactics
+Proving in Lean](./bib.md#1) and Chapter 6 of [The Lean Reference Manual](./bib.md/#3). Tactics
 are a backward proof mechanism. They start from the goal and work backwards towards the already
 proved lemmas. Consider the lemmas `a, a → b`, and `b → c` and the goal `⊢ c`. An informal backward
 proof is as follow:
