@@ -14,7 +14,7 @@ proof is as follow:
 
 - To prove `c`, by `b → c` it suffices to prove `b`.
 - To prove `b`, by `a → b` it suffices to prove `a`.
-- To prove `a`, we use `a`.
+- To prove `a`, we use `a`.  <span class="qed"></span>
 
 The telltale sign of a backward proof is the phrase “it suffices to.” Notice how we
 progress from one goal to another ( `⊢ c`, `⊢ b`, `⊢ a`) until no goal is left to prove. By
@@ -22,7 +22,7 @@ contrast, a forward proof would start from the lemma `a` and progress, one theor
 at a time, towards the desired theorem `c`:
 
 - From `a` and `a → b`, we have `b`.
-- From `b` and `b → c`, we have `c`, as desired.
+- From `b` and `b → c`, we have `c`, as desired. <span class="qed"></span>
 
 A forward proof only manipulates theorems, not goals. We will study forward
 proofs more deeply in Chapter 3.

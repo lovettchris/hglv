@@ -3,3 +3,4 @@ lean_packages/
 .vscode/
 *.lean.md
 .ninja_log
+docs/

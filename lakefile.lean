@@ -16,3 +16,8 @@ lean_lib Basics {
 lean_lib BackwardProofs {
   -- add library configuration options here
 }
+
+
+lean_lib ForwardProofs {
+  -- add library configuration options here
+}

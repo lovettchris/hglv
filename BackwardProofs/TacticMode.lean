@@ -59,7 +59,7 @@ write the proof as follows:
 
 - Let `a` and `b` be propositions.
 - Assume `(ha) a` and `(hb) b` are true.
-- To prove `a`, we use hypothesis `ha`.
+- To prove `a`, we use hypothesis `ha`. <span class="qed"></span>
 
 (Mathematicians would probably use numeric tags such as (1) and (2) for the hypotheses
 instead of informative names.)
@@ -85,5 +85,5 @@ Putting on our mathematician’s hat, we can verbalize the last proof as follows
 - Assume `(ha) a` is true.
 - To prove `c`, by hypothesis `hbc` it suffices to prove `b`.
 - To prove `b`, by hypothesis `hab` it suffices to prove `a`.
-- To prove `a`, we use hypothesis `ha`.
+- To prove `a`, we use hypothesis `ha`. <span class="qed"></span>
 -/

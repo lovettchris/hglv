@@ -54,11 +54,12 @@ Once we have proved that a binary operator is commutative and associative, it
 is a good idea to let Lean’s automation, notably `cc`, know about this. The following
 commands achieve this for add:
 -/
-@[instance] def add.is_commutative : is_commutative N add :=
-{ comm := add_comm }
 
-@[instance] def add.is_associative : is_associative N add :=
-{ assoc := add_assoc }
+-- @[instance] def add.is_commutative : is_commutative N add :=
+-- { comm := add_comm }
+
+-- @[instance] def add.is_associative : is_associative N add :=
+-- { assoc := add_assoc }
 
 -- BUGBUG: 'is_commutative' and 'cc' are still missing from mathlib...
 
@@ -67,12 +68,13 @@ commands achieve this for add:
 to reason up to associativity and commutativity of add:
 
 -/
-lemma mul_add (l m n : ℕ) :
-mul l (add m n) = add (mul l m) (mul l n) := by
-  induction' n with n ih
-  { rfl }
-  { simp [add, mul, ih]
-    cc }    -- BUGBUG: 'cc' is still missing from mathlib...
+-- lemma mul_add (l m n : ℕ) :
+-- mul l (add m n) = add (mul l m) (mul l n) := by
+--   induction' n with n ih
+--   { rfl }
+--   { simp [add, mul, ih]
+--     cc }    -- BUGBUG: 'cc' is still missing from mathlib...
+
 /-!
 Here are a few hints on how to carry out proofs by induction:
 

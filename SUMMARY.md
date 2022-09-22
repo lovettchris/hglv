@@ -5,7 +5,7 @@
 
 - [Definitions and Statements](./Basics/Definitions.lean.md)
   - [Types and Terms](./Basics/TypesAndTerms.lean.md)
-  - [Types Definitions](./Basics/TypeDefinitions.lean.md)
+  - [Type Definitions](./Basics/TypeDefinitions.lean.md)
   - [Function Definitions](./Basics/FunctionDefinitions.lean.md)
   - [Theorem Statements](./Basics/TheoremStatements.lean.md)
   - [Summary of New Lean Constructs](./Basics/Summary.md)
@@ -20,5 +20,16 @@
   - [Induction Tactic](./BackwardProofs/InductionTactic.lean.md)
   - [Cleanup Tactics](./BackwardProofs/CleanupTactics.lean.md)
   - [Summary of New Lean Constructs](./BackwardProofs/Summary.lean.md)
+
+- [Forward Proofs](./ForwardProofs.lean.md)
+  - [Structured Proofs](./ForwardProofs/StructuredProofs.lean.md)
+  - [Structured Constructs](./ForwardProofs/StructuredConstructs.lean.md)
+  - [Forward Reasoning about Connectives and Quantifiers](./ForwardProofs/Connectives.lean.md)
+  - [Calculation Proofs](./ForwardProofs/CalculationProofs.lean.md)
+  - [Forward Reasoning with Tactics](./ForwardProofs/ForwardTactics.lean.md)
+  - [Dependent Types](./ForwardProofs/DependentTypes.lean.md)
+  - [The Curry–Howard Correspondence](./ForwardProofs/CurryHoward.lean.md)
+  - [Induction by Pattern Matching](./ForwardProofs/InductionPatterns.lean.md)
+  - [Summary of New Lean Constructs](./ForwardProofs/Summary.lean.md)
 
 - [Bibliography](./bib.md)

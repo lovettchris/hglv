@@ -10,7 +10,7 @@ build-dir = "docs"
 
 [output.html]
 git-repository-url = "https://github.com/leanprover/HitchikersGuide"
-additional-css = ["alectryon.css", "pygments.css"]
+additional-css = ["alectryon.css", "pygments.css", "custom.css"]
 additional-js = ["alectryon.js"]
 mathjax-support = true
 
