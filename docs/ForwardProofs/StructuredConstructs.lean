@@ -46,8 +46,6 @@ fun (names₁ [: type₁]) . . . (namesₙ [: typeₙ]) =>
 
 A lambda `fun` moves ∀-quantified variables from the goal’s target to the local
 context. It can be seen as a structured version of the `intros` tactic.
-Note that the standard Lean tactic for fixing variables is assume, which also
-works in this case.
 
 **have**
 
@@ -78,18 +76,8 @@ show proposition by tactic proof
 ```
 The `show` command lets us repeat the goal to prove, which can be useful as documentation. It also
 allows us to rephrase the goal in a syntactically equal form up to computation. Instead of the
-syntax `show proposition from proof`, we can simply write proof if we do not want to repeat the goal
-and do not need to rephrase it. The proof can also tactical if you write `show proposition by ...`
-
-**suffices**
-```
-suffices name : type from proof
-```
-
-Writing `suffices hq : q` leaves us with two goals. First, we have to show that it indeed suffices
-to show `q`, by proving the original goalwith the additional hypothesis `hq : q`.
-Finally, we have to show `q`.
-
+syntax `show proposition from proof`, we can simply write `proof` if we do not want to repeat the goal
+and do not need to rephrase it. The proof can also be tactical if you write `show proposition by ...`
 
 
 -/

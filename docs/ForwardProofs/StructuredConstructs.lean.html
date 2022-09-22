@@ -35,17 +35,17 @@
         <link rel="stylesheet" href="../custom.css">
 
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script>
+        <script type="text/javascript">
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
+        <script type="text/javascript">
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -61,7 +61,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
+        <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -73,7 +73,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
+        <script type="text/javascript">
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -140,7 +140,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
+                <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -168,23 +168,28 @@ For example:</p>
 <p>We can pass arguments to lemmas to instantiate ∀-quantifiers and discharge assumptions. Suppose the
 lemma <code>add_comm (m n : ℕ) : add m n = add n m</code> is available, and suppose we want to prove its instance
 <code>add 0 n = add n 0</code>. This can be achieved neatly using the name of the lemma and two arguments:</p>
-<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">axiom</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm</var><b>: </b><span>∀ (m n : ℕ), add m n = add n m</span></span></div></blockquote></div></small></div>add_comm</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>m</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">m</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">) : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add</var><b>: </b><span>ℕ → ℕ → ℕ</span></span></div></blockquote></div></small></div>add</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>m</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">m</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">=</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add</var><b>: </b><span>ℕ → ℕ → ℕ</span></span></div></blockquote></div></small></div>add</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>m</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">m</span></span><span class="alectryon-token">
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">axiom</span></span><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuredConstructs-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuredConstructs-lean-chk0"><span class="alectryon-token">add_comm</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: <span class="bp">&#39;</span>add_comm&#39; has already been declared</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> (m n : ℕ) : add m n <span class="bp">=</span> add n m
 
 </span><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm_zero_left</var><b>: </b><span>∀ (n : ℕ), add 0 n = add n 0</span></span></div></blockquote></div></small></div><span class="nv">add_comm_zero_left</span></span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">) :
   </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add</var><b>: </b><span>ℕ → ℕ → ℕ</span></span></div></blockquote></div></small></div>add</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">=</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add</var><b>: </b><span>ℕ → ℕ → ℕ</span></span></div></blockquote></div></small></div>add</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> :=
-  </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm</var><b>: </b><span>∀ (m n : ℕ), add m n = add n m</span></span></div></blockquote></div></small></div>add_comm</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"></span></span></pre>
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuredConstructs-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuredConstructs-lean-chk1"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>add_comm</var><b>: </b><span>∀ {A : Type} [inst : AddCommSemigroup A] (a b : A), a + b = b + a</span></span></div></blockquote></div></small></div>add_comm</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: type mismatch
+  add_comm <span class="mi">0</span> n
+has type
+  <span class="mi">0</span> <span class="bp">+</span> n <span class="bp">=</span> n <span class="bp">+</span> <span class="mi">0</span> : <span class="kt">Prop</span>
+but is expected to <span class="k">have</span> type
+  add <span class="mi">0</span> n <span class="bp">=</span> add n <span class="mi">0</span> : <span class="kt">Prop</span></blockquote></div></div></small></span></pre>
 <p>This has the same effect as the tactical proof <code>by exact add_comm 0 n</code>, but is more concise. The <code>exact</code>
 tactic can be seen as the inverse of <code>by</code>. Why enter tactic mode if only to leave it immediately?</p>
 <p>Like with <code>exact</code> and <code>apply</code>, the lemma or hypothesis’s statement is matched with the current goal up
 to computation. This gives some flexibility.</p>
 <p><strong>fun</strong></p>
-<pre><code class="language-lean">fun (names₁ [: type₁]) . . . (namesₙ [: typeₙ]) =&gt;</code></pre>
+<pre><code class="language-lean">fun (names₁ [: type₁]) . . . (namesₙ [: typeₙ]) =&gt;
+</code></pre>
 <p>A lambda <code>fun</code> moves ∀-quantified variables from the goal’s target to the local
-context. It can be seen as a structured version of the <code>intros</code> tactic.
-Note that the standard Lean tactic for fixing variables is assume, which also
-works in this case.</p>
+context. It can be seen as a structured version of the <code>intros</code> tactic.</p>
 <p><strong>have</strong></p>
-<pre><code class="language-lean">have name : proposition := proof</code></pre>
+<pre><code class="language-lean">have name : proposition := proof
+</code></pre>
 <p>The <code>have</code> command lets us state and prove an intermediate lemma, which may refer to names
 introduced previously. The proof can be tactical or structured. Generally, we tend to use structured
 proofs to sketch the main argument and resort to tactical proofs for proving subgoals or
@@ -201,17 +206,12 @@ is designed for computable data, not proofs. Expanding or introducing a let corr
 ζ-conversion (Section 2.2).</p>
 <p><strong>show</strong></p>
 <pre><code class="language-lean">show proposition from proof
-show proposition by tactic proof</code></pre>
+show proposition by tactic proof
+</code></pre>
 <p>The <code>show</code> command lets us repeat the goal to prove, which can be useful as documentation. It also
 allows us to rephrase the goal in a syntactically equal form up to computation. Instead of the
-syntax <code>show proposition from proof</code>, we can simply write proof if we do not want to repeat the goal
-and do not need to rephrase it. The proof can also tactical if you write <code>show proposition by ...</code></p>
-<p><strong>suffices</strong></p>
-<pre><code>suffices name : type from proof
-</code></pre>
-<p>Writing <code>suffices hq : q</code> leaves us with two goals. First, we have to show that it indeed suffices
-to show <code>q</code>, by proving the original goalwith the additional hypothesis <code>hq : q</code>.
-Finally, we have to show <code>q</code>.</p>
+syntax <code>show proposition from proof</code>, we can simply write <code>proof</code> if we do not want to repeat the goal
+and do not need to rephrase it. The proof can also be tactical if you write <code>show proposition by ...</code></p>
 
                     </main>
 
@@ -245,21 +245,21 @@ Finally, we have to show <code>q</code>.</p>
 
 
 
-        <script>
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" charset="utf-8"></script>
-        <script src="../mark.min.js" charset="utf-8"></script>
-        <script src="../searcher.js" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" charset="utf-8"></script>
-        <script src="../highlight.js" charset="utf-8"></script>
-        <script src="../book.js" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../alectryon.js"></script>
+        <script type="text/javascript" src="../alectryon.js"></script>
 
 
     </body>
