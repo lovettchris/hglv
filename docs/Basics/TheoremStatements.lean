@@ -16,27 +16,27 @@ examples of true statements that can be made about the addition, multiplication,
 operations defined in [Function Definitions](./FunctionDefinitions.lean.md):
 
 -/
-theorem add_comm (m n : Nat) :
+theorem add_comm₁ (m n : Nat) :
   add m n = add n m :=
   sorry
 
-theorem add_assoc (l m n : Nat) :
+theorem add_assoc₁ (l m n : Nat) :
   add (add l m) n = add l (add m n) :=
   sorry
 
-theorem mul_comm (m n : Nat) :
+theorem mul_comm₁ (m n : Nat) :
   mul m n = mul n m :=
   sorry
 
-theorem mul_assoc (l m n : Nat) :
+theorem mul_assoc₁ (l m n : Nat) :
   mul (mul l m) n = mul l (mul m n) :=
   sorry
 
-theorem mul_add (l m n : Nat) :
+theorem mul_add₁ (l m n : Nat) :
   mul l (add m n) = add (mul l m) (mul l n) :=
   sorry
 
-theorem reverse_reverse {α : Type} (xs : List α) :
+theorem reverse_reverse₁ {α : Type} (xs : List α) :
   reverse (reverse xs) = xs :=
   sorry
 /-!

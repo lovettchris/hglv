@@ -39,7 +39,7 @@ examples, in a global context containing `def double (n : ℕ) : ℕ := n + n`:
 | α-conversion | `(λx, f x) = (λy, f y)`              |
 | β-conversion | `(λx, f x) a = f a`                  |
 | δ-conversion | `double 5 = 5 + 5`                   |
-| ζ-conversion | `(let n : N := 2 in n + n) = 4`      |
+| ζ-conversion | `(let n : N := 2 ; n + n) = 4`      |
 | η-conversion | `(λx, f x) = f`                      |
 | ι-conversion | `prod.fst (a, b) = a`                |
 

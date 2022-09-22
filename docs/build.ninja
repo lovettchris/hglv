@@ -1,0 +1,31 @@
+rule alectryon
+  command = alectryon --frontend lean4+markup $in --backend webpage --lake lakefile.lean -o $out
+rule book
+  command = mdbook build
+build ./BackwardProofs.lean.md: alectryon ./BackwardProofs.lean
+build ./Basics.lean.md: alectryon ./Basics.lean
+build ./ForwardProofs.lean.md: alectryon ./ForwardProofs.lean
+build Basics/Definitions.lean.md: alectryon Basics/Definitions.lean
+build Basics/FunctionDefinitions.lean.md: alectryon Basics/FunctionDefinitions.lean
+build Basics/TheoremStatements.lean.md: alectryon Basics/TheoremStatements.lean
+build Basics/TypeDefinitions.lean.md: alectryon Basics/TypeDefinitions.lean
+build Basics/TypesAndTerms.lean.md: alectryon Basics/TypesAndTerms.lean
+build BackwardProofs/BasicTactics.lean.md: alectryon BackwardProofs/BasicTactics.lean
+build BackwardProofs/CleanupTactics.lean.md: alectryon BackwardProofs/CleanupTactics.lean
+build BackwardProofs/ConnectivesAndQuantifiers.lean.md: alectryon BackwardProofs/ConnectivesAndQuantifiers.lean
+build BackwardProofs/Equality.lean.md: alectryon BackwardProofs/Equality.lean
+build BackwardProofs/Induction.lean.md: alectryon BackwardProofs/Induction.lean
+build BackwardProofs/InductionTactic.lean.md: alectryon BackwardProofs/InductionTactic.lean
+build BackwardProofs/RewritingTactics.lean.md: alectryon BackwardProofs/RewritingTactics.lean
+build BackwardProofs/Summary.lean.md: alectryon BackwardProofs/Summary.lean
+build BackwardProofs/TacticMode.lean.md: alectryon BackwardProofs/TacticMode.lean
+build ForwardProofs/CalculationProofs.lean.md: alectryon ForwardProofs/CalculationProofs.lean
+build ForwardProofs/Connectives.lean.md: alectryon ForwardProofs/Connectives.lean
+build ForwardProofs/CurryHoward.lean.md: alectryon ForwardProofs/CurryHoward.lean
+build ForwardProofs/DependentTypes.lean.md: alectryon ForwardProofs/DependentTypes.lean
+build ForwardProofs/ForwardTactics.lean.md: alectryon ForwardProofs/ForwardTactics.lean
+build ForwardProofs/InductionPatterns.lean.md: alectryon ForwardProofs/InductionPatterns.lean
+build ForwardProofs/StructuredConstructs.lean.md: alectryon ForwardProofs/StructuredConstructs.lean
+build ForwardProofs/StructuredProofs.lean.md: alectryon ForwardProofs/StructuredProofs.lean
+build ForwardProofs/Summary.lean.md: alectryon ForwardProofs/Summary.lean
+build docs/index.html: book ./BackwardProofs.lean.md ./Basics.lean.md ./ForwardProofs.lean.md Basics/Definitions.lean.md Basics/FunctionDefinitions.lean.md Basics/TheoremStatements.lean.md Basics/TypeDefinitions.lean.md Basics/TypesAndTerms.lean.md BackwardProofs/BasicTactics.lean.md BackwardProofs/CleanupTactics.lean.md BackwardProofs/ConnectivesAndQuantifiers.lean.md BackwardProofs/Equality.lean.md BackwardProofs/Induction.lean.md BackwardProofs/InductionTactic.lean.md BackwardProofs/RewritingTactics.lean.md BackwardProofs/Summary.lean.md BackwardProofs/TacticMode.lean.md ForwardProofs/CalculationProofs.lean.md ForwardProofs/Connectives.lean.md ForwardProofs/CurryHoward.lean.md ForwardProofs/DependentTypes.lean.md ForwardProofs/ForwardTactics.lean.md ForwardProofs/InductionPatterns.lean.md ForwardProofs/StructuredConstructs.lean.md ForwardProofs/StructuredProofs.lean.md ForwardProofs/Summary.lean.md

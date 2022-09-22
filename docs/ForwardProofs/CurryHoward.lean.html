@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Curry–Howard Correspondence - The Hitchhiker’s Guide to Logical Verification</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../alectryon.css">
+        <link rel="stylesheet" href="../pygments.css">
+        <link rel="stylesheet" href="../custom.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme && theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar && sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Type Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item expanded "><a href="../ForwardProofs.lean.html"><strong aria-hidden="true">3.</strong> Forward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ForwardProofs/StructuredProofs.lean.html"><strong aria-hidden="true">3.1.</strong> Structured Proofs</a></li><li class="chapter-item "><a href="../ForwardProofs/StructuredConstructs.lean.html"><strong aria-hidden="true">3.2.</strong> Structured Constructs</a></li><li class="chapter-item "><a href="../ForwardProofs/Connectives.lean.html"><strong aria-hidden="true">3.3.</strong> Forward Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../ForwardProofs/CalculationProofs.lean.html"><strong aria-hidden="true">3.4.</strong> Calculation Proofs</a></li><li class="chapter-item "><a href="../ForwardProofs/ForwardTactics.lean.html"><strong aria-hidden="true">3.5.</strong> Forward Reasoning with Tactics</a></li><li class="chapter-item "><a href="../ForwardProofs/DependentTypes.lean.html"><strong aria-hidden="true">3.6.</strong> Dependent Types</a></li><li class="chapter-item expanded "><a href="../ForwardProofs/CurryHoward.lean.html" class="active"><strong aria-hidden="true">3.7.</strong> The Curry–Howard Correspondence</a></li><li class="chapter-item "><a href="../ForwardProofs/InductionPatterns.lean.html"><strong aria-hidden="true">3.8.</strong> Induction by Pattern Matching</a></li><li class="chapter-item "><a href="../ForwardProofs/Summary.lean.html"><strong aria-hidden="true">3.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">4.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hitchhiker’s Guide to Logical Verification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/leanprover/HitchikersGuide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic</span></span></pre>
+<h2 id="the-curryhoward-correspondence"><a class="header" href="#the-curryhoward-correspondence">The Curry–Howard Correspondence</a></h2>
+<p>You will likely have noticed that the same symbol <code>→</code> is used both for implication
+(e.g., <code>false → true</code>) and as the type constructor of functions (e.g., <code>ℤ → ℕ</code>).
+Similarly, ∀ is used both as a quantifier and to specify dependent types. Without
+context, we cannot tell whether <code>a → b</code> refers to the type of a function with domain
+<code>a</code> and codomain <code>b</code> or to the proposition “<code>a</code> implies <code>b</code>,” and similarly,
+<code>∀x : a, b[x]</code> can denote a proposition or a dependent type.</p>
+<p>It turns out that not only the two pairs of concepts look the same, they are the
+same. This is called the <em>Curry–Howard correspondence</em>. It is also called the
+<em>PAT principle</em>, where PAT is a double mnemonic:</p>
+<blockquote>
+<p>PAT = propositions as types     PAT = proofs as terms</p>
+</blockquote>
+<p>Furthermore, because types are also terms, we also have that propositions are
+terms. However, PAT is not a quadruple mnemonic (<span style="text-decoration:line-through">PAT = proofs as types</span>).</p>
+<p>Haskell Curry and William Alvin Howard noticed that for some logics, propositions are isomorphic to
+types, and proofs are isomorphic to terms. Hence, in dependent type theory, we <em>identify</em> proofs with
+terms as well as propositions with types, a considerable economy of concepts. The question “Is <code>H</code> a
+proof of <code>P</code>?” becomes equivalent to “Does the term <code>H</code> have type <code>P</code>?” As a result, inside of Lean, there
+is no proof checker, only a type checker.</p>
+<p>Let us go through the dramatis personae one by one. We use the metavariables <code>σ</code>, <code>τ</code> for types;
+<code>P</code>, <code>Q</code> for propositions; <code>t</code>, <code>u</code>, <code>x</code> for terms; and <code>h</code>, <code>G</code>, <code>H</code>, for proofs. Starting with
+“propositions as types,” for types, we have the following:</p>
+<ol>
+<li><code>σ → τ</code> is the type of (total) functions from <code>σ</code> to <code>τ</code>.</li>
+<li><code>∀x : σ, τ[x]</code> is the dependent function type from <code>x : σ</code> to <code>τ[x]</code>.</li>
+</ol>
+<p>In contrast, for propositions, we have the following:</p>
+<ol>
+<li><code>P → Q</code> can be read as “<code>P</code> implies <code>Q</code>,” or as the type of functions mapping proofs
+of <code>P</code> to proofs of <code>Q</code>.</li>
+<li><code>∀x : σ, Q[x]</code> can be read as “for all <code>x, Q[x]</code>,” or as the type of functions
+mapping values <code>x</code> of type <code>σ</code> to proofs of <code>Q[x]</code>.</li>
+</ol>
+<p>Continuing with “proofs as terms,” for terms, we have the following:</p>
+<ol>
+<li>A constant is a term.</li>
+<li>A variable is a term.</li>
+<li><code>t u</code> is the application of function <code>t</code> to argument <code>u</code>.</li>
+<li><code>λ x =&gt; t[x]</code> is a function mapping <code>x</code> to <code>t[x]</code>.</li>
+</ol>
+<p>In contrast, for proofs (i.e., proof terms), we have the following:</p>
+<ol>
+<li>The name of a lemma or hypothesis is a proof.</li>
+<li><code>H t</code>, which instantiates the leading parameter or quantifier of proof <code>H</code>’s statement with term
+<code>t</code>, is a proof.</li>
+<li><code>H G</code>, which discharges the leading assumption of <code>H</code>’s statement with proof <code>G</code>, is a proof.
+This operation is called modus ponens.</li>
+<li><code>λ h : P =&gt; H[h]</code> is a proof of <code>P → Q</code>, assuming <code>H[h]</code> is a proof of <code>Q</code> for <code>h : P</code>.</li>
+<li><code>λ x : σ =&gt; H[x]</code> is a proof of <code>∀x : σ, Q[x]</code>, assuming <code>H[x]</code> is a proof of <code>Q[x]</code> for <code>x : σ</code>.</li>
+</ol>
+<p>The last two cases are justified by the LAM' rule. In a structured proof, as opposed to a raw proof
+term, we would write assume or fix instead of λ, and we would probably want to repeat the conclusion
+using show for readability, as follows:</p>
+<pre><code class="language-lean">lemma case_4 (H : P → Q):
+  P → Q :=
+λ h : P =&gt;
+  show Q from
+  H h
+
+lemma case_5 :
+∀ x : σ, Q x :=
+λ x =&gt;
+  show Q x from
+  H x</code></pre>
+<p>Some commands are provided in Lean under two different names but are really
+the same as per the Curry–Howard correspondence. This is the case for
+<code>axiom</code>.</p>
+<p>There are also pairs with slightly different behavior, such as <code>def</code> and <code>lemma</code> or
+<code>let</code> and <code>have</code>. The fundamental difference is this: When we define some function
+or data, we care not only about the type but also about the body—the behavior. On
+the other hand, once we have proved a lemma, the proof becomes <em>irrelevant</em>. All
+that matters is that there is a proof. We will return to the topic of proof irrelevance
+in Chapter 11.</p>
+<p>The following correspondence table summarizes the differences between tactical proofs, structured
+proofs, and raw proof terms:</p>
+<div class="table-wrapper"><table><thead><tr><th>Tactical proofs</th><th>Structured proofs</th><th>Raw proof terms</th></tr></thead><tbody>
+<tr><td><code>intro x</code></td><td><code>λ x =&gt;</code></td><td><code>λ x =&gt;</code></td></tr>
+<tr><td><code>intro h</code></td><td><code>λ h =&gt;</code></td><td><code>λ h =&gt;</code></td></tr>
+<tr><td><code>have k := H</code></td><td><code>have k := H</code></td><td><code>(λ k =&gt; . . .) H</code></td></tr>
+<tr><td><code>let x := t</code></td><td><code>let x := t</code></td><td><code>let x := t</code></td></tr>
+<tr><td><code>exact (H : P)</code></td><td><code>show P from H</code></td><td><code>H : P</code></td></tr>
+<tr><td><code>calc . . .</code></td><td><code>calc . . .</code></td><td><code>calc . . .</code></td></tr>
+</tbody></table>
+</div>
+<p>-- BUGBUG: I made some changes to this table, it needs close review.</p>
+<p>The terminology of dependent type theory can be quite confusing, because some words have a narrow
+and a broad sense. The following diagram captures the various meanings of important words:</p>
+<p>-- BUGBUG nice latex chart goes here...</p>
+<p>According to the broad senses, any expression is a term, any expression that may occur on the
+right-hand side of a typing judgment is a type, and any expression that may occur on the right-hand
+side of a typing judgment with a type on its left-hand side is a universe. This is consistent with the
+reading of <code>t : u</code> as “<code>t</code> has type <code>u</code>” and the notion that universes are types of types.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../ForwardProofs/DependentTypes.lean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../ForwardProofs/InductionPatterns.lean.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../ForwardProofs/DependentTypes.lean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../ForwardProofs/InductionPatterns.lean.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" charset="utf-8"></script>
+        <script src="../mark.min.js" charset="utf-8"></script>
+        <script src="../searcher.js" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" charset="utf-8"></script>
+        <script src="../highlight.js" charset="utf-8"></script>
+        <script src="../book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../alectryon.js"></script>
+
+
+    </body>
+</html>

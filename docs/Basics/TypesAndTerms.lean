@@ -1,3 +1,5 @@
+import Mathlib.Init.Data.Nat.Basic
+import Mathlib.Init.Data.Int.Basic
 /-!
 ## Types and Terms
 
@@ -89,8 +91,9 @@ this function are `λ x => Add.add 1 x` and `λ x => 1 + x`.
 No we can move some of this into the Lean language, declaring some simple
 typed values and functions using the `def` command as follows:
 -/
-notation "ℤ" => Int   -- associates the notation ℤ with Integer type.
-notation "ℕ" => Nat   -- associates the notation ℕ with Nat type for natural numbers.
+-- These are defined in Mathlib:
+-- notation "ℤ" => Int   -- associates the notation ℤ with Integer type.
+-- notation "ℕ" => Nat   -- associates the notation ℕ with Nat type for natural numbers.
 
 def a : ℤ := 1
 def b : ℤ := 2
