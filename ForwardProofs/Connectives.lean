@@ -5,8 +5,8 @@ import Mathlib.Init.Data.Int.Basic
 ## Forward Reasoning about Connectives and Quantifiers
 
 Reasoning about the logical connectives and quantifiers in a forward fashion uses
-the same introduction and elimination rules as in tactic mode (Section 2.3). A few
-examples will show the flavor. Let us start with conjunction:
+the same introduction and elimination rules as in [tactic mode](../BackwardProofs/ConnectivesAndQuantifiers.lean.md).
+A few examples will show the flavor. Let us start with conjunction:
 -/
 lemma and_swap (a b : Prop) :
   a ∧ b → b ∧ a :=
