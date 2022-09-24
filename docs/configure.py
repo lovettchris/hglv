@@ -8,7 +8,7 @@ def createNinja(f):
     f.write("  command = mdbook build\n")
 
     all_files = []
-    for d in [".", "Basics", "BackwardProofs", "ForwardProofs"]:
+    for d in [".", "Basics", "BackwardProofs", "ForwardProofs", "FunctionalProgramming"]:
         for path in glob.glob(f"{d}/*.lean"):
             n = path.replace('\\', '/')
             if "lakefile.lean" not in n:

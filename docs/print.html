@@ -36,17 +36,17 @@
         <link rel="stylesheet" href="custom.css">
 
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -62,7 +62,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -74,7 +74,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="cover.html">Cover</a></li><li class="chapter-item affix "><a href="preface.html">Preface</a></li><li class="chapter-item "><a href="Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Type Definitions</a></li><li class="chapter-item "><a href="Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="ForwardProofs.lean.html"><strong aria-hidden="true">3.</strong> Forward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ForwardProofs/StructuredProofs.lean.html"><strong aria-hidden="true">3.1.</strong> Structured Proofs</a></li><li class="chapter-item "><a href="ForwardProofs/StructuredConstructs.lean.html"><strong aria-hidden="true">3.2.</strong> Structured Constructs</a></li><li class="chapter-item "><a href="ForwardProofs/Connectives.lean.html"><strong aria-hidden="true">3.3.</strong> Forward Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="ForwardProofs/CalculationProofs.lean.html"><strong aria-hidden="true">3.4.</strong> Calculation Proofs</a></li><li class="chapter-item "><a href="ForwardProofs/ForwardTactics.lean.html"><strong aria-hidden="true">3.5.</strong> Forward Reasoning with Tactics</a></li><li class="chapter-item "><a href="ForwardProofs/DependentTypes.lean.html"><strong aria-hidden="true">3.6.</strong> Dependent Types</a></li><li class="chapter-item "><a href="ForwardProofs/CurryHoward.lean.html"><strong aria-hidden="true">3.7.</strong> The Curry–Howard Correspondence</a></li><li class="chapter-item "><a href="ForwardProofs/InductionPatterns.lean.html"><strong aria-hidden="true">3.8.</strong> Induction by Pattern Matching</a></li><li class="chapter-item "><a href="ForwardProofs/Summary.lean.html"><strong aria-hidden="true">3.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="bib.html"><strong aria-hidden="true">4.</strong> Bibliography</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="cover.html">Cover</a></li><li class="chapter-item affix "><a href="preface.html">Preface</a></li><li class="chapter-item "><a href="Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Type Definitions</a></li><li class="chapter-item "><a href="Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="ForwardProofs.lean.html"><strong aria-hidden="true">3.</strong> Forward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ForwardProofs/StructuredProofs.lean.html"><strong aria-hidden="true">3.1.</strong> Structured Proofs</a></li><li class="chapter-item "><a href="ForwardProofs/StructuredConstructs.lean.html"><strong aria-hidden="true">3.2.</strong> Structured Constructs</a></li><li class="chapter-item "><a href="ForwardProofs/Connectives.lean.html"><strong aria-hidden="true">3.3.</strong> Forward Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="ForwardProofs/CalculationProofs.lean.html"><strong aria-hidden="true">3.4.</strong> Calculation Proofs</a></li><li class="chapter-item "><a href="ForwardProofs/ForwardTactics.lean.html"><strong aria-hidden="true">3.5.</strong> Forward Reasoning with Tactics</a></li><li class="chapter-item "><a href="ForwardProofs/DependentTypes.lean.html"><strong aria-hidden="true">3.6.</strong> Dependent Types</a></li><li class="chapter-item "><a href="ForwardProofs/CurryHoward.lean.html"><strong aria-hidden="true">3.7.</strong> The Curry–Howard Correspondence</a></li><li class="chapter-item "><a href="ForwardProofs/InductionPatterns.lean.html"><strong aria-hidden="true">3.8.</strong> Induction by Pattern Matching</a></li><li class="chapter-item "><a href="ForwardProofs/Summary.lean.html"><strong aria-hidden="true">3.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="FunctionalProgramming.lean.html"><strong aria-hidden="true">4.</strong> Functional Programming</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="FunctionalProgramming/InductiveTypes.lean.html"><strong aria-hidden="true">4.1.</strong> Inductive Types</a></li><li class="chapter-item "><a href="FunctionalProgramming/StructuralInduction.lean.html"><strong aria-hidden="true">4.2.</strong> Structural Induction</a></li><li class="chapter-item "><a href="FunctionalProgramming/StructuralRecursion.lean.html"><strong aria-hidden="true">4.3.</strong> Structural Recursion</a></li></ol></li><li class="chapter-item "><a href="bib.html"><strong aria-hidden="true">5.</strong> Bibliography</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,7 +141,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -300,7 +300,7 @@ or the space bar. We will freely use these notations. For reference, we provide 
 non-ASCII symbols that are used in the guide and, for each, one of its ASCII representations. By
 hovering over a symbol in Visual Studio Code while holding the control or command key pressed, you
 will see the different ways in which it can be entered.</p>
-<table><thead><tr><th>symbol</th><th>abbreviation</th><th>symbol</th><th>abbreviation</th><th>symbol</th><th>abbreviation</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>symbol</th><th>abbreviation</th><th>symbol</th><th>abbreviation</th><th>symbol</th><th>abbreviation</th></tr></thead><tbody>
 <tr><td>¬</td><td>\not</td><td>∧</td><td>\and</td><td>∨</td><td>\or</td></tr>
 <tr><td>→</td><td>\r</td><td>←</td><td>\l</td><td>↔</td><td>\lr</td></tr>
 <tr><td>∃</td><td>\ex</td><td>∀</td><td>\fo</td><td>∑</td><td>\S</td></tr>
@@ -318,7 +318,7 @@ will see the different ways in which it can be entered.</p>
 <tr><td>₄</td><td>\4</td><td>₅</td><td>\5</td><td>₆</td><td>\6</td></tr>
 <tr><td>₇</td><td>\7</td><td>₈</td><td>\8</td><td>₉</td><td>\9</td></tr>
 </tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="definitions-and-statements"><a class="header" href="#definitions-and-statements">Definitions and Statements</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="definitions-and-statements"><a class="header" href="#definitions-and-statements">Definitions and Statements</a></h1>
 <p>We start our journey by studying the basics of Lean, without carrying out any
 proofs yet. We review how to define new types and functions and how to state
 their expected properties as lemmas.</p>
@@ -561,8 +561,7 @@ step 1 is possible, so we end up with the term <code>λ f =&gt; λ g =&gt; _</co
 context surrounding the placeholder contains the following variables:</p>
 <pre><code class="language-lean">f : α → β → γ
 g : (β → α) → β
-a : α
-</code></pre>
+a : α</code></pre>
 <p>Recall that we are trying to build a term of type <code>γ</code>. The only variable we can use
 to achieve this is <code>f</code>: It takes two arguments and returns a value of type <code>γ</code>. So
 we replace the placeholder with the term <code>f _ _</code>, where the two new placeholders
@@ -616,8 +615,7 @@ inductive definition interesting—it requires an argument of type <code>Nat</co
 <pre><code class="language-lean">Nat.zero
 Nat.succ Nat.zero
 Nat.succ (Nat.succ Nat.zero)
-...
-</code></pre>
+...</code></pre>
 <p>denote the different values of type nat—zero, its successor, its successor’s successor, and so on.
 This notation is called <em>unary</em>, or <em>Peano</em>, after the logician Giuseppe Peano. For an alternative
 explanation of Peano numbers in Lean (and some groovy video game graphics), see Kevin Buzzard’s
@@ -628,8 +626,7 @@ article <a href="http://chalkdustmagazine.com/features/can-computers-prove-theor
 .
 .
 .
-| constructor-nameₙ : constructor-typeₙ
-</code></pre>
+| constructor-nameₙ : constructor-typeₙ</code></pre>
 <p>You can also use literals <code>0, 1, 2, . . .</code> and Lean will be able to infer that they are of type <code>Nat</code>
 when they are used in that context.</p>
 <p>We can inspect an earlier definition at any point in Lean by using the <code>#print</code> command. For example,
@@ -829,8 +826,7 @@ pattern matching is:</p>
 .
 .
 .
-| patternsₙ := resultₙ
-</code></pre>
+| patternsₙ := resultₙ</code></pre>
 <p>The parentheses ( ) around the parameters can also be curly braces { } if we want
 to make them implicit arguments. The parameters cannot be subjected to pattern
 matching, only the remaining arguments (e.g., the <code>aexp</code> argument of <code>eval</code>).</p>
@@ -839,8 +835,7 @@ right-hand side, as well as constructors. For example, in the second case in eva
 definition, the variable <code>x</code> can be used in the right-hand side <code>env x</code>.</p>
 <p>Some definitions do not need pattern matching. For these, the syntax is simply</p>
 <pre><code class="language-lean">def name (params₁ : type₁) . . . (paramsₘ : typeₘ) : type :=
-  result
-</code></pre>
+  result</code></pre>
 <p>We can have pattern matching without recursion (e.g., in the <code>aexp.num</code> and <code>aexp.var</code> cases above),
 and we can have recursion without pattern matching.</p>
 <p>The basic arithmetic operations on natural numbers, such as addition, can be
@@ -987,8 +982,7 @@ operations defined in <a href="Basics/./FunctionDefinitions.lean.html">Function 
 <p>The general format is</p>
 <pre><code class="language-lean">theorem name (params1 : type1) . . . (paramsm : typem) :
   statement :=
-  proof
-</code></pre>
+  proof</code></pre>
 <p>The <code>:=</code> symbol separates the theorem’s statement and its proof. The syntax of theorem is very
 similar to that of a <code>def</code> command without pattern matching, with <code>statement</code> instead of <code>type</code> and
 <code>proof</code> instead of <code>result</code>. In the examples above, we put the marker <code>sorry</code> as a placeholder for
@@ -1003,8 +997,7 @@ which is often used in conjunction with constant(s). For example:</p>
 <p>Here we have no information about a and b beyond their type. The axiom specifies the desired
 property about them. The general format of the command is</p>
 <pre><code class="language-lean">axiom name (params₁ : type₁) . . . (paramsₘ : typeₘ) :
-  statement
-</code></pre>
+  statement</code></pre>
 <p>Axioms are dangerous, because they rapidly can lead to an inconsistent logic, in which we can derive
 false. For example, if we added a second axiom stating that <code>a = b</code>, we could easily derive <code>b &lt; b</code>,
 from which we could derive <code>false</code> is true. The history of interactive theorem proving is paved with
@@ -1018,24 +1011,27 @@ in the chapter. Some syntaxes have multiple meanings, which will be introduced g
 to <a href="Basics/../bib.html#3">The Lean Reference Manual</a>, the <a href="Basics/../bib.html#1">Theorem Proving in Lean</a> tutorial, and
 the <a href="https://leanprover-community.github.io/mathlib_docs/">mathlib documentation</a> for details.</p>
 <p><strong>Diagnosis Commands</strong></p>
-<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
 <tr><td>#check</td><td>checks and prints type of a term</td></tr>
 <tr><td>#eval</td><td>executes a term using an optimized interpreter</td></tr>
 <tr><td>#print</td><td>prints the definition of a constant</td></tr>
 <tr><td>#reduce</td><td>executes a term using Lean’s inference kernel</td></tr>
 </tbody></table>
+</div>
 <p><strong>Declarations</strong></p>
-<table><thead><tr><th>Declaration</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Declaration</th><th>Description</th></tr></thead><tbody>
 <tr><td>axiom</td><td>states an axiom</td></tr>
 <tr><td>def</td><td>defines a new constant</td></tr>
 <tr><td>inductive</td><td>introduces a type and its constructors</td></tr>
 <tr><td>theorem</td><td>states a theorem and its proof</td></tr>
 <tr><td>namespace . . .</td><td>end collects declarations in a named scope</td></tr>
 </tbody></table>
+</div>
 <p><strong>Proof Commands</strong></p>
-<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
 <tr><td>sorry</td><td>stands for a missing proof or definition</td></tr>
 </tbody></table>
+</div>
 <p>TODO : need to review closely how I removed &quot;contants&quot; from this chapter,
 since we are generally hiding that term in Lean 4.  I instead jumped straight
 to &quot;def&quot;.</p>
@@ -1087,8 +1083,7 @@ are invoked, each on its own line. Let us trace their behavior:</p>
 <ol>
 <li>
 <p>Initially, the goal is simply the lemma statement:</p>
-<pre><code class="language-lean">⊢ ∀ a b : Prop, a → b → a
-</code></pre>
+<pre><code class="language-lean">⊢ ∀ a b : Prop, a → b → a</code></pre>
 </li>
 <li>
 <p>The <code>intros a b</code> tactic tells Lean to fix two free variables, <code>a</code> and <code>b</code>,
@@ -1096,16 +1091,14 @@ corresponding to the two bound variables of the same names. Offen, we name the f
 variables after the bound variables. The tactic mimics how mathematicians
 work on paper: To prove a ∀-quantified proposition, it suffices to prove it for
 some arbitrary but fixed value of the bound variable. The goal becomes</p>
-<pre><code class="language-lean">a b : Prop ⊢ a → b → a
-</code></pre>
+<pre><code class="language-lean">a b : Prop ⊢ a → b → a</code></pre>
 </li>
 <li>
 <p>The <code>intros ha hb</code> tactic tells Lean to move the assumptions <code>a</code> and <code>b</code> to the
 local context and to call these hypotheses <code>ha</code> and <code>hb</code>. Indeed, to prove an
 implication, it suffices to take its left-hand side as hypothesis and prove its
 right-hand side. The goal becomes</p>
-<pre><code class="language-lean">a b : Prop, ha : a, hb : b ⊢ a
-</code></pre>
+<pre><code class="language-lean">a b : Prop, ha : a, hb : b ⊢ a</code></pre>
 </li>
 <li>
 <p>The <code>apply ha</code> tactic tells Lean to match the hypothesis <code>a</code>, called <code>ha</code>, against
@@ -1165,7 +1158,7 @@ syntactically equal up to computation. Computation means expansion of definition
 application of a λ-expression to an argument, and more.</p>
 <p>These <em>conversions</em> have traditional names. The main conversions are listed below together with
 examples, in a global context containing <code>def double (n : ℕ) : ℕ := n + n</code>:</p>
-<table><thead><tr><th>name</th><th>effect</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>effect</th></tr></thead><tbody>
 <tr><td>α-conversion</td><td><code>(λx, f x) = (λy, f y)</code></td></tr>
 <tr><td>β-conversion</td><td><code>(λx, f x) a = f a</code></td></tr>
 <tr><td>δ-conversion</td><td><code>double 5 = 5 + 5</code></td></tr>
@@ -1173,6 +1166,7 @@ examples, in a global context containing <code>def double (n : ℕ) : ℕ := n +
 <tr><td>η-conversion</td><td><code>(λx, f x) = f</code></td></tr>
 <tr><td>ι-conversion</td><td><code>prod.fst (a, b) = a</code></td></tr>
 </tbody></table>
+</div>
 <p>Applying a conversion repeatedly as left-to-right rewrite rules is called _reduction); applying it
 once in reverse is called <em>expansion</em>. Since much of Lean’s machinery treats terms that are
 syntactically equal up to computation uniformly, it usually makes sense to tell Lean’s
@@ -1295,8 +1289,7 @@ rules to extract <code>b</code> and <code>a</code> from the hypothesis <code>a �
 <p>Question marks can also arise in goals. They indicate variables that can be
 instantiated arbitrarily. In the middle of the proof above, right after the tactic
 apply <code>And.right</code>, we have the goal</p>
-<pre><code class="language-lean">a b : Prop, hab : a ∧ b ⊢ ?left.a ∧ b
-</code></pre>
+<pre><code class="language-lean">a b : Prop, hab : a ∧ b ⊢ ?left.a ∧ b</code></pre>
 <p>The tactic exact <code>hab</code> matches <code>?left.a</code> (in the target) with <code>a</code> (in <code>hab</code>). Because variables can
 occur both in the hypothesis or lemma that is <code>apply</code>d and in the target, in general the procedure
 used to instantiate variables to make two terms syntactically equal is called <em>unification</em>. Matching
@@ -1330,8 +1323,7 @@ benefit of this approach is that we avoid the potentially confusing <code>?left.
 <p>The introduction and elimination rules for disjunction (∨) are as follows:</p>
 <pre><code class="language-lean">Or.intro_left : ∀ b : Prop, ?a → ?a ∨ b
 Or.intro_right : ∀ b : Prop, ?a → b ∨ ?a
-Or.elim : ?a ∨ ?b → (?a → ?c) → (?b → ?c) → ?c
-</code></pre>
+Or.elim : ?a ∨ ?b → (?a → ?c) → (?b → ?c) → ?c</code></pre>
 <p>--BUGBUG: what are all these question marks? Are they supposed to look like
 unresolved metavariables?</p>
 <p>The ∀-quantifiers in <code>Or.intro_left</code> and <code>Or.intro_right</code> can be instantiated
@@ -1353,12 +1345,10 @@ as a clever trick to express the concept of disjunction using only implication.<
 <p>The introduction and elimination rules for equivalence (<code>↔</code>) are as follows:</p>
 <pre><code class="language-lean">Iff.intro : (?a → ?b) → (?b → ?a) → (?a ↔ ?b)
 Iff.mp : (?a ↔ ?b) → ?a → ?b
-Iff.mpr : (?a ↔ ?b) → ?b → ?a
-</code></pre>
+Iff.mpr : (?a ↔ ?b) → ?b → ?a</code></pre>
 <p>The introduction and elimination rules for existential quantification (<code>∃</code>) are</p>
 <pre><code class="language-lean">Exists.intro : ∀ w, (?p w → (∃x, ?p x))
-Exists.elim : (∃ x, ?p x) → (∀a, ?p a → ?c) → ?c
-</code></pre>
+Exists.elim : (∃ x, ?p x) → (∀a, ?p a → ?c) → ?c</code></pre>
 <p>The introduction rule for <code>∃</code> can be used to instantiate an existential quantifier
 with a witness. For example:</p>
 <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>nat_exists_double_iden</var><b>: </b><span>∃ n, double n = n</span></span></div></blockquote></div></small></div><span class="nv">nat_exists_double_iden</span></span><span class="alectryon-token"> :
@@ -1373,14 +1363,12 @@ take 3 as the witness, we end up with the unprovable subgoal <code>⊢ 3 &gt; 5<
 of a quantification <code>∃ n, ?p n</code> is as a possibly infinitary disjunction <code>?p 0 ∨ ?p 1 ∨ · · · </code>.
 Similarly, <code>∀ n, ?p n</code> can be thought of as <code>?p 0 ∧ ?p 1 ∧ · · · </code>.
 For truth (<code>true</code>), there is only an introduction rule:</p>
-<pre><code class="language-lean">True.intro : true
-</code></pre>
+<pre><code class="language-lean">True.intro : true</code></pre>
 <p>Truth holds no information whatsoever. If it appears as a hypothesis, it is completely useless, and
 there is no elimination rule that will succeed at extracting any information from it. The <code>clear</code>
 tactic, described in Section 2.8 below, can be used to remove such useless hypotheses.</p>
 <p>Dually, for falsehood (<code>false</code>), there is only an elimination rule</p>
-<pre><code class="language-lean">False.elim : false → ?a
-</code></pre>
+<pre><code class="language-lean">False.elim : false → ?a</code></pre>
 <p>There is no way to prove falsehood, but if we somehow have it from somewhere
 (e.g., from a hypothesis), then we can derive <code>?a</code>nything.</p>
 <p>Negation (<code>not</code>) is defined in terms of implication and falsehood:
@@ -1389,8 +1377,7 @@ middle and proof by contradiction:</p>
 <p>-- BUGBUG is this still true statemetn or is classical lean just one option now as per:
 https://leanprover.github.io/theorem_proving_in_lean4/propositions_and_proofs.html?highlight=classical#classical-logic</p>
 <pre><code class="language-lean">Classical.em : ∀ a : Prop, a ∨ ¬ a
-Classical.byContradiction : (¬ ?a → false) → ?a
-</code></pre>
+Classical.byContradiction : (¬ ?a → false) → ?a</code></pre>
 <p>Finally, implication (<code>→</code>) and universal quantification (<code>∀</code>) are the proverbial dogs
 that did not bark. For both of them, the <code>intro</code> tactic is the introduction principle,
 and application is the elimination principle. For example, given the lemmas
@@ -1439,8 +1426,7 @@ introduction and elimination rules:</p>
 <pre><code class="language-lean">Eq.refl : ∀a, a = a
 Eq.symm : ?a = ?b → ?b = ?a
 Eq.trans : ?a = ?b → ?b = ?c → ?a = ?c
-Eq.subst : ?a = ?b → ?p ?a → ?p ?b
-</code></pre>
+Eq.subst : ?a = ?b → ?p ?a → ?p ?b</code></pre>
 <p>The first three lemmas are introduction rules specifying that <code>=</code> is an equivalence
 relation. The fourth lemma is an elimination rule that allows us to replace equals
 for equals in an arbitrary context, represented by the higher-order variable <code>?p</code>.</p>
@@ -1461,11 +1447,9 @@ ha : a <span class="bp">=</span> a&#39;
 
 <span class="c1">-- BUGBUG doesn&#39;t work.</span></span></span></pre>
 <p>The <code>Eq.subst</code> instance we use has <code>?a := a</code>, <code>?b := a'</code>, and <code>?p := (λ x, f a b = f x b)</code>:</p>
-<pre><code class="language-lean">a = a' → (λx, f a b = f x b) a → (λx, f a b = f x b) a'
-</code></pre>
+<pre><code class="language-lean">a = a' → (λx, f a b = f x b) a → (λx, f a b = f x b) a'</code></pre>
 <p>In β-reduced form:</p>
-<pre><code class="language-lean">a = a' → f a b = f a b → f a b = f a' b
-</code></pre>
+<pre><code class="language-lean">a = a' → f a b = f a b → f a b = f a' b</code></pre>
 <p>The lemma's first assumption matches the hypothesis <code>ha : a = a'</code>, which is passed as an argument in the
 first apply invocation. The lemma's second assumption is a trivial equality that can be proved by
 apply <code>Eq.refl</code> or <code>rfl</code>. The lemma's conclusion matches the goal’s target. Notice how a higher-order
@@ -1504,11 +1488,12 @@ Thus, <code>a = a' ∧ b = b'</code> should be read as (a = a') ∧ (b = b').</p
 they use equations as left-to-right rewrite rules. By default, they operate on the
 goal’s target, but they can also be used to rewrite hypotheses specified using the
 <code>at</code> keyword:</p>
-<table><thead><tr><th>at</th><th>description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>at</th><th>description</th></tr></thead><tbody>
 <tr><td><code>at ⊢</code></td><td>applies to the target (the default)</td></tr>
 <tr><td><code>at h₁ . . . hₙ</code></td><td>applies to the specified hypotheses</td></tr>
 <tr><td><code>at *</code></td><td>applies to all hypotheses and the target</td></tr>
 </tbody></table>
+</div>
 <p><strong>rw</strong></p>
 <pre><code>rw lemma-or-constant [at position]
 </code></pre>
@@ -1542,8 +1527,7 @@ lemma, we can also specify the name of a constant. This temporarily adds the con
 equations to the simp set.</p>
 <p>To find out what simp does, you can enable tracing via the command</p>
 <pre><code class="language-lean">set_option trace.simplify.rewrite true              -- this was lean3
-set_option trace.Meta.Tactic.simp.rewrite true      -- BUGBUG: is this the correct lean4 option?
-</code></pre>
+set_option trace.Meta.Tactic.simp.rewrite true      -- BUGBUG: is this the correct lean4 option?</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic
 <span class="kn">import</span> Mathlib.Tactic.Cases
 <span class="kn">import</span> Basics.FunctionDefinitions</span></span></pre>
@@ -1563,8 +1547,7 @@ add <span class="mi">0</span> n <span class="bp">=</span> n := </span><span clas
   { </span><span class="alectryon-token"><span class="k">simp</span></span><span class="alectryon-token"> [add, ih] }</span></span></pre>
 <p>The first <code>{ }</code> encloses the base case <code>⊢ add 0 0 = 0</code>. The second block corresponds
 to the induction step</p>
-<pre><code class="language-lean">n : N, ih : add 0 n = n ` add 0 (Nat.succ n) = (Nat.succ n)
-</code></pre>
+<pre><code class="language-lean">n : N, ih : add 0 n = n ` add 0 (Nat.succ n) = (Nat.succ n)</code></pre>
 <p>The local variable <code>n</code> in the induction step should not be confused with the <code>n</code> in
 the lemma statement. Like mathematicians, <code>induction’</code> tries to reuse variable
 names that are no longer needed. The name <code>ih</code> for the induction hypothesis, in
@@ -1645,19 +1628,22 @@ are not used anywhere else in the goal.</p>
 <div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic</span></span></pre>
 <h2 id="summary-of-new-lean-constructs-1"><a class="header" href="#summary-of-new-lean-constructs-1">Summary of New Lean Constructs</a></h2>
 <p><strong>Commands</strong></p>
-<table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
 <tr><td><code>set_option</code></td><td>changes or activates tracing, syntax output, etc.</td></tr>
 </tbody></table>
+</div>
 <p><strong>Attribute</strong></p>
-<table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
 <tr><td><code>@[simp]</code></td><td>adds a lemma to the simp set</td></tr>
 </tbody></table>
+</div>
 <p><strong>Proof Commands</strong></p>
-<table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
 <tr><td><code>by</code></td><td>applies a single tactic</td></tr>
 </tbody></table>
+</div>
 <p><strong>Tactics</strong></p>
-<table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
 <tr><td>apply</td><td>matches the goal’s target with the lemma’s conclusion and replaces the goal with the lemma’s hypotheses</td></tr>
 <tr><td>assumption</td><td>proves the goal using a hypothesis</td></tr>
 <tr><td>cc</td><td>propagates equalities up to to associativity and commutativity</td></tr>
@@ -1671,11 +1657,12 @@ are not used anywhere else in the goal.</p>
 <tr><td>simp</td><td>applies a set of preregistered rewrite rules exhaustively</td></tr>
 <tr><td>sorry</td><td>stands for a missing proof or definition</td></tr>
 </tbody></table>
+</div>
 <p><strong>Tactic Combinator</strong></p>
-<table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>description</th></tr></thead><tbody>
 <tr><td><code>{ . . . }</code></td><td>focuses on the first subgoal; needs to prove that goal</td></tr>
 </tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> ForwardProofs.StructuredProofs</span></span></pre>
+</div><div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> ForwardProofs.StructuredProofs</span></span></pre>
 <h1 id="forward-proofs"><a class="header" href="#forward-proofs">Forward Proofs</a></h1>
 <p>Tactics are a backward proof mechanism. They start from the goal and break it down. Often it makes
 sense to work in a forward fashion: to start with what we already know and proceed step by step
@@ -1773,8 +1760,7 @@ have k1 : Q1 :=
 have kn : Qn :=
 . . .,
 show R, from
-. . .
-</code></pre>
+. . .</code></pre>
 <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --></pre><div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic
 <span class="kn">import</span> Basics.FunctionDefinitions</span></span></pre>
 <h2 id="structured-constructs"><a class="header" href="#structured-constructs">Structured Constructs</a></h2>
@@ -1808,13 +1794,11 @@ tactic can be seen as the inverse of <code>by</code>. Why enter tactic mode if o
 <p>Like with <code>exact</code> and <code>apply</code>, the lemma or hypothesis’s statement is matched with the current goal up
 to computation. This gives some flexibility.</p>
 <p><strong>fun</strong></p>
-<pre><code class="language-lean">fun (names₁ [: type₁]) . . . (namesₙ [: typeₙ]) =&gt;
-</code></pre>
+<pre><code class="language-lean">fun (names₁ [: type₁]) . . . (namesₙ [: typeₙ]) =&gt;</code></pre>
 <p>A lambda <code>fun</code> moves ∀-quantified variables from the goal’s target to the local
 context. It can be seen as a structured version of the <code>intros</code> tactic.</p>
 <p><strong>have</strong></p>
-<pre><code class="language-lean">have name : proposition := proof
-</code></pre>
+<pre><code class="language-lean">have name : proposition := proof</code></pre>
 <p>The <code>have</code> command lets us state and prove an intermediate lemma, which may refer to names
 introduced previously. The proof can be tactical or structured. Generally, we tend to use structured
 proofs to sketch the main argument and resort to tactical proofs for proving subgoals or
@@ -1831,8 +1815,7 @@ is designed for computable data, not proofs. Expanding or introducing a let corr
 ζ-conversion (Section 2.2).</p>
 <p><strong>show</strong></p>
 <pre><code class="language-lean">show proposition from proof
-show proposition by tactic proof
-</code></pre>
+show proposition by tactic proof</code></pre>
 <p>The <code>show</code> command lets us repeat the goal to prove, which can be useful as documentation. It also
 allows us to rephrase the goal in a syntactically equal form up to computation. Instead of the
 syntax <code>show proposition from proof</code>, we can simply write <code>proof</code> if we do not want to repeat the goal
@@ -1910,8 +1893,7 @@ assumption followed by a show:</p>
   (λ hall : ∀ (x : α), x = t → p x =&gt;
   show p t by
   _)
-  (_)
-</code></pre>
+  (_)</code></pre>
 <p>What we need to show now is the simpler term <code>p t</code> which can by done using the <code>apply</code> tactic
 using the <code>hall</code> hypothesis. The result of this is the goal <code>t = t</code> which can be easily
 solved using <code>rfl</code> or <code>exact</code> in this case would also work.</p>
@@ -1967,8 +1949,7 @@ operators.</p>
   .
   .
   .
-  _     opₙ termₙ : proofₙ
-</code></pre>
+  _     opₙ termₙ : proofₙ</code></pre>
 <p>Each <em>proofᵢ</em> justifies the statement <em>termᵢ-₁ opᵢ termᵢ</em>.
 The operators <em>opᵢ</em> need not be identical, but they must be compatible.
 The underscore (_) is a placeholder for the previous term.
@@ -2036,8 +2017,7 @@ defined symbol and its definition are available in the goal state.</p>
   .
   .
   .
-  _     opₙ termₙ : proofₙ
-</code></pre>
+  _     opₙ termₙ : proofₙ</code></pre>
 <p>The <code>calc</code> tactic lets us enter a <a href="ForwardProofs/./CalculationProofs.lean.html">calculational proof</a> in tactic mode.
 The tactic has the same syntax as the structured proof command of the same name. We can regard
 <code>apply calc . . . </code>, where <code>calc</code> is a tactic, as an alias for <code>apply (exact calc . . .)</code>,
@@ -2073,12 +2053,13 @@ or the polymorphic type <code>λ α : Type =&gt; α → α</code> of functions w
 depend on a type—for example, the polymorphic identity function <code>λ α : Type =&gt; λ x : α =&gt; x</code>. And of course,
 a term may also depend on a term— for example, <code>λ n : ℕ =&gt; n + 2</code>. In summary, there are four cases for
 <code>λ x =&gt; t</code>:</p>
-<table><thead><tr><th>Body (t)</th><th></th><th>Argument (x)</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Body (t)</th><th></th><th>Argument (x)</th><th>Description</th></tr></thead><tbody>
 <tr><td>A term</td><td>depending on</td><td>a term</td><td>Simply typed λ-expression</td></tr>
 <tr><td>A type</td><td>depending on</td><td>a term</td><td>Dependent type (in the narrow sense)</td></tr>
 <tr><td>A term</td><td>depending on</td><td>a type</td><td>Polymorphic term</td></tr>
 <tr><td>A type</td><td>depending on</td><td>a type</td><td>Type constructor</td></tr>
 </tbody></table>
+</div>
 <p>The last three rows correspond to the three axes of <a href="https://en.wikipedia.org/wiki/Lambda_cube">Henk Barendregt’s λ-cube</a>.</p>
 <p>The APP and LAM rules presented in <a href="ForwardProofs/TypesAndTerms.lean.html#type-checking-and-type-inference">Type Checking and Type Inference</a>
 must be generalized to work with dependent types:</p>
@@ -2178,8 +2159,7 @@ lemma case_5 :
 ∀ x : σ, Q x :=
 λ x =&gt;
   show Q x from
-  H x
-</code></pre>
+  H x</code></pre>
 <p>Some commands are provided in Lean under two different names but are really
 the same as per the Curry–Howard correspondence. This is the case for
 <code>axiom</code>.</p>
@@ -2191,7 +2171,7 @@ that matters is that there is a proof. We will return to the topic of proof irre
 in Chapter 11.</p>
 <p>The following correspondence table summarizes the differences between tactical proofs, structured
 proofs, and raw proof terms:</p>
-<table><thead><tr><th>Tactical proofs</th><th>Structured proofs</th><th>Raw proof terms</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Tactical proofs</th><th>Structured proofs</th><th>Raw proof terms</th></tr></thead><tbody>
 <tr><td><code>intro x</code></td><td><code>λ x =&gt;</code></td><td><code>λ x =&gt;</code></td></tr>
 <tr><td><code>intro h</code></td><td><code>λ h =&gt;</code></td><td><code>λ h =&gt;</code></td></tr>
 <tr><td><code>have k := H</code></td><td><code>have k := H</code></td><td><code>(λ k =&gt; . . .) H</code></td></tr>
@@ -2199,6 +2179,7 @@ proofs, and raw proof terms:</p>
 <tr><td><code>exact (H : P)</code></td><td><code>show P from H</code></td><td><code>H : P</code></td></tr>
 <tr><td><code>calc . . .</code></td><td><code>calc . . .</code></td><td><code>calc . . .</code></td></tr>
 </tbody></table>
+</div>
 <p>-- BUGBUG: I made some changes to this table, it needs close review.</p>
 <p>The terminology of dependent type theory can be quite confusing, because some words have a narrow
 and a broad sense. The following diagram captures the various meanings of important words:</p>
@@ -2220,8 +2201,7 @@ pattern matching and the Curry–Howard correspondence.</p>
 <p>In fact, <code>reverse</code> exists in Lean’s standard library, as <code>List.reverse</code>, but our definition is
 optimized for reasoning. A useful property to prove is that <code>reverse</code> is its own inverse: <code>reverse (reverse xs) = xs</code> for all lists <code>xs</code>. However, if we try to prove it by induction, we quickly run
 into an obstacle. The induction step is</p>
-<pre><code class="language-lean">ih : ∀xs, reverse (reverse xs) = xs ⊢ reverse (reverse xs ++ [x]) = x :: xs
-</code></pre>
+<pre><code class="language-lean">ih : ∀xs, reverse (reverse xs) = xs ⊢ reverse (reverse xs ++ [x]) = x :: xs</code></pre>
 <p>What is unpleasant about this subgoal is the presence of <code>++ [x]</code> inside the double
 <code>reverse</code> sandwich. We need a way to “distribute” the outer <code>reverse</code> over <code>++</code> to
 obtain a term that matches the induction hypothesis’s left-hand side. The trick is
@@ -2264,8 +2244,7 @@ statement
 .
 .
 .
-| patternsₙ := proofₙ
-</code></pre>
+| patternsₙ := proofₙ</code></pre>
 <p>Notice the strong similarity with the syntax of <code>def</code> (Section 1.3). The two commands are, in fact,
 almost the same, the main exception being that <code>lemma</code> considers the defined term or the proof opaque,
 whereas <code>def</code> keeps it transparent. Since the actual proofs are irrelevant once a lemma is proven
@@ -2292,21 +2271,306 @@ topic of Chapter 5.</p>
 <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --></pre><div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic</span></span></pre>
 <h2 id="summary-of-new-lean-constructs-2"><a class="header" href="#summary-of-new-lean-constructs-2">Summary of New Lean Constructs</a></h2>
 <p><strong>Proof Commands</strong></p>
-<table><thead><tr><th style="text-align: left">command</th><th style="text-align: left">description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">command</th><th style="text-align: left">description</th></tr></thead><tbody>
 <tr><td style="text-align: left">λ x =&gt;</td><td style="text-align: left">introduces assumptions</td></tr>
 <tr><td style="text-align: left">calc</td><td style="text-align: left">combines proofs by transitivity</td></tr>
 <tr><td style="text-align: left">have</td><td style="text-align: left">states an intermediate lemma</td></tr>
 <tr><td style="text-align: left">let . . .</td><td style="text-align: left">introduces a local definition</td></tr>
 <tr><td style="text-align: left">show . . .  from</td><td style="text-align: left">states the target</td></tr>
 </tbody></table>
+</div>
 <p><strong>Tactics</strong></p>
-<table><thead><tr><th style="text-align: left">tactic</th><th style="text-align: left">description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">tactic</th><th style="text-align: left">description</th></tr></thead><tbody>
 <tr><td style="text-align: left">calc</td><td style="text-align: left">combines proofs by transitivity</td></tr>
 <tr><td style="text-align: left">have</td><td style="text-align: left">states an intermediate lemma</td></tr>
 <tr><td style="text-align: left">let</td><td style="text-align: left">introduces a local definition</td></tr>
 <tr><td style="text-align: left">case</td><td style="text-align: left">handles a inductive case</td></tr>
 </tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="bibliography"><a class="header" href="#bibliography">Bibliography</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> FunctionalProgramming.InductiveTypes</span></span></pre>
+<h1 id="functional-programming"><a class="header" href="#functional-programming">Functional Programming</a></h1>
+<p>We take a closer look at the essence of typed functional programming: inductive types, proofs by
+induction, recursive functions, pattern matching, structures (records), and type classes. The
+concepts covered here are described in more detail in Chapters 7 to 9 of
+<a href="./bib.html#1">Theorem Proving in Lean</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">namespace</span></span><span class="alectryon-token"> func</span></span></pre>
+<h2 id="inductive-types"><a class="header" href="#inductive-types">Inductive Types</a></h2>
+<p>Inductive types are modeled after the data types of typed functional programming languages (e.g.,
+Haskell, ML, OCaml). They are also reminiscent of sealed classes in Scala. Already in <a href="FunctionalProgramming/../Basics/Definitions.lean.html">Chapter
+1</a>, we saw some basic inductive types: the natural numbers, the finite
+lists, and a type of arithmetic expressions. In this chapter, we revisit the lists and study binary
+trees. We also take a brief look at vectors of length <em>n</em>, a dependent type.</p>
+<p>Recall the definition of natural numbers as an inductive type:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">inductive</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Type</var><b>: </b><span>Type 1</span></span></div></blockquote></div></small></div><span class="kt">Type</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>zero</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div>zero</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>succ</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div>succ</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div><span class="nv">Nat</span></span><span class="alectryon-token"></span></span></pre>
+<p>This definition introduces three constants, which could have been declared as
+follows:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="InductiveTypes-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="InductiveTypes-lean-chk0"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Nat : <span class="kt">Type</span></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>Nat</span><span class="alectryon-token">       <span class="c1">-- Type</span>
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="InductiveTypes-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="InductiveTypes-lean-chk1"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Nat.zero : Nat</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat.zero</var><b>: </b><span>Nat</span></span></div></blockquote></div></small></div>Nat.zero</span><span class="alectryon-token">  <span class="c1">-- Nat</span>
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="InductiveTypes-lean-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="InductiveTypes-lean-chk2"><span class="alectryon-token"><span class="k">#check</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Nat.succ : Nat <span class="bp">→</span> Nat</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat.succ</var><b>: </b><span>Nat → Nat</span></span></div></blockquote></div></small></div>Nat.succ</span><span class="alectryon-token">  <span class="c1">-- Nat</span></span></span></pre>
+<p>In addition, the inductive definitions asserts some properties about <code>Nat.zero</code> and <code>Nat.succ</code>,
+which is why we use the inductive command. It also introduces further constants that are used
+internally to support induction and recursion.</p>
+<p>As we saw in <a href="FunctionalProgramming/../Basics/TypeDefinitions.lean.html">Section 1.2</a>, an inductive type is a type whose
+members are all the values that can be built by a finite number of applications of its constructors,
+and only those. Mottos:</p>
+<ul>
+<li><em>No junk</em>: The type contains no values beyond those expressible using the constructors.</li>
+<li><em>No confusion</em>: Values built using a different combination of constructors are different.</li>
+</ul>
+<p>For natural numbers, “no junk” means that there exist no special values such as −1, ε, ∞, or <code>NaN</code>
+that cannot be expressed using a finite combination of <code>Nat.zero</code> and <code>Nat.succ</code>,¹ and “no
+confusion” ensures that <code>Nat.zero ≠ Nat.succ n</code> for all <code>n</code> and that <code>Nat.succ</code> is injective. In
+addition, values of inductive types are always finite.</p>
+<blockquote>
+<p>¹ We could try to cheat and axiomatize special constants using constant and axiom, but the result
+would be either tautological (i.e., useless) or contradictory (i.e., positively harmful). A safer
+but equally pointless alternative would be to locally assume the existence of such a value; this
+would be pointless because the assumption could never be discharged.</p>
+</blockquote>
+<p>The infinite term</p>
+<pre><code>nat.succ (nat.succ (nat.succ (nat.succ . . .)))
+</code></pre>
+<p>is not a value. Nor does there exist a value <code>n</code> such that <code>Nat.succ n = n</code>, as we will
+show below.</p>
+<p>Inductive types are very convenient to use, because they support induction and recursion and their
+constructors are well behaved, but not all types can be defined as an inductive type. In particular,
+mathematical types such as ℚ (the rationals) and ℝ (the real numbers) require more elaborate
+constructions, based on quotienting and subtyping. These will be explained in Chapters 11 and 13.</p>
+<div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic
+<span class="kn">import</span> Mathlib.Tactic.Cases
+<span class="kn">import</span> Mathlib.Init.Data.Nat.Basic</span></span></pre>
+<h2 id="structural-induction"><a class="header" href="#structural-induction">Structural Induction</a></h2>
+<p><em>Structural induction</em> is a generalization of mathematical induction to arbitrary inductive types.
+To prove a goal <code>n : ℕ ⊢ P[n]</code> by structural induction on <code>n</code>, it suffces to show two subgoals,
+traditionally called the base case and the induction step:</p>
+<pre><code class="language-lean">⊢ P[0]
+k : ℕ,ih : P[k] ⊢ P[k + 1]</code></pre>
+<p>We can of course also write <code>Nat.zero</code> and <code>Nat.succ k</code>.</p>
+<p>In general, the situation is more complex. The goal might contain some extra hypotheses (e.g., <code>Q</code>)
+that do not depend on <code>n</code> and others (e.g., <code>R[n]</code>) that do. Assuming we have one hypothesis of each
+kind, this gives the initial goal</p>
+<pre><code class="language-lean">hQ : Q, n : N, hR : R[n] ⊢ S[n]</code></pre>
+<p>Structural induction on <code>n</code> then produces the two subgoals</p>
+<pre><code class="language-lean">hQ : Q, hR : R[0] ⊢ S[0]
+hQ : Q, k : N, ih : R[k] → S[k], hR : R[k + 1] ⊢ S[k + 1]</code></pre>
+<p>The hypothesis <code>Q</code> is simply carried over unchanged from the initial goal, whereas
+<code>R[n] ⊢ S[n]</code> is treated almost the same as if the goal’s target had been
+<code>R[n] → S[n]</code>. This is easy to check by taking <code>P[n] := R[n] → S[n]</code> in the first example
+above. Since this general format is very verbose and hardly informative (now that
+we understand how it works), from now on we will present goals in the simplest
+form possible, without extra hypotheses.</p>
+<p>For lists, given a goal <code>xs : List α ⊢ P[xs]</code>, structural induction on <code>xs</code> yields</p>
+<pre><code class="language-lean">⊢ P[[]]
+y : α, ys : List α, ih : P[ys] ⊢ P[y :: ys]</code></pre>
+<p>We can of course also write <code>List.nil</code> and <code>List.cons y ys</code>. There is no induction hypothesis
+associated with <code>y</code>, because <code>y</code> is not of List type.</p>
+<p>For arithmetic expressions, the base cases are</p>
+<pre><code>i : ℤ ⊢ P[Aexp.num i]                    x : string ⊢ P[Aexp.var x]
+</code></pre>
+<p>and the induction steps for <code>add</code>, <code>sub</code>, <code>mul</code> and <code>div</code> are</p>
+<pre><code>e₁ e₂ : Aexp, ih₁ : P[e₁], ih₂ : P[e₂] ⊢ P[Aexp.add e₁ e₂]
+e₁ e₂ : Aexp, ih₁ : P[e₁], ih₂ : P[e₂] ⊢ P[Aexp.sub e₁ e₂]
+e₁ e₂ : Aexp, ih₁ : P[e₁], ih₂ : P[e₂] ⊢ P[Aexp.mul e₁ e₂]
+e₁ e₂ : Aexp, ih₁ : P[e₁], ih₂ : P[e₂] ⊢ P[Aexp.div e₁ e₂]
+</code></pre>
+<p>Notice the two induction hypotheses, about e₁ and e₂.</p>
+<p>In general, structural induction produces one subgoal per constructor. In each subgoal, induction
+hypotheses are available for all constructor arguments of the type we are performing the induction
+on.</p>
+<p>Regardless of the inductive type <code>τ</code>, the procedure to compute the subgoals is
+always the same:</p>
+<ol>
+<li>Replace the hole in <code>P[ ]</code> with each possible constructor applied to fresh
+variables (e.g., <code>y :: ys</code>), yielding as many subgoals as there are constructors.</li>
+<li>Add these new variables (e.g., <code>y</code>, <code>ys</code>) to the local context.</li>
+<li>Add induction hypotheses for all new variables of type <code>τ</code>.</li>
+</ol>
+<p>As an example, we will prove that <code>Nat.succ n ≠ n</code> for all <code>n : ℕ</code>. We start with
+an informal proof, because these require us to understand what we are doing:</p>
+<p>The proof is by structural induction on <code>n</code>.</p>
+<p><code>Case 0</code>: We must show <code>Nat.succ 0 ≠ 0</code>. This follows from the “no confusion” property
+of the constructors of inductive types.</p>
+<p><code>Case Nat.succ k</code>: The induction hypothesis is <code>Nat.succ k ≠ k</code>. We
+must show <code>Nat.succ (Nat.succ k) ≠ Nat.succ k</code>. By the injectivity of
+<code>Nat.succ</code>, we have that <code>Nat.succ (Nat.succ k) = Nat.succ k</code> is equivalent to
+<code>Nat.succ k = k</code>. Thus, it suffces to prove <code>Nat.succ k ≠ k</code>,
+which corresponds exactly to the induction hypothesis. <span class=qed></span></p>
+<p>Notice the main features of this informal proof, which you should aim to reproduce in your own
+informal arguments:</p>
+<ul>
+<li>The proof starts with an unambiguous announcement of the type of proof we are carrying out (e.g.,
+which kind of induction and on which variable).</li>
+<li>The cases are clearly identified, and for each case, both the goal’s target and the hypotheses are
+stated.</li>
+<li>The key lemmas on which the proof relies are explicitly invoked (e.g., injectivity of <code>Nat.succ</code>).</li>
+</ul>
+<p>Now let us carry out the proof in Lean:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>nat.succ_neq_self</var><b>: </b><span>∀ (n : ℕ), Nat.succ n ≠ n</span></span></div></blockquote></div></small></div><span class="nv">nat.succ_neq_self</span></span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">) :
+  </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat.succ</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div>Nat.succ</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">≠</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> := </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk0"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ n <span class="bp">≠</span> n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk1"><span class="alectryon-token"><span class="k">induction&#39;</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">with</span></span><span class="alectryon-token"> n ih</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr><span class="goal-name">zero</span></span><div class="goal-conclusion">Nat.succ Nat.zero <span class="bp">≠</span> Nat.zero</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="StructuralInduction-lean-chk2" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br><span><var>ih</var><span class="hyp-type"><b>: </b><span>Nat.succ n <span class="bp">≠</span> n</span></span></span><br></div><label class="goal-separator" for="StructuralInduction-lean-chk2"><hr><span class="goal-name">succ</span></label><div class="goal-conclusion">Nat.succ (Nat.succ n) <span class="bp">≠</span> Nat.succ n</div></blockquote></div></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk3"><span class="alectryon-token"><span class="c1">-- ih: Nat.succ n ≠ n</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ n <span class="bp">≠</span> n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk4"><span class="alectryon-token">{</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr><span class="goal-name">zero</span></span><div class="goal-conclusion">Nat.succ Nat.zero <span class="bp">≠</span> Nat.zero</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk5"><span class="alectryon-token"><span class="k">simp</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk6" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk6"><span class="alectryon-token">}</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br><span><var>ih</var><span class="hyp-type"><b>: </b><span>Nat.succ n <span class="bp">≠</span> n</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">succ</span></span><div class="goal-conclusion">Nat.succ (Nat.succ n) <span class="bp">≠</span> Nat.succ n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">           </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk7"><span class="alectryon-token"><span class="c1">-- ⊢ Nat.succ Nat.zero ≠ Nat.zero</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ n <span class="bp">≠</span> n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk8"><span class="alectryon-token">{</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br><span><var>ih</var><span class="hyp-type"><b>: </b><span>Nat.succ n <span class="bp">≠</span> n</span></span></span><br></div><span class="goal-separator"><hr><span class="goal-name">succ</span></span><div class="goal-conclusion">Nat.succ (Nat.succ n) <span class="bp">≠</span> Nat.succ n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk9" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk9"><span class="alectryon-token"><span class="k">simp</span></span><span class="alectryon-token"> [</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ih</var><b>: </b><span>Nat.succ n ≠ n</span></span></div></blockquote></div></small></div><span class="nv">ih</span></span><span class="alectryon-token">]</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chka" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chka"><span class="alectryon-token">}</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">      <span class="c1">-- ⊢ Nat.succ (Nat.succ n) ≠ Nat.succ n</span></span></span></pre>
+<p>The routine reasoning about constructors is all carried out by <code>simp</code> automatically,
+which is usually what we want.</p>
+<p>We can supply our own names, and reorder the cases, by using the case tactic
+in front of each case, together with the case’s name and the desired names for
+the variables and hypotheses introduced by <code>induction’</code>. For example:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>nat.succ_neq_self2</var><b>: </b><span>∀ (n : ℕ), Nat.succ n ≠ n</span></span></div></blockquote></div></small></div><span class="nv">nat.succ_neq_self2</span></span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">) :
+  </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>Nat.succ</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div>Nat.succ</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">≠</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> := </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chkb"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ n <span class="bp">≠</span> n</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chkc"><span class="alectryon-token"><span class="k">induction&#39;</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><span class="k">with</span></span><span class="alectryon-token"> m IH</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr><span class="goal-name">zero</span></span><div class="goal-conclusion">Nat.succ Nat.zero <span class="bp">≠</span> Nat.zero</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="StructuralInduction-lean-chkd" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>m</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br><span><var>IH</var><span class="hyp-type"><b>: </b><span>Nat.succ m <span class="bp">≠</span> m</span></span></span><br></div><label class="goal-separator" for="StructuralInduction-lean-chkd"><hr><span class="goal-name">succ</span></label><div class="goal-conclusion">Nat.succ (Nat.succ m) <span class="bp">≠</span> Nat.succ m</div></blockquote></div></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chke" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chke"><span class="alectryon-token"><span class="k">case</span></span><span class="alectryon-token"> succ  <span class="bp">=&gt;</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>m</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br><span><var>IH</var><span class="hyp-type"><b>: </b><span>Nat.succ m <span class="bp">≠</span> m</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ (Nat.succ m) <span class="bp">≠</span> Nat.succ m</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chkf"><span class="alectryon-token">{</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>m</var><span class="hyp-type"><b>: </b><span>ℕ</span></span></span><br><span><var>IH</var><span class="hyp-type"><b>: </b><span>Nat.succ m <span class="bp">≠</span> m</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ (Nat.succ m) <span class="bp">≠</span> Nat.succ m</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk10" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk10"><span class="alectryon-token"><span class="k">simp</span></span><span class="alectryon-token"> [</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>IH</var><b>: </b><span>Nat.succ m ≠ m</span></span></div></blockquote></div></small></div><span class="nv">IH</span></span><span class="alectryon-token">]</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk11" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk11"><span class="alectryon-token">}</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk12" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk12"><span class="alectryon-token"><span class="k">case</span></span><span class="alectryon-token"> zero <span class="bp">=&gt;</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ Nat.zero <span class="bp">≠</span> Nat.zero</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk13" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk13"><span class="alectryon-token">{</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Nat.succ Nat.zero <span class="bp">≠</span> Nat.zero</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk14" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk14"><span class="alectryon-token"><span class="k">simp</span></span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralInduction-lean-chk15" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralInduction-lean-chk15"><span class="alectryon-token">}</span></label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span></pre>
+<p>Instead of <code>n</code> and <code>ih</code>, we chose the names <code>m</code> and <code>IH</code> and we moved the zero
+case to the end.</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --></pre><div style="break-before: page; page-break-before: always;"></div><pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic
+<span class="kn">import</span> Mathlib.Tactic.Cases
+<span class="kn">import</span> Mathlib.Init.Data.Nat.Basic</span></span></pre>
+<h2 id="structural-recursion"><a class="header" href="#structural-recursion">Structural Recursion</a></h2>
+<p><em>Structural recursion</em> is a form of recursion that allows us to peel off one constructor from the
+value on which we recurse. The factorial function below is structurally recursive:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fact</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div><span class="nv">fact</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token">
+<span class="bp">|</span> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">+</span> <span class="mi">1</span>) <span class="bp">=&gt;</span> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">) <span class="bp">*</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fact</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div><span class="nv">fact</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"></span></span></pre>
+<p>The constructor we peel off here is <code>Nat.succ</code> (written <code>+ 1</code>). Such functions are guaranteed to
+call themselves only finitely many times before the recursion stops; for example, <code>fact 12345</code> will
+call itself 12345 times. This is a prerequisite for establishing that the function terminates, an
+important property to ensure both logical consistency and termination of evaluation.</p>
+<p>With structural recursion, there are as many equations as there are constructors. Novices are often
+tempted to supply additional, redundant cases, as in the following example:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fact₁</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div><span class="nv">fact₁</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">
+<span class="bp">|</span> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">+</span> <span class="mi">1</span>) <span class="bp">=&gt;</span> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">) <span class="bp">*</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>fact</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div>fact</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"></span></span></pre>
+<p>It is in your own best interest to resist this temptation. The more cases you have in your
+definitions, the more work it will be to reason about them. Keep in mind the saying that one good
+definition is worth three theorems.</p>
+<p>For structurally recursive functions, Lean can automatically prove termination. For more general
+recursive schemes, the termination check may fail. Sometimes it does so for a good reason, as in the
+following example:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="c1">-- fails saying: fail to show termination for `illegal`</span>
+</span><span class="alectryon-token"><span class="kd">def</span></span><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk0"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>illegal</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div><span class="nv">illegal</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: fail to <span class="k">show</span> termination for
+  illegal
+<span class="k">with</span> errors
+structural recursion cannot be used
+
+well<span class="bp">-</span>founded recursion cannot be used, <span class="bp">&#39;</span>illegal&#39; does not take any (non<span class="bp">-</span>fixed) arguments</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token"> <span class="bp">→</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">
+<span class="bp">|</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">=&gt;</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>illegal</var><b>: </b><span>ℕ → ℕ</span></span></div></blockquote></div></small></div><span class="nv">illegal</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token"></span></span></pre>
+<p>If Lean were to accept this definition, we could exploit it to prove that <code>0 = 1</code>, by subtracting
+<code>illegal n</code> on each side of the equation <code>illegal n = illegal n + 1</code>. From <code>0 = 1</code>, we could derive <code>false</code>,
+and from <code>false</code>, we could derive anything, including the three-color theorem. Clearly, we do not want
+that.</p>
+<p>If we had used a variable and axiom, nothing could have saved us:</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kd">constant</span> immoral : ℕ <span class="bp">→</span> <span class="bp">\</span>N
+
+</span><span class="alectryon-token"><span class="kd">axiom</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral_eq</var><b>: </b><span>ℕ → sorryAx ℕ true = sorryAx ℕ true + 1</span></span></div></blockquote></div></small></div>immoral_eq</span><span class="alectryon-token"> (</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="nv">n</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℕ</var><b>: </b><span>Type</span></span></div></blockquote></div></small></div>ℕ</span><span class="alectryon-token">) : </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk1"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> n</span><span class="alectryon-token"> <span class="bp">=</span> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk2"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> n</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> n</span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token">
+
+</span><span class="alectryon-token"><span class="kd">lemma</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>proof_of_false</var><b>: </b><span>false = true</span></span></div></blockquote></div></small></div><span class="nv">proof_of_false</span></span><span class="alectryon-token"> :
+</span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>false</var><b>: </b><span>Bool</span></span></div></blockquote></div></small></div>false</span><span class="alectryon-token"> := </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk3"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk4"><span class="alectryon-token"><span class="k">have</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>h1</var><b>: </b><span>sorryAx ℕ true = sorryAx ℕ true + 1</span></span></div></blockquote></div></small></div><span class="nv">h1</span></span><span class="alectryon-token"> :</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk5"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk6" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk6"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">=</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk7"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk8"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token"> :=
+    </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral_eq</var><b>: </b><span>ℕ → sorryAx ℕ true = sorryAx ℕ true + 1</span></span></div></blockquote></div></small></div>immoral_eq</span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk9" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk9"><span class="alectryon-token"><span class="k">have</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>h2</var><b>: </b><span>sorryAx ℕ true - sorryAx ℕ true = sorryAx ℕ true + 1 - sorryAx ℕ true</span></span></div></blockquote></div></small></div><span class="nv">h2</span></span><span class="alectryon-token"> :</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chka" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chka"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chkb"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">-</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chkc"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chkd" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chkd"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">=</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chke" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chke"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chkf"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">+</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token"> <span class="bp">-</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk10" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk10"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>immoral</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div>immoral</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: unknown identifier <span class="bp">&#39;</span>immoral&#39;</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk11" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk11"><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var> 0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> :=</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+    </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk12" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk12"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk13" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk13"><span class="alectryon-token"><span class="k">rfl</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk14" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk14"><span class="alectryon-token"><span class="k">have</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>h3</var><b>: </b><span>0 = 1</span></span></div></blockquote></div></small></div><span class="nv">h3</span></span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>0</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">0</span></span><span class="alectryon-token"> <span class="bp">=</span> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>1</var><b>: </b><span>ℕ</span></span></div></blockquote></div></small></div><span class="mi">1</span></span><span class="alectryon-token"> :=</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br><span><var>h2</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk15" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk15"><span class="alectryon-token"><span class="kd">by</span></span><span class="alectryon-token"></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br><span><var>h2</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk16" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk16"><span class="alectryon-token"><span class="k">simp</span></span><span class="alectryon-token"> [<span class="bp">*</span>] </span><span class="alectryon-token"><span class="k">at</span></span><span class="alectryon-token"> <span class="bp">*</span></span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote><blockquote class="alectryon-message">Error: maximum recursion depth has been reached (use <span class="bp">`</span><span class="kd">set_option</span> maxRecDepth <span class="bp">&lt;</span>num<span class="bp">&gt;`</span> to increase limit)</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion">Goals accomplished<span class="bp">!</span> <span class="bp">🐙</span></div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+  </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="StructuralRecursion-lean-chk17" style="display: none" type="checkbox"><label class="alectryon-input" for="StructuralRecursion-lean-chk17"><span class="alectryon-token"><span class="k">show</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>false</var><b>: </b><span>Bool</span></span></div></blockquote></div></small></div>false</span></label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Error: unsolved goals
+h1 : sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span>
+h2 : sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true
+h3 : <span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span>
+<span class="bp">⊢</span> false <span class="bp">=</span> true</blockquote></div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>h1</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span></span></span></span><br><span><var>h2</var><span class="hyp-type"><b>: </b><span>sorryAx ℕ true <span class="bp">-</span> sorryAx ℕ true <span class="bp">=</span> sorryAx ℕ true <span class="bp">+</span> <span class="mi">1</span> <span class="bp">-</span> sorryAx ℕ true</span></span></span><br><span><var>h3</var><span class="hyp-type"><b>: </b><span><span class="mi">0</span> <span class="bp">=</span> <span class="mi">1</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">false <span class="bp">=</span> true</div></blockquote></div></div></small></span><span class="alectryon-wsp"><span class="alectryon-token">
+    <span class="kd">by</span> rfl
+
+<span class="c1">-- BUGBUG: failed to synthesize instance...</span></span></span></pre>
+<p>Another reason for preferring <code>def</code> is that the defining equations are used to compute. Tactics such
+as <code>rfl</code> that unify up to computation become stronger each time we introduce a definition, and the
+diagnosis commands <code>#eval</code> and <code>#reduce</code> can be used on defined constants.</p>
+<p>-- BUGBUG: what to use instead of 'contants' in the above example ?</p>
+<p>The observant reader will have noticed that the above definitions of factorial are mathematically
+wrong: <code>fact</code> shockingly returns <code>0</code> regardless of the argument, and <code>fact₂ 0</code> should give <code>1</code>, not
+<code>0</code>. We quite literally facted up. These embarrassing mistakes remind us to test our definitions and
+prove some properties about them. Although flawed axioms arise now and then, what is much more
+common are definitions that fail to capture the intended concepts. Just because a function is called
+<code>fact</code> does not mean that it actually computes factorials.</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --></pre><div style="break-before: page; page-break-before: always;"></div><h1 id="bibliography"><a class="header" href="#bibliography">Bibliography</a></h1>
 <h3 id="1"><a class="header" href="#1">1</a></h3>
 <p>J. Avigad, L. de Moura, and S. Kong. Theorem Proving in Lean: Release 3.20.0.
 2020. https://leanprover.github.io/theorem_proving_in_lean/.</p>
@@ -2466,23 +2730,23 @@ https://www.cl.cam.ac.uk/~caw77/papers/mechanising-and-verifyingthe-webassembly-
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" charset="utf-8"></script>
+        <script src="mark.min.js" charset="utf-8"></script>
+        <script src="searcher.js" charset="utf-8"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" charset="utf-8"></script>
+        <script src="highlight.js" charset="utf-8"></script>
+        <script src="book.js" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript" src="alectryon.js"></script>
+        <script src="alectryon.js"></script>
 
-        <script type="text/javascript">
+        <script>
         window.addEventListener('load', function() {
             MathJax.Hub.Register.StartupHook('End', function() {
                 window.setTimeout(window.print, 100);

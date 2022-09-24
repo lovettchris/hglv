@@ -5,6 +5,7 @@ rule book
 build ./BackwardProofs.lean.md: alectryon ./BackwardProofs.lean
 build ./Basics.lean.md: alectryon ./Basics.lean
 build ./ForwardProofs.lean.md: alectryon ./ForwardProofs.lean
+build ./FunctionalProgramming.lean.md: alectryon ./FunctionalProgramming.lean
 build Basics/Definitions.lean.md: alectryon Basics/Definitions.lean
 build Basics/FunctionDefinitions.lean.md: alectryon Basics/FunctionDefinitions.lean
 build Basics/TheoremStatements.lean.md: alectryon Basics/TheoremStatements.lean
@@ -28,4 +29,7 @@ build ForwardProofs/InductionPatterns.lean.md: alectryon ForwardProofs/Induction
 build ForwardProofs/StructuredConstructs.lean.md: alectryon ForwardProofs/StructuredConstructs.lean
 build ForwardProofs/StructuredProofs.lean.md: alectryon ForwardProofs/StructuredProofs.lean
 build ForwardProofs/Summary.lean.md: alectryon ForwardProofs/Summary.lean
-build docs/index.html: book ./BackwardProofs.lean.md ./Basics.lean.md ./ForwardProofs.lean.md Basics/Definitions.lean.md Basics/FunctionDefinitions.lean.md Basics/TheoremStatements.lean.md Basics/TypeDefinitions.lean.md Basics/TypesAndTerms.lean.md BackwardProofs/BasicTactics.lean.md BackwardProofs/CleanupTactics.lean.md BackwardProofs/ConnectivesAndQuantifiers.lean.md BackwardProofs/Equality.lean.md BackwardProofs/Induction.lean.md BackwardProofs/InductionTactic.lean.md BackwardProofs/RewritingTactics.lean.md BackwardProofs/Summary.lean.md BackwardProofs/TacticMode.lean.md ForwardProofs/CalculationProofs.lean.md ForwardProofs/Connectives.lean.md ForwardProofs/CurryHoward.lean.md ForwardProofs/DependentTypes.lean.md ForwardProofs/ForwardTactics.lean.md ForwardProofs/InductionPatterns.lean.md ForwardProofs/StructuredConstructs.lean.md ForwardProofs/StructuredProofs.lean.md ForwardProofs/Summary.lean.md
+build FunctionalProgramming/InductiveTypes.lean.md: alectryon FunctionalProgramming/InductiveTypes.lean
+build FunctionalProgramming/StructuralInduction.lean.md: alectryon FunctionalProgramming/StructuralInduction.lean
+build FunctionalProgramming/StructuralRecursion.lean.md: alectryon FunctionalProgramming/StructuralRecursion.lean
+build docs/index.html: book ./BackwardProofs.lean.md ./Basics.lean.md ./ForwardProofs.lean.md ./FunctionalProgramming.lean.md Basics/Definitions.lean.md Basics/FunctionDefinitions.lean.md Basics/TheoremStatements.lean.md Basics/TypeDefinitions.lean.md Basics/TypesAndTerms.lean.md BackwardProofs/BasicTactics.lean.md BackwardProofs/CleanupTactics.lean.md BackwardProofs/ConnectivesAndQuantifiers.lean.md BackwardProofs/Equality.lean.md BackwardProofs/Induction.lean.md BackwardProofs/InductionTactic.lean.md BackwardProofs/RewritingTactics.lean.md BackwardProofs/Summary.lean.md BackwardProofs/TacticMode.lean.md ForwardProofs/CalculationProofs.lean.md ForwardProofs/Connectives.lean.md ForwardProofs/CurryHoward.lean.md ForwardProofs/DependentTypes.lean.md ForwardProofs/ForwardTactics.lean.md ForwardProofs/InductionPatterns.lean.md ForwardProofs/StructuredConstructs.lean.md ForwardProofs/StructuredProofs.lean.md ForwardProofs/Summary.lean.md FunctionalProgramming/InductiveTypes.lean.md FunctionalProgramming/StructuralInduction.lean.md FunctionalProgramming/StructuralRecursion.lean.md
