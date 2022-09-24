@@ -32,4 +32,9 @@
   - [Induction by Pattern Matching](./ForwardProofs/InductionPatterns.lean.md)
   - [Summary of New Lean Constructs](./ForwardProofs/Summary.lean.md)
 
+- [Functional Programming](./FunctionalProgramming.lean.md)
+  - [Inductive Types](./FunctionalProgramming/InductiveTypes.lean.md)
+  - [Structural Induction](./FunctionalProgramming/StructuralInduction.lean.md)
+  - [Structural Recursion](./FunctionalProgramming/StructuralRecursion.lean.md)
+
 - [Bibliography](./bib.md)
