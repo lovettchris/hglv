@@ -4,3 +4,4 @@ lean_packages/
 *.lean.md
 .ninja_log
 docs/
+build.ninja

@@ -17,11 +17,11 @@ lean_lib BackwardProofs {
   -- add library configuration options here
 }
 
+lean_lib ForwardProofs {
+  -- add library configuration options here
+}
+
 lean_lib FunctionalProgramming {
   -- add library configuration options here
 }
 
-
-lean_lib ForwardProofs {
-  -- add library configuration options here
-}

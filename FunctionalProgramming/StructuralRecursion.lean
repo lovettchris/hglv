@@ -63,7 +63,7 @@ Another reason for preferring `def` is that the defining equations are used to c
 as `rfl` that unify up to computation become stronger each time we introduce a definition, and the
 diagnosis commands `#eval` and `#reduce` can be used on defined constants.
 
--- BUGBUG: what to use instead of 'contants' in the above example ?
+-- BUGBUG: what to use instead of 'constants' in the above example ?
 
 The observant reader will have noticed that the above definitions of factorial are mathematically
 wrong: `fact` shockingly returns `0` regardless of the argument, and `fact₂ 0` should give `1`, not

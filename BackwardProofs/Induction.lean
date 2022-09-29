@@ -1,6 +1,7 @@
 import Mathlib.Tactic.Basic
 import Mathlib.Tactic.Cases
 import Basics.FunctionDefinitions
+namespace hglv
 /-!
 ## Proofs by Mathematical Induction
 
@@ -51,31 +52,20 @@ lemma add_assoc (l m n : ℕ) :
 
 /-!
 Once we have proved that a binary operator is commutative and associative, it
-is a good idea to let Lean’s automation, notably `cc`, know about this. The following
-commands achieve this for add:
+is a good idea to let Lean’s automation, notably `cc`, know about this
+using type classes.  See [Type Classes](../Basics/TypeClasses.lean.md).
+
+The following example uses the `cc` tactic to reason up to associativity and commutativity of `add`:
 -/
-
--- @[instance] def add.is_commutative : is_commutative N add :=
--- { comm := add_comm }
-
--- @[instance] def add.is_associative : is_associative N add :=
--- { assoc := add_assoc }
-
--- BUGBUG: 'is_commutative' and 'cc' are still missing from mathlib...
-
+lemma mul_add (l m n : ℕ) :
+mul l (add m n) = add (mul l m) (mul l n) := by
+  induction' n with n ih
+  { rfl }
+  { simp [add, mul, ih]
+    cc }
 /-!
-(The @[instance] mechanism will be explained in Chapter 4.) The following example uses the `cc` tactic
-to reason up to associativity and commutativity of add:
+-- BUGBUG: 'cc' is still missing from mathlib...
 
--/
--- lemma mul_add (l m n : ℕ) :
--- mul l (add m n) = add (mul l m) (mul l n) := by
---   induction' n with n ih
---   { rfl }
---   { simp [add, mul, ih]
---     cc }    -- BUGBUG: 'cc' is still missing from mathlib...
-
-/-!
 Here are a few hints on how to carry out proofs by induction:
 
 - It is usually beneficial to perform induction following the structure of the definition of one of

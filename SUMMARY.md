@@ -36,5 +36,9 @@
   - [Inductive Types](./FunctionalProgramming/InductiveTypes.lean.md)
   - [Structural Induction](./FunctionalProgramming/StructuralInduction.lean.md)
   - [Structural Recursion](./FunctionalProgramming/StructuralRecursion.lean.md)
+  - [Pattern Matching Expressions](./FunctionalProgramming/PatternMatching.lean.md)
+  - [Structures](./FunctionalProgramming/Structures.lean.md)
+  - [Type Classes](./FunctionalProgramming/TypeClasses.lean.md)
+  - [Lists](./FunctionalProgramming/Lists.lean.md)
 
 - [Bibliography](./bib.md)
