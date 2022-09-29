@@ -161,20 +161,15 @@ def length {α : Type} : List α → ℕ
 We can say something interesting about the length of `zip`’s result—namely, it is
 the minimum of the lengths of the two input lists:
 -/
-lemma le_add_comm (l m n : ℕ) : (m + l ≤ n + l) = (m ≤ n) := by
-  cases Classical.em (m ≤ n)
-  case inl h =>
-    simp [h, Nat.le_of_add_le_add_right]
-  case inr h =>
-    simp [h, Nat.lt_of_add_lt_add_right]
+attribute [simp] Nat.add_le_add_iff_le_right
 
-lemma min_add_add (l m n : ℕ) :
+theorem min_add_add (l m n : Nat) :
     min (m + l) (n + l) = min m n + l := by
   cases Classical.em (m ≤ n)
   case inl h =>
-    simp [min, h, le_add_comm]
+    simp [min, h]
   case inr h =>
-    simp [min, h, le_add_comm]
+    simp [min, h]
 
 lemma length_zip {α β : Type} (xs : List α) (ys : List β) :
     length (zip xs ys) = min (length xs) (length ys) := by
@@ -186,7 +181,7 @@ case cons x xs' ih =>
   case cons y ys' =>
     simp [zip, length]
     simp [min_add_add]
-    simp [ih] -- this should have worked?
+    simp [ih ys']
 
 
 -- BUGBUG still broken
@@ -220,15 +215,15 @@ a structured proof:
 lemma min_add_add2 (l m n : ℕ) :
     min (m + l) (n + l) = min m n + l :=
   match Classical.em (m ≤ n) with
-  | Or.inl h => by simp [min, h, le_add_comm]
-  | Or.inr h => by simp [min, h, le_add_comm]
+  | Or.inl h => by simp [min, h]
+  | Or.inr h => by simp [min, h]
 
 lemma min_add_add3 (l m n : ℕ) :
     min (m + l) (n + l) = min m n + l :=
   if h : m ≤ n then
-    by simp [min, h, le_add_comm]
+    by simp [min, h]
   else
-    by simp [min, h, le_add_comm]
+    by simp [min, h]
 /-!
 We see again that the mechanisms that are available to write functional programs,
 such as `match` and `if–then–else`, are also available for writing structured proofs
