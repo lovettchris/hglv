@@ -5,3 +5,4 @@ lean_packages/
 .ninja_log
 docs/
 build.ninja
+__pycache__/

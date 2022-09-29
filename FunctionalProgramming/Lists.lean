@@ -156,28 +156,38 @@ The length of a list is defined by recursion:
 -/
 def length {α : Type} : List α → ℕ
 | [] => 0
-| (_ :: xs) => length xs + 1
+| (_ :: xs) => (length xs) + 1
 /-!
 We can say something interesting about the length of `zip`’s result—namely, it is
 the minimum of the lengths of the two input lists:
 -/
+lemma le_add_comm (l m n : ℕ) : (m + l ≤ n + l) = (m ≤ n) := by
+  cases Classical.em (m ≤ n)
+  case inl h =>
+    simp [h, Nat.le_of_add_le_add_right]
+  case inr h =>
+    simp [h, Nat.lt_of_add_lt_add_right]
+
 lemma min_add_add (l m n : ℕ) :
     min (m + l) (n + l) = min m n + l := by
   cases Classical.em (m ≤ n)
   case inl h =>
-    simp [min] at h
+    simp [min, h, le_add_comm]
   case inr h =>
-    simp [min] at h
+    simp [min, h, le_add_comm]
 
 lemma length_zip {α β : Type} (xs : List α) (ys : List β) :
     length (zip xs ys) = min (length xs) (length ys) := by
 induction' xs
-case nil => rfl
+case nil =>  simp [length, min]
 case cons x xs' ih =>
   cases ys
   case nil => rfl
   case cons y ys' =>
-    simp [zip, length, min_add_add] at ih ys'
+    simp [zip, length]
+    simp [min_add_add]
+    simp [ih] -- this should have worked?
+
 
 -- BUGBUG still broken
 /-!
@@ -210,15 +220,15 @@ a structured proof:
 lemma min_add_add2 (l m n : ℕ) :
     min (m + l) (n + l) = min m n + l :=
   match Classical.em (m ≤ n) with
-  | Or.inl h => by simp [min, h]
-  | Or.inr h => by simp [min, h]
+  | Or.inl h => by simp [min, h, le_add_comm]
+  | Or.inr h => by simp [min, h, le_add_comm]
 
 lemma min_add_add3 (l m n : ℕ) :
     min (m + l) (n + l) = min m n + l :=
   if h : m ≤ n then
-    by simp [min, h]
+    by simp [min, h, le_add_comm]
   else
-    by simp [min, h]
+    by simp [min, h, le_add_comm]
 /-!
 We see again that the mechanisms that are available to write functional programs,
 such as `match` and `if–then–else`, are also available for writing structured proofs
@@ -232,9 +242,10 @@ the end of Section 3.7:
 | cases Classical.em Q | if Q then _ else _ | if Q then _ else _ |
 
 We conclude with a distributivity law about `map` and `zip`, expressed using the
-`Prod.fst` and `Prod.snd` selectors on pairs:
+`*.1` and `*.2` selectors on pairs:
 
 -/
+
 lemma map_zip {α α' β β' : Type} (f : α → α') (g : β → β') :
   ∀xs ys, map (λab : α × β => (f (ab.1), g (ab.2))) (zip xs ys) =
     zip (map f xs) (map g ys)
