@@ -39,7 +39,7 @@ simp [at position]
 ```
 
 The simp tactic applies a standard set of rewrite rules, called the _simp_ set, exhaustively. The simp
-set can be extended by putting the `@[simp]` attribute on lemmas. Unlike `rw`, `simp` can rewrite terms
+set can be extended by putting the `attribute [simp]` on lemmas. Unlike `rw`, `simp` can rewrite terms
 containing bound variables (e.g., occurrences of `x` in the body of `λx => . . .`, `∀x, . . .`, or
 `∃x, . . .`).
 
@@ -56,10 +56,10 @@ produces the subgoal `⊢ h (f a) (f b) (f c)`, where both `g b` and `g c` have 
 lemma, we can also specify the name of a constant. This temporarily adds the constant’s defining
 equations to the simp set.
 
-To find out what simp does, you can enable tracing via the command
+To find out what simp does, you can enable tracing via the command just before your lemma
+and you will see nice detailed information in the InfoView in VS Code.
 ```lean
-set_option trace.simplify.rewrite true              -- this was lean3
-set_option trace.Meta.Tactic.simp.rewrite true      -- BUGBUG: is this the correct lean4 option?
+set_option trace.Meta.Tactic.simp.rewrite true
 ```
 
 

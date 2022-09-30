@@ -6,19 +6,19 @@ import Mathlib.Tactic.Basic
 
 | command | description |
 | :--- | :--- |
-| λ x =>             |  introduces assumptions            |
-| calc               |  combines proofs by transitivity   |
-| have               |  states an intermediate lemma      |
-| let . . .          |  introduces a local definition     |
-| show . . .  from   |  states the target                 |
+| `λ x =>`             |  introduces assumptions            |
+| `calc`               |  combines proofs by transitivity   |
+| `have`               |  states an intermediate lemma      |
+| `let . . . `         |  introduces a local definition     |
+| `show . . .  from`   |  states the target                 |
 
 **Tactics**
 
 | tactic | description |
 | :--- | :--- |
-| calc | combines proofs by transitivity |
-| have | states an intermediate lemma |
-| let  | introduces a local definition |
-| case | handles a inductive case |
+| `calc` | combines proofs by transitivity |
+| `have` | states an intermediate lemma |
+| `let`  | introduces a local definition |
+| `case` | handles a inductive case |
 
 -/

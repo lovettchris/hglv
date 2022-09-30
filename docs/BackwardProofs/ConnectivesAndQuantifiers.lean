@@ -90,7 +90,8 @@ Or.elim : ?a ∨ ?b → (?a → ?c) → (?b → ?c) → ?c
 ```
 
 --BUGBUG: what are all these question marks? Are they supposed to look like
-unresolved metavariables?
+unresolved metavariables?  I find it ugly and distracting, can we just write `a`
+instead?
 
 The ∀-quantifiers in `Or.intro_left` and `Or.intro_right` can be instantiated
 directly by applying the lemma name to the value we want to instantiate with,
@@ -162,7 +163,7 @@ Negation (`not`) is defined in terms of implication and falsehood:
 `¬ a` abbreviates `a → false`. Lean’s logic is classical, with support for the law of excluded
 middle and proof by contradiction:
 
--- BUGBUG is this still true statemetn or is classical lean just one option now as per:
+-- BUGBUG is this still true statement or is classical lean just one option now as per:
   https://leanprover.github.io/theorem_proving_in_lean4/propositions_and_proofs.html?highlight=classical#classical-logic
 
 ```lean

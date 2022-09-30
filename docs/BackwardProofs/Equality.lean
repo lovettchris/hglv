@@ -19,7 +19,7 @@ for equals in an arbitrary context, represented by the higher-order variable `?p
 An example will show how this works. Below, we apply `Eq.subst` to rewrite
 `f a b` to `f a' b`, using the equation `a = a'`:
 -/
-lemma cong_fst_arg {α : Type} (a a' b : α)
+theorem cong_fst_arg {α : Type} (a a' b : α)
 (f : α → α → α) (ha : a = a') : f a b = f a' b := by
   apply Eq.subst ha
   apply Eq.refl
