@@ -57,15 +57,12 @@ This follows directly from the definition of `mirror`.
 - Case `tree.node a l r`: The induction hypotheses are
 `(ih_l) mirror (mirror l) = l` and `(ih_r) mirror (mirror r) = r`
 - We must show `mirror (mirror (tree.node a l r)) = tree.node a l r`.
-- We have
-```
-mirror (mirror (tree.node a l r))
-= mirror (tree.node a (mirror r) (mirror l)) (by def. of mirror)
-= tree.node a (mirror (mirror l)) (mirror (mirror r)) (ditto)
-= tree.node a l (mirror (mirror r)) (by ih_l)
-= tree.node a l r (by ih_r)
-```
-<span class="qed"></span>
+- We have:
+- `mirror (mirror (tree.node a l r))`
+- `= mirror (tree.node a (mirror r) (mirror l)) (by def. of mirror)`
+- `= tree.node a (mirror (mirror l)) (mirror (mirror r)) (ditto)`
+- `= tree.node a l (mirror (mirror r)) (by ih_l)`
+- `= tree.node a l r (by ih_r)` <span class="qed"></span>
 
 To achieve the same level of detail in the Lean proof, we could use a calculational
 block ([Section 3.4](../ForwardProofs/CalculationProofs.lean.md)) instead of `simp`:
@@ -97,4 +94,3 @@ lemma mirror_eq_empty_iff {α : Type} :
 ∀t : BTree α, mirror t = BTree.empty ↔ t = BTree.empty
 | BTree.empty => by rfl
 | (BTree.node _ _ _) => by simp [mirror]
-
