@@ -65,14 +65,10 @@ mul l (add m n) = add (mul l m) (mul l n) := by
   induction' n with n ih -- ih: mul l (add m n) = add (mul l m) (mul l n)
   { rfl }
   {
-     -- ⊢ mul l (add m (Nat.succ n)) = add (mul l m) (mul l (Nat.succ n))
-    simp [add, mul]
-    -- ⊢ add l (mul l (add m n)) = add (mul l m) (add l (mul l n))
-    simp [ih]
-    -- ⊢ add l (add (mul l m) (mul l n)) = add (mul l m) (add l (mul l n))
+    simp [add_comm, add_assoc, add_succ]
   }
 /-!
--- BUGBUG: 'cc' is still missing from mathlib...
+-- BUGBUG: 'cc' is still missing from mathlib... trying to write it without cc.
 
 Here are a few hints on how to carry out proofs by induction:
 

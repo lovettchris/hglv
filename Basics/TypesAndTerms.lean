@@ -64,7 +64,7 @@ contain `x`. For example, `λ x : ℤ => square (abs x)` denotes the function th
 Applications and λ-expressions mirror each other: A λ-expression “builds” a
 function; an application “destructs” a function. Although our functions are unary
 (i.e., they take one argument), we can build _n_-ary functions by nesting λs, using
-an ingenious technique called _currying_. For example, `λ x : σ => (λy : τ, x)` denotes
+an ingenious technique called _currying_. For example, `λ x : σ => (λ y : τ => x)` denotes
 the function of type `σ → (τ → σ)` that takes two arguments and returns the first
 one. Strictly speaking, `σ → (τ → σ)` takes a single argument and returns a function,
 which in turn takes an argument. Applications work in the same way: If
@@ -272,7 +272,7 @@ placeholder. This means our current term is `λ f => λ g => λ a => f a (g _)`.
 We are almost done. The only placeholder left has type `β → α`, which is g’s
 argument type. Applying step 1, we replace the placeholder with `λ b => _`, where `_`
 has type `α`. Here, we can simply supply `a`. Our final term is
-`λ f => λ g => λ a => f a (g (λ b, a))`—i.e., `λ f g a => f a (g (λb, a))`.
+`λ f => λ g => λ a => f a (g (λ b => a))`—i.e., `λ f g a => f a (g (λ b => a))`.
 
 The above derivation was tedious but deterministic: At each point, either step
 1 or 2 was applicable, but not both. In general, this will not always be the case.

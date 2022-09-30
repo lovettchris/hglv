@@ -17,19 +17,21 @@ relation. The fourth lemma is an elimination rule that allows us to replace equa
 for equals in an arbitrary context, represented by the higher-order variable `?p`.
 
 An example will show how this works. Below, we apply `Eq.subst` to rewrite
-`f a b` to `f a' b`, using the equation `a = a'`:
+`f a b` to `f a' b`, using the hypothesis `a = a'`:
 -/
+
 theorem cong_fst_arg {α : Type} (a a' b : α)
 (f : α → α → α) (ha : a = a') : f a b = f a' b := by
-  apply Eq.subst ha
+  apply Eq.subst ha (motive := λ x => f a b = f x b)
   apply Eq.refl
 
--- BUGBUG doesn't work.
+-- BUGBUG why does lean4 require this motive, lean3 did not
+-- See https://leanprover.zulipchat.com/#narrow/stream/270676-lean4/topic/debugging.20'apply'.20failed.20to.20unify
 
 /-!
-The `Eq.subst` instance we use has `?a := a`, `?b := a'`, and `?p := (λ x, f a b = f x b)`:
+The `Eq.subst` instance we use has `?a := a`, `?b := a'`, and `?p := (λ x => f a b = f x b)`:
 ```lean
-a = a' → (λx, f a b = f x b) a → (λx, f a b = f x b) a'
+a = a' → (λx => f a b = f x b) a → (λx => f a b = f x b) a'
 ```
 In β-reduced form:
 ```lean
@@ -42,15 +44,21 @@ variable (e.g., `?p`) can represent an arbitrary context (e.g., `f . . . b`) aro
 `a` or `a'`). This works because `apply` unifies up to computation, including β-conversion.
 
 The `Eq.subst` lemma can be applied several times in sequence, as follows:
+
+(λx => f x n₁ ... nₖ) a = f a` n₁ ... nₖ
+
 -/
+
 lemma cong_two_args {α : Type} (a a' b b' : α)
   (f : α → α → α) (ha : a = a') (hb : b = b') :
 f a b = f a' b' := by
-  apply Eq.subst ha
-  apply Eq.subst hb
+  apply Eq.subst ha (motive := λ x => f a b = f x b')
+  apply Eq.subst hb (motive := λ x => f a b = f a x)
   apply Eq.refl
+  -- rw [ha, hb]
 
--- BUGBUG doesn't work.
+
+-- BUGBUG lean3 did not require these explicit motives...
 
 /-!
 Since rewriting in this way is such a common operation, Lean provides a `rw` tactic

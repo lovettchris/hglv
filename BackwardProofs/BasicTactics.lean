@@ -36,11 +36,11 @@ examples, in a global context containing `def double (n : ℕ) : ℕ := n + n`:
 
 | name         | effect                               |
 |--------------|--------------------------------------|
-| α-conversion | `(λx, f x) = (λy, f y)`              |
-| β-conversion | `(λx, f x) a = f a`                  |
+| α-conversion | `(λx => f x) = (λy => f y)`              |
+| β-conversion | `(λx => f x) a = f a`                  |
 | δ-conversion | `double 5 = 5 + 5`                   |
 | ζ-conversion | `(let n : N := 2 ; n + n) = 4`      |
-| η-conversion | `(λx, f x) = f`                      |
+| η-conversion | `(λx => f x) = f`                      |
 | ι-conversion | `prod.fst (a, b) = a`                |
 
 Applying a conversion repeatedly as left-to-right rewrite rules is called _reduction); applying it
