@@ -39,14 +39,12 @@ The `let` tactic lets us introduce a local definition in tactic mode. Afterwards
 defined symbol and its definition are available in the goal state.
 
 **calc**
--- BUGBUG does this tactic exist in lean4 ?
+
 ```lean
 calc
   term₀ op₁ term₁ : proof1
   _     op₂ term₂ : proof₂
-  .
-  .
-  .
+  ...
   _     opₙ termₙ : proofₙ
 ```
 

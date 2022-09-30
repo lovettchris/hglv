@@ -71,20 +71,14 @@ The instance relies itself on an instance of the same type class but on a differ
 type. This frequently occurs and is part of the reason why we speak of type class
 _search_ rather than _lookup_.
 
-For case (2), there is no type class for uninhabitedness, but we know that the
-type empty is not inhabited, so it will do:
+For case (2), there is a type class for uninhabitedness, but we know that the
+type `Empty` is not inhabited, so it will do:
 -/
-inductive empty : Type
-
-instance {β : Type} : Inhabited (empty → β) where
-  default := λ a : empty => match a with ...
-
+instance {β : Sort v} [Inhabited β] : Inhabited (Empty → β) where
+  default := fun _ : Empty => default
 /-!
-Notice the trivial match that implements the body of a function that can never be
-called, because no value of type `empty` can be passed as argument. The definition
-of `empty` has zero introduction rules, so the corresponding `match` has zero cases.
-
---BUGBUG : how to do an empty match in lean 4 ? This doesn't compile.
+Notice the function can never be called, because no value of type `empty` exists to pass as
+argument. The definition of `empty` has zero introduction rules.
 
 Finally, the type `α × β` of pairs, also called product type, contains values of
 the form `(a, b)`, where `a : α` and `b : β`. Given a pair x, the first and second components

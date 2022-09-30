@@ -31,11 +31,13 @@ definition is worth three theorems.
 For structurally recursive functions, Lean can automatically prove termination. For more general
 recursive schemes, the termination check may fail. Sometimes it does so for a good reason, as in the
 following example:
--/
--- fails saying: fail to show termination for `illegal`
+
+```lean
 def illegal : ℕ → ℕ
 | n => illegal n + 1
-/-!
+
+-- fails saying: fail to show termination for `illegal`
+```
 If Lean were to accept this definition, we could exploit it to prove that `0 = 1`, by subtracting
 `illegal n` on each side of the equation `illegal n = illegal n + 1`. From `0 = 1`, we could derive `false`,
 and from `false`, we could derive anything, including the three-color theorem. Clearly, we do not want
@@ -43,27 +45,19 @@ that.
 
 If we had used a variable and axiom, nothing could have saved us:
 -/
-constant immoral : ℕ → \N
+def immoral (x : ℕ) : ℕ := x + 1
 
 axiom immoral_eq (n : ℕ) : immoral n = immoral n + 1
 
 lemma proof_of_false :
 false := by
-  have h1 : immoral 0 = immoral 0 + 1 :=
-    immoral_eq 0
-  have h2 : immoral 0 - immoral 0 = immoral 0 + 1 - immoral 0 :=
-    by rfl
-  have h3 : 0 = 1 := by simp [*] at *
-  show false
-    by rfl
+  have h1 : immoral 0 = immoral 0 + 1 := immoral_eq 0
+  simp [h1] at *
 
--- BUGBUG: failed to synthesize instance...
 /-!
 Another reason for preferring `def` is that the defining equations are used to compute. Tactics such
 as `rfl` that unify up to computation become stronger each time we introduce a definition, and the
 diagnosis commands `#eval` and `#reduce` can be used on defined constants.
-
--- BUGBUG: what to use instead of 'constants' in the above example ?
 
 The observant reader will have noticed that the above definitions of factorial are mathematically
 wrong: `fact` shockingly returns `0` regardless of the argument, and `fact₂ 0` should give `1`, not

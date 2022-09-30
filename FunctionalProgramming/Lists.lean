@@ -173,24 +173,29 @@ theorem min_add_add (l m n : Nat) :
 
 lemma length_zip {α β : Type} (xs : List α) (ys : List β) :
     length (zip xs ys) = min (length xs) (length ys) := by
-induction' xs
-case nil =>  simp [length, min]
-case cons x xs' ih =>
-  cases ys
-  case nil => rfl
-  case cons y ys' =>
-    simp [zip, length]
-    simp [min_add_add]
-    simp [ih ys']
+  induction xs generalizing ys with
+  | nil => simp [length, min]
+  | cons x xs' ih  =>
+    cases ys
+    case nil => rfl
+    case cons y ys' =>
+      simp [zip, length, min_add_add, ih]
 
 
--- BUGBUG still broken
 /-!
-The proof above teaches us yet another trick. The induction hypothesis is
+The proof above teaches us yet another trick.
+The `induction xs generalizing ys` statement causes Lean to generalize
+over `ys` which yields the induction hypothesis:
 ```lean
-ih : ∀{β} ys : List β, length (zip xs ys) = min (length xs) (length ys)
+ih: ∀ (ys : List β), length (zip xs' ys) = min (length xs') (length ys)
 ```
-The syntax `∀{β}` is new but suggestive: It indicates that the type `β` is an implicit
+If you remove `generalizing ys` then you get the following which is not as useful to us
+and the proof will get stuck:
+```lean
+ih: length (zip xs' ys) = min (length xs') (length ys)
+```
+
+The syntax `∀ (ys : List β)` indicates that the type `β` is an implicit
 argument of `ih`. In contrast, `ys` is explicit—and from it, `β` can be inferred.
 
 The presence of ∀-quantifiers is explained as follows. The `induction’` tactic
@@ -205,7 +210,7 @@ distributes over addition.
 
 Recall the definition `min a b = (if a ≤ b then a else b)`. To reason about `min`, we
 often need to perform a `case` distinction on the condition `a ≤ b`. This is achieved
-using `cases Classical.em (a ≤ b)`. This creates two subgoals: one with `a ≤ b` as
+using `cases Classical.em (a ≤ b)`. This creates two sub-goals: one with `a ≤ b` as
 a hypothesis and one with `¬ a ≤ b`.
 
 Here are two different ways to perform a case distinction on a proposition in

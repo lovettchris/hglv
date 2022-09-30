@@ -1,4 +1,11 @@
 import FunctionalProgramming.InductiveTypes
+import FunctionalProgramming.StructuralInduction
+import FunctionalProgramming.StructuralRecursion
+import FunctionalProgramming.PatternMatching
+import FunctionalProgramming.Structures
+import FunctionalProgramming.TypeClasses
+import FunctionalProgramming.Lists
+import FunctionalProgramming.BinaryTrees
 /-!
 # Functional Programming
 

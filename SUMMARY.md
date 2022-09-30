@@ -40,5 +40,9 @@
   - [Structures](./FunctionalProgramming/Structures.lean.md)
   - [Type Classes](./FunctionalProgramming/TypeClasses.lean.md)
   - [Lists](./FunctionalProgramming/Lists.lean.md)
+  - [Binary Trees](./FunctionalProgramming/BinaryTrees.lean.md)
+  - [Case Distinction and Induction Tactics](./FunctionalProgramming/CaseDistinction.lean.md)
+  - [Dependent Inductive Types](./FunctionalProgramming/DependentInductiveTypes.lean.md)
+  - [Summary of New Lean Constructs](./FunctionalProgramming/Summary.lean.md)
 
 - [Bibliography](./bib.md)

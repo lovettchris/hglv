@@ -12,3 +12,8 @@ This is referring to undefined tactic in the preceeding proof:
 It doesn't use clear it uses cc, but it could just use simp.
 
 Also this seems like a typo `map_zip xs ys` in `map_zip` deleting `xs ys` solves it
+
+## 4.8 Binary Trees
+
+Paragraph has "tree.empty instead of tree.empty N" and "tree.empty _" but I think
+it means to use "btree" instead here.
