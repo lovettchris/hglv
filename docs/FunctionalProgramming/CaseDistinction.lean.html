@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Case Distinction and Induction Tactics - The Hitchhiker’s Guide to Logical Verification</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../alectryon.css">
+        <link rel="stylesheet" href="../pygments.css">
+        <link rel="stylesheet" href="../custom.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme && theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar && sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../cover.html">Cover</a></li><li class="chapter-item affix "><a href="../preface.html">Preface</a></li><li class="chapter-item "><a href="../Basics/Definitions.lean.html"><strong aria-hidden="true">1.</strong> Definitions and Statements</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Basics/TypesAndTerms.lean.html"><strong aria-hidden="true">1.1.</strong> Types and Terms</a></li><li class="chapter-item "><a href="../Basics/TypeDefinitions.lean.html"><strong aria-hidden="true">1.2.</strong> Type Definitions</a></li><li class="chapter-item "><a href="../Basics/FunctionDefinitions.lean.html"><strong aria-hidden="true">1.3.</strong> Function Definitions</a></li><li class="chapter-item "><a href="../Basics/TheoremStatements.lean.html"><strong aria-hidden="true">1.4.</strong> Theorem Statements</a></li><li class="chapter-item "><a href="../Basics/Summary.html"><strong aria-hidden="true">1.5.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../BackwardProofs.lean.html"><strong aria-hidden="true">2.</strong> Backward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BackwardProofs/TacticMode.lean.html"><strong aria-hidden="true">2.1.</strong> Tactic Mode</a></li><li class="chapter-item "><a href="../BackwardProofs/BasicTactics.lean.html"><strong aria-hidden="true">2.2.</strong> Basic Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/ConnectivesAndQuantifiers.lean.html"><strong aria-hidden="true">2.3.</strong> Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../BackwardProofs/Equality.lean.html"><strong aria-hidden="true">2.4.</strong> Reasoning about Equality</a></li><li class="chapter-item "><a href="../BackwardProofs/RewritingTactics.lean.html"><strong aria-hidden="true">2.5.</strong> Rewriting Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Induction.lean.html"><strong aria-hidden="true">2.6.</strong> Proofs by Mathematical Induction</a></li><li class="chapter-item "><a href="../BackwardProofs/InductionTactic.lean.html"><strong aria-hidden="true">2.7.</strong> Induction Tactic</a></li><li class="chapter-item "><a href="../BackwardProofs/CleanupTactics.lean.html"><strong aria-hidden="true">2.8.</strong> Cleanup Tactics</a></li><li class="chapter-item "><a href="../BackwardProofs/Summary.lean.html"><strong aria-hidden="true">2.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../ForwardProofs.lean.html"><strong aria-hidden="true">3.</strong> Forward Proofs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ForwardProofs/StructuredProofs.lean.html"><strong aria-hidden="true">3.1.</strong> Structured Proofs</a></li><li class="chapter-item "><a href="../ForwardProofs/StructuredConstructs.lean.html"><strong aria-hidden="true">3.2.</strong> Structured Constructs</a></li><li class="chapter-item "><a href="../ForwardProofs/Connectives.lean.html"><strong aria-hidden="true">3.3.</strong> Forward Reasoning about Connectives and Quantifiers</a></li><li class="chapter-item "><a href="../ForwardProofs/CalculationProofs.lean.html"><strong aria-hidden="true">3.4.</strong> Calculation Proofs</a></li><li class="chapter-item "><a href="../ForwardProofs/ForwardTactics.lean.html"><strong aria-hidden="true">3.5.</strong> Forward Reasoning with Tactics</a></li><li class="chapter-item "><a href="../ForwardProofs/DependentTypes.lean.html"><strong aria-hidden="true">3.6.</strong> Dependent Types</a></li><li class="chapter-item "><a href="../ForwardProofs/CurryHoward.lean.html"><strong aria-hidden="true">3.7.</strong> The Curry–Howard Correspondence</a></li><li class="chapter-item "><a href="../ForwardProofs/InductionPatterns.lean.html"><strong aria-hidden="true">3.8.</strong> Induction by Pattern Matching</a></li><li class="chapter-item "><a href="../ForwardProofs/Summary.lean.html"><strong aria-hidden="true">3.9.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item expanded "><a href="../FunctionalProgramming.lean.html"><strong aria-hidden="true">4.</strong> Functional Programming</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../FunctionalProgramming/InductiveTypes.lean.html"><strong aria-hidden="true">4.1.</strong> Inductive Types</a></li><li class="chapter-item "><a href="../FunctionalProgramming/StructuralInduction.lean.html"><strong aria-hidden="true">4.2.</strong> Structural Induction</a></li><li class="chapter-item "><a href="../FunctionalProgramming/StructuralRecursion.lean.html"><strong aria-hidden="true">4.3.</strong> Structural Recursion</a></li><li class="chapter-item "><a href="../FunctionalProgramming/PatternMatching.lean.html"><strong aria-hidden="true">4.4.</strong> Pattern Matching Expressions</a></li><li class="chapter-item "><a href="../FunctionalProgramming/Structures.lean.html"><strong aria-hidden="true">4.5.</strong> Structures</a></li><li class="chapter-item "><a href="../FunctionalProgramming/TypeClasses.lean.html"><strong aria-hidden="true">4.6.</strong> Type Classes</a></li><li class="chapter-item "><a href="../FunctionalProgramming/Lists.lean.html"><strong aria-hidden="true">4.7.</strong> Lists</a></li><li class="chapter-item "><a href="../FunctionalProgramming/BinaryTrees.lean.html"><strong aria-hidden="true">4.8.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../FunctionalProgramming/CaseDistinction.lean.html" class="active"><strong aria-hidden="true">4.9.</strong> Case Distinction and Induction Tactics</a></li><li class="chapter-item "><a href="../FunctionalProgramming/DependentInductiveTypes.lean.html"><strong aria-hidden="true">4.10.</strong> Dependent Inductive Types</a></li><li class="chapter-item "><a href="../FunctionalProgramming/Summary.lean.html"><strong aria-hidden="true">4.11.</strong> Summary of New Lean Constructs</a></li></ol></li><li class="chapter-item "><a href="../bib.html"><strong aria-hidden="true">5.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hitchhiker’s Guide to Logical Verification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/leanprover/HitchikersGuide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="alectryon-token"><span class="kn">import</span> Mathlib.Tactic.Basic
+<span class="kn">import</span> Mathlib.Tactic.Cases</span></span></pre>
+<h2 id="case-distinction-and-induction-tactics"><a class="header" href="#case-distinction-and-induction-tactics">Case Distinction and Induction Tactics</a></h2>
+<p>The following tactics are useful when performing case distinctions, with or without
+induction hypotheses.</p>
+<p><strong>cases'</strong></p>
+<pre><code>  cases' term [with name₁ . . . nameₙ]
+</code></pre>
+<p>The <code>cases'</code> tactic performs a case distinction on the specified term. This gives
+rise to as many sub-goals as there are constructors in the definition of the term’s
+type. The tactic behaves roughly the same as <code>induction’</code> except that it does not
+produce induction hypotheses and it eliminates impossible cases.</p>
+<p>The optional names <code>name₁ . . . nameₙ</code> are used for any emerging variables or
+hypotheses, to override the default names.</p>
+<p>Note that the standard Lean tactic for case distinction is called <code>cases</code>. The
+primed variant is provided by <code>Mathlib</code>. It is more user-friendly.</p>
+<pre><code>cases' hypothesis-of-the-form-l-equals-r
+</code></pre>
+<p>The <code>cases'</code> tactic can also be used on a hypothesis <code>h</code> of the form <code>l = r</code>. It matches
+<code>r</code> against <code>l</code> and replaces all occurrences of the variables occurring in <code>r</code> with the
+corresponding terms in <code>l</code> everywhere in the goal. The remaining hypothesis <code>l = l</code>
+can be removed using <code>clear h</code> if desired. If <code>r</code> fails to match <code>l</code>, no sub-goals emerge;
+the proof is complete.</p>
+<pre><code>cases' Classical.em (proposition) [with name₁ name₂]
+</code></pre>
+<p>The <code>cases'</code> tactic can also be used to perform a case distinction on a proposition.
+Two cases emerge: one in which the proposition is true and one in which it is false.
+The optional names <code>name₁</code> and <code>name₂</code> are used for hypotheses in the true and false
+cases, respectively.</p>
+<p><strong>case</strong></p>
+<pre><code>case name [: name₁ . . . nameₙ] =&gt; ...
+</code></pre>
+<p>The <code>case</code> tactic (with no s) can be used in tandem with <code>cases'</code> or <code>induction'</code> to
+select a sub-goal corresponding to the constructor called <code>name</code> and focus on it.
+The optional names <code>name₁ . . . nameₙ</code> are used for any emerging variables or
+hypotheses, to override the default names.</p>
+<p>You can lits multiple names separated by '|' to apply the same proof to
+a number of case names.  <code>case tag₁ | tag₂ =&gt; tac</code>.
+This is equivalent to <code>(case tag₁ =&gt; tac); (case tag₂ =&gt; tac)</code>.</p>
+<pre class="alectryon-io type-info-hidden highlight"><!-- Generator: Alectryon --></pre>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../FunctionalProgramming/BinaryTrees.lean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../FunctionalProgramming/DependentInductiveTypes.lean.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../FunctionalProgramming/BinaryTrees.lean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../FunctionalProgramming/DependentInductiveTypes.lean.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" charset="utf-8"></script>
+        <script src="../mark.min.js" charset="utf-8"></script>
+        <script src="../searcher.js" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" charset="utf-8"></script>
+        <script src="../highlight.js" charset="utf-8"></script>
+        <script src="../book.js" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../alectryonjs.js"></script>
+
+
+    </body>
+</html>
