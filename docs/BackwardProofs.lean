@@ -1,4 +1,13 @@
 import BackwardProofs.TacticMode
+import BackwardProofs.BasicTactics
+import BackwardProofs.ConnectivesAndQuantifiers
+import BackwardProofs.Equality
+import BackwardProofs.RewritingTactics
+-- import BackwardProofs.Induction
+import BackwardProofs.InductionTactic
+import BackwardProofs.CleanupTactics
+import BackwardProofs.Summary
+
 /-!
 # Backward Proofs
 

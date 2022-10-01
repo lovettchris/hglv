@@ -36,10 +36,6 @@ predicate `p`. The predicate’s codomain is `Bool`. As a general rule, we will 
 `Bool`, of Booleans, within programs and use the type `Prop`, of propositions, when
 stating properties of programs.
 
-The connectives are called `or` (infix: `||`), `and` (infix: `&&`), and `not` (`¬`) or (`!`).
-
-BUGBUG: the book also adds `xor` but I couldn't find that in Lean, I only found HXor.hXor?
-
 Here's an example that shows how to match on two variables:
 -/
 def extract  {α : Type} : List α → ℕ → List α
@@ -50,6 +46,7 @@ def extract  {α : Type} : List α → ℕ → List α
 #eval extract (List.range 10) 3  -- [0, 1, 2]
 
 /-!
+
 Notice that the variables are extracted in order from the return type.
 This example also shows how to use an induction technique matching `i + 1` so that
 the count is decremented by one on each recursive call.
@@ -63,8 +60,21 @@ def extract₂ {α : Type} (xs : List α) (count : ℕ) : List α :=
     | [], _ => []
     | (x :: xs), i + 1 => x :: (extract xs i)
 /-!
-We cannot match on a proposition of type `Prop`, but we can use if–then–else
-instead. For example, the min operator on natural numbers operator can be defined as follows:
+The connectives are called `or` (infix: `||`), `and` (infix: `&&`), and `not` (`¬`) or (`!`).
+
+BUGBUG: the book also adds `xor` but I couldn't find that in Lean, I only found HXor.hXor?
+
+The following diagram shows the interpretations of `bool` and `Prop`:
+
+![diagram](diagram.svg)
+
+Dots represents elements, circles represents types, and the group represents
+a type of types. We see that `bool` are interpreted as a set with two values, whereas
+`Prop` consists in an infinite number of propositions (the types), each of which has
+zero or more proofs (the elements). We will refine this picture in Chapter 5.
+
+We cannot match on a proposition of type `Prop`, but we can use `if–then–else`
+instead. For example, the `min` operator on natural numbers operator can be defined as follows:
 
 -/
 def minimum (a b : ℕ) : ℕ :=

@@ -1,6 +1,6 @@
 import Mathlib.Tactic.Basic
 import Mathlib.Tactic.Cases
-
+import Basics.FunctionDefinitions
 /-!
 ## Induction by Pattern Matching
 
@@ -9,13 +9,12 @@ the induction’ tactic to perform proofs by induction. An alternative, more fle
 pattern matching and the Curry–Howard correspondence.
 
 Recall the definition of the reverse of a list from [Function Definitions](../Basics/FunctionDefinitions.lean.md):
-
--/
+```lean
 def reverse {α : Type} : List α → List α
 | [] => []
 | (x :: xs) => reverse xs ++ [x]
+```
 
-/-!
 In fact, `reverse` exists in Lean’s standard library, as `List.reverse`, but our definition is
 optimized for reasoning. A useful property to prove is that `reverse` is its own inverse: `reverse
 (reverse xs) = xs` for all lists `xs`. However, if we try to prove it by induction, we quickly run
@@ -111,4 +110,3 @@ topic of Chapter 5.
 
 --BUGBUG: is this still true in lean4?
 -/
-

@@ -1,4 +1,13 @@
 import ForwardProofs.StructuredProofs
+import ForwardProofs.StructuredConstructs
+-- import ForwardProofs.Connectives
+import ForwardProofs.CalculationProofs
+import ForwardProofs.ForwardTactics
+import ForwardProofs.DependentTypes
+import ForwardProofs.CurryHoward
+import ForwardProofs.InductionPatterns
+import ForwardProofs.Summary
+
 /-!
 # Forward Proofs
 

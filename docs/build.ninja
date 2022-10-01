@@ -3,17 +3,6 @@ rule alectryon
       --backend webpage -o $out
 rule book
   command = mdbook build
-build ./BackwardProofs.lean.md: alectryon ./BackwardProofs.lean
-build ./Basics.lean.md: alectryon ./Basics.lean
-build ./ForwardProofs.lean.md: alectryon ./ForwardProofs.lean
-build ./FunctionalProgramming.lean.md: alectryon ./FunctionalProgramming.lean
-build Basics/Definitions.lean.md: alectryon Basics/Definitions.lean
-build Basics/FunctionDefinitions.lean.md: alectryon $
-    Basics/FunctionDefinitions.lean
-build Basics/TheoremStatements.lean.md: alectryon $
-    Basics/TheoremStatements.lean
-build Basics/TypeDefinitions.lean.md: alectryon Basics/TypeDefinitions.lean
-build Basics/TypesAndTerms.lean.md: alectryon Basics/TypesAndTerms.lean
 build BackwardProofs/BasicTactics.lean.md: alectryon $
     BackwardProofs/BasicTactics.lean
 build BackwardProofs/CleanupTactics.lean.md: alectryon $
@@ -30,6 +19,13 @@ build BackwardProofs/RewritingTactics.lean.md: alectryon $
 build BackwardProofs/Summary.lean.md: alectryon BackwardProofs/Summary.lean
 build BackwardProofs/TacticMode.lean.md: alectryon $
     BackwardProofs/TacticMode.lean
+build Basics/Definitions.lean.md: alectryon Basics/Definitions.lean
+build Basics/FunctionDefinitions.lean.md: alectryon $
+    Basics/FunctionDefinitions.lean
+build Basics/TheoremStatements.lean.md: alectryon $
+    Basics/TheoremStatements.lean
+build Basics/TypeDefinitions.lean.md: alectryon Basics/TypeDefinitions.lean
+build Basics/TypesAndTerms.lean.md: alectryon Basics/TypesAndTerms.lean
 build ForwardProofs/CalculationProofs.lean.md: alectryon $
     ForwardProofs/CalculationProofs.lean
 build ForwardProofs/Connectives.lean.md: alectryon $
@@ -69,17 +65,21 @@ build FunctionalProgramming/Summary.lean.md: alectryon $
     FunctionalProgramming/Summary.lean
 build FunctionalProgramming/TypeClasses.lean.md: alectryon $
     FunctionalProgramming/TypeClasses.lean
-build docs/index.html: book ./BackwardProofs.lean.md ./Basics.lean.md $
-    ./ForwardProofs.lean.md ./FunctionalProgramming.lean.md $
-    Basics/Definitions.lean.md Basics/FunctionDefinitions.lean.md $
-    Basics/TheoremStatements.lean.md Basics/TypeDefinitions.lean.md $
-    Basics/TypesAndTerms.lean.md BackwardProofs/BasicTactics.lean.md $
+build InductivePredicates/IntroductoryExamples.lean.md: alectryon $
+    InductivePredicates/IntroductoryExamples.lean
+build InductivePredicates/LogicalSymbols.lean.md: alectryon $
+    InductivePredicates/LogicalSymbols.lean
+build InductivePredicates/RuleInduction.lean.md: alectryon $
+    InductivePredicates/RuleInduction.lean
+build docs/index.html: book BackwardProofs/BasicTactics.lean.md $
     BackwardProofs/CleanupTactics.lean.md $
     BackwardProofs/ConnectivesAndQuantifiers.lean.md $
     BackwardProofs/Equality.lean.md BackwardProofs/Induction.lean.md $
     BackwardProofs/InductionTactic.lean.md $
     BackwardProofs/RewritingTactics.lean.md BackwardProofs/Summary.lean.md $
-    BackwardProofs/TacticMode.lean.md $
+    BackwardProofs/TacticMode.lean.md Basics/Definitions.lean.md $
+    Basics/FunctionDefinitions.lean.md Basics/TheoremStatements.lean.md $
+    Basics/TypeDefinitions.lean.md Basics/TypesAndTerms.lean.md $
     ForwardProofs/CalculationProofs.lean.md $
     ForwardProofs/Connectives.lean.md ForwardProofs/CurryHoward.lean.md $
     ForwardProofs/DependentTypes.lean.md $
@@ -97,9 +97,13 @@ build docs/index.html: book ./BackwardProofs.lean.md ./Basics.lean.md $
     FunctionalProgramming/StructuralRecursion.lean.md $
     FunctionalProgramming/Structures.lean.md $
     FunctionalProgramming/Summary.lean.md $
-    FunctionalProgramming/TypeClasses.lean.md BackwardProofs.lean.md $
+    FunctionalProgramming/TypeClasses.lean.md $
+    InductivePredicates/IntroductoryExamples.lean.md $
+    InductivePredicates/LogicalSymbols.lean.md $
+    InductivePredicates/RuleInduction.lean.md BackwardProofs.lean.md $
     Basics.lean.md bib.md cover.md ForwardProofs.lean.md $
-    FunctionalProgramming.lean.md preface.md SUMMARY.md todo.md typos.md $
-    Basics/Summary.md lean_packages/mathlib/README.md $
+    FunctionalProgramming.lean.md InductivePredicates.lean.md preface.md $
+    SUMMARY.md todo.md typos.md Basics/Summary.md $
+    lean_packages/mathlib/README.md $
     lean_packages/mathlib/Mathlib/Mathport/README.md $
     lean_packages/std/README.md

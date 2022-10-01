@@ -50,9 +50,9 @@ The last three rows correspond to the three axes of [Henk Barendregt’s λ-cube
 The APP and LAM rules presented in [Type Checking and Type Inference](TypesAndTerms.lean.md#type-checking-and-type-inference)
 must be generalized to work with dependent types:
 
-\\( \cfrac{C ⊢ t : (x : σ) → τ[x] \quad C ⊢ u : σ }{C ⊢ t\enspace{u} : τ[u]} {\large A}{\normalsize PP'} \\)
+\\( \cfrac{C ⊢ t : (x : σ) → τ[x] \quad C ⊢ u : σ }{C ⊢ t\enspace{u} : τ[u]} {\large{A}}{\normalsize{PP'}} \\)
 
-\\( \cfrac{C, x : σ ⊢ t : τ[x] }{C ⊢ (λ\enspace{x} : σ => t) : (x : σ) → τ[x]} {\large L}{\normalsize AM'} \\)
+\\( \cfrac{C, x : σ ⊢ t : τ[x] }{C ⊢ (λ\enspace{x} : σ => t) : (x : σ) → τ[x]} {\large{L}}{\normalsize{AM'}} \\)
 
 The notation `τ[x]` stands for a type that may contain `x`, and `τ[u]` stands for the
 same type where all occurrences of `x` have been replaced by `u`.
@@ -63,11 +63,15 @@ to `(_ : σ) → τ`. It is easy to check that APP' and LAM' coincide with APP a
 when `x` does not occur in `τ[x]`. The example below demonstrates APP':
 
 
-\\( \cfrac{pick : (n : ℕ) → i : ℕ // i ≤ n \quad 5 : ℕ }{⊢ pick\enspace{5} : i : ℕ // i ≤ 5} {\large A}{\normalsize PP'} \\)
+\\( \cfrac{pick : (n : ℕ) → i : ℕ // i ≤ n \quad 5 : ℕ }{⊢ pick\enspace{5} : i : ℕ // i ≤ 5} {\large{A}}{\normalsize{PP'}} \\)
 
 The next example demonstrates LAM':
 
-\\( \cfrac{\cfrac {α : Type, x : α ⊢ x : α} {α : Type ⊢ (λ\enspace{x} : α => x) : α → α}  {\large L}{\normalsize AM}\enspace{or}\enspace{\large L}{\normalsize AM'}} {⊢ (λ\enspace{α} : Type => λ\enspace{x} : α => x) : (α : Type) → α → α} {\large L}{\normalsize AM'} \\)
+\\( \cfrac{
+      \cfrac {α : Type, x : α ⊢ x : α} {α : Type ⊢ (λ\enspace{x} : α => x) : α → α} {\large{L}}{\normalsize{AM}}\enspace{or}\enspace{\large{L}}{\normalsize{AM'}}
+    }
+    {⊢ (λ\enspace{α} : Type => λ\enspace{x} : α => x) : (α : Type) → α → α}
+    {\large{L}}{\normalsize{AM'}} \\)
 
 The picture is incomplete because we only check that the terms—the entities on the left-hand side of a
 colon (:)—are well typed. The types—the entities on the right-hand side of a colon—must also be
@@ -96,4 +100,3 @@ as argument and that returns a value of type `List α`.
 -- BUGBUG : lean4 no longer shows `List.nil : Π(α : Type), list α` - is there a better example
 we can use here instead?
 -/
-

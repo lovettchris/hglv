@@ -10,18 +10,19 @@ def createNinja(f):
     ninja.rule(name="book", command="mdbook build")
 
     os.chdir(script_path)
-    print("collecting .lean source files in Examples and Monads folders...")
     all_files = []
-    for d in [".", "Basics", "BackwardProofs", "ForwardProofs", "FunctionalProgramming"]:
-        for path in glob.glob(f"{d}/*.lean"):
-            n = path.replace('\\', '/')
-            if "lakefile.lean" not in n:
-                ninja.build(outputs=f"{n}.md", rule="alectryon", inputs=f"{n}")
-                all_files += [f"{n}.md"]
+    for d in os.listdir(script_path):
+        if os.path.isdir(d) and d != "__pycache__" and d != "build" and d != "lean_packages" and d != ".git" and d != "docs":
+            print(f"collecting .lean source files in {d}")
+            for path in glob.glob(f"{d}/*.lean"):
+                n = path.replace('\\', '/')
+                if "lakefile.lean" not in n:
+                    ninja.build(outputs=f"{n}.md", rule="alectryon", inputs=f"{n}")
+                    all_files += [f"{n}.md"]
 
     print("collecting all md files...")
     for path in glob.glob("**/*.md", recursive=True):
-        if not  path.startswith("ninja") :
+        if not path.startswith("ninja"):
             n = path.replace('\\', '/')
             if n not in all_files:
                 all_files += [n]

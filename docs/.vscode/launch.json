@@ -10,17 +10,17 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
+            "justMyCode": true,
+            "args":[
                 "--frontend",
                 "lean4+markup",
-                "basics.lean",
-                "--backend",
-                "webpage",
+                "InductivePredicates/LogicalSymbols.lean",
                 "--lake",
                 "lakefile.lean",
+                "--backend",
+                "webpage",
                 "-o",
-                "basics.lean.md",
+                "InductivePredicates/LogicalSymbols.lean.md",
             ]
         }
     ]

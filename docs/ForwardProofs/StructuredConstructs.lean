@@ -10,27 +10,26 @@ and `show`. We now review the components of structured proofs more systematicall
 
 The simplest structured proof, apart from `sorry`, is the name of a lemma or hypothesis. If we have
 -/
-lemma two_add_two_eq_four :
-  2 + 2 = 4 :=
--- . . .
+axiom two_add_two_eq_four :  2 + 2 = 4
 /-!
+
 then the lemma name `two_add_two_eq_four` can be used as a proof of `2 + 2 = 4` later.
 For example:
 -/
 lemma this_time_with_feelings :
   2 + 2 = 4 :=
-two_add_two_eq_four
+  two_add_two_eq_four
 
 /-!
 We can pass arguments to lemmas to instantiate ∀-quantifiers and discharge assumptions. Suppose the
 lemma `add_comm (m n : ℕ) : add m n = add n m` is available, and suppose we want to prove its instance
 `add 0 n = add n 0`. This can be achieved neatly using the name of the lemma and two arguments:
 -/
-axiom add_comm (m n : ℕ) : add m n = add n m
+axiom add_comm₂ (m n : ℕ) : add m n = add n m
 
 lemma add_comm_zero_left (n : ℕ) :
   add 0 n = add n 0 :=
-  add_comm 0 n
+  add_comm₂ 0 n
 /-!
 This has the same effect as the tactical proof `by exact add_comm 0 n`, but is more concise. The `exact`
 tactic can be seen as the inverse of `by`. Why enter tactic mode if only to leave it immediately?

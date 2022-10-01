@@ -224,8 +224,9 @@ Syntactic type classes do not impose serious restrictions on the types that can 
 instances, except that α in type class `Zero` and `One` must be `Inhabited`. In contrast, the
 semantic type classes contain properties that restrict how the given constants behave.
 
---BUGBUG : I don't like the use of the term `constants` here, can this be replaced with `instances`
-or `definitions` ?
+--BUGBUG : I don't like the use of the term `constants` here since we are kind of hiding that term
+in lean4 now, I think it is refering to the type class functions like `zero`, `one`, `inv` in the
+above, so can this be replaced with `definitions` or `functions` ?
 
 In [Proofs by Mathematical Induction](../ForwardProofs/Induction.lean.md), we defined a lemma
 proving Nat is commutative under addition, we named this lemma `add_comm`.

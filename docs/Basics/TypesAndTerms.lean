@@ -64,7 +64,7 @@ contain `x`. For example, `λ x : ℤ => square (abs x)` denotes the function th
 Applications and λ-expressions mirror each other: A λ-expression “builds” a
 function; an application “destructs” a function. Although our functions are unary
 (i.e., they take one argument), we can build _n_-ary functions by nesting λs, using
-an ingenious technique called _currying_. For example, `λ x : σ => (λy : τ, x)` denotes
+an ingenious technique called _currying_. For example, `λ x : σ => (λ y : τ => x)` denotes
 the function of type `σ → (τ → σ)` that takes two arguments and returns the first
 one. Strictly speaking, `σ → (τ → σ)` takes a single argument and returns a function,
 which in turn takes an argument. Applications work in the same way: If
@@ -149,13 +149,13 @@ in a local context consisting of `n : ℕ`.
 
 For simple type theory, there are four typing rules, one per kind of term:
 
-\\( \cfrac{}{C ⊢ c : σ} {\large C}{\normalsize ST} \quad \\text{if c is declared with type σ } \\)
+\\( \cfrac{}{C ⊢ c : σ} {\large{C}}{\normalsize{ST}} \quad \\text{if c is declared with type σ } \\)
 
-\\( \cfrac{}{C ⊢ x : σ} {\large V}{\normalsize AR} \quad \\text{if x : σ is the last occurrence of x in C } \\)
+\\( \cfrac{}{C ⊢ x : σ} {\large{V}}{\normalsize{AR}} \quad \\text{if x : σ is the last occurrence of x in C } \\)
 
-\\( \cfrac{C ⊢ t : σ → τ \quad C ⊢ u : σ }{C ⊢ t\enspace{u} : τ} {\large A}{\normalsize PP} \\)
+\\( \cfrac{C ⊢ t : σ → τ \quad C ⊢ u : σ }{C ⊢ t\enspace{u} : τ} {\large{A}}{\normalsize{PP}} \\)
 
-\\( \cfrac{C, x : σ ⊢ t : τ }{C ⊢ (λ\enspace{x} : σ => t) : σ → τ} {\large L}{\normalsize AM} \\)
+\\( \cfrac{C, x : σ ⊢ t : τ }{C ⊢ (λ\enspace{x} : σ => t) : σ → τ} {\large{L}}{\normalsize{AM}} \\)
 
 Each rule has zero or more premises (above the horizontal bar), a conclusion
 (below the bar), and possibly a side condition. The premises are typing judgments,
@@ -179,7 +179,15 @@ at the root, and each branch ends with the application of a premise-less rule. R
 indicated by a horizontal bar and a label. The following typing derivation establishes that the term
 `λ x : ℤ => abs x` has type `ℤ → ℕ`  in an arbitrary local context `C`:
 
-\\( \cfrac{ \cfrac{}{C, x : ℤ ⊢ abs : ℤ → ℕ} {\large C}{\normalsize ST} \quad \cfrac{}{C, x : ℤ ⊢ x : ℤ } {\large V}{\normalsize AR}} { \cfrac{C, x : ℤ ⊢ abs\enspace{x} : ℕ}{C ⊢ (λ\enspace{x} : ℤ => abs\enspace{x}): ℤ → ℕ} {\large C}{\normalsize ST} } {\large A}{\normalsize PP}\\)
+\\( \cfrac{
+      \cfrac{}{C, x : ℤ ⊢ abs : ℤ → ℕ} {\large{C}}{\normalsize{ST}}
+      \quad 
+      \cfrac{}{C, x : ℤ ⊢ x : ℤ } {\large{V}}{\normalsize{AR}}
+    }
+    {
+      \cfrac{C, x : ℤ ⊢ abs\enspace{x} : ℕ}{C ⊢ (λ\enspace{x} : ℤ => abs\enspace{x}): ℤ → ℕ} {\large{C}}{\normalsize{ST}}
+    }
+    {\large{A}}{\normalsize{PP}}\\)
 
 Reading the proof from the root upwards, notice how the local context is threaded
 through and how it is extended by the `LAM` rule. The rule moves the variable bound
@@ -202,7 +210,15 @@ and attempts to solve them using a type unification procedure. For example, when
 inferring the type `?α` of `λ x => abs x`, Lean would perform the following schematic
 type derivation:
 
-\\( \cfrac{ \cfrac{}{x :\thinspace{?β} ⊢ abs :\thinspace{?β} → γ} {\large C}{\normalsize ST} \quad \cfrac{}{x :\thinspace{?β} ⊢ x :\thinspace{?β}} {\large V}{\normalsize AR}} { \cfrac{x :\thinspace{?β} ⊢ abs\enspace{x}:\thinspace{?γ}}{⊢ (λ\enspace{x} => abs\enspace{x}) :\thinspace{?α}} {\large C}{\normalsize ST} } {\large A}{\normalsize PP}\\)
+\\( \cfrac{
+      \cfrac{}{x :\thinspace{?β} ⊢ abs :\thinspace{?β} → γ} {\large{C}}{\normalsize{ST}}
+      \quad 
+      \cfrac{}{x :\thinspace{?β} ⊢ x :\thinspace{?β}} {\large{V}}{\normalsize{AR}}
+    }
+    {
+      \cfrac{x :\thinspace{?β} ⊢ abs\enspace{x}:\thinspace{?γ}}{⊢ (λ\enspace{x} => abs\enspace{x}) :\thinspace{?α}} {\large{C}}{\normalsize{ST}}
+    }
+    {\large{A}}{\normalsize{PP}}\\)
 
 In addition, Lean would generate the following constraints to ensure that all the
 rule applications are legal:
@@ -272,7 +288,7 @@ placeholder. This means our current term is `λ f => λ g => λ a => f a (g _)`.
 We are almost done. The only placeholder left has type `β → α`, which is g’s
 argument type. Applying step 1, we replace the placeholder with `λ b => _`, where `_`
 has type `α`. Here, we can simply supply `a`. Our final term is
-`λ f => λ g => λ a => f a (g (λ b, a))`—i.e., `λ f g a => f a (g (λb, a))`.
+`λ f => λ g => λ a => f a (g (λ b => a))`—i.e., `λ f g a => f a (g (λ b => a))`.
 
 The above derivation was tedious but deterministic: At each point, either step
 1 or 2 was applicable, but not both. In general, this will not always be the case.

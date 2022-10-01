@@ -25,3 +25,7 @@ lean_lib FunctionalProgramming {
   -- add library configuration options here
 }
 
+
+lean_lib InductivePredicates {
+  -- add library configuration options here
+}

@@ -181,7 +181,6 @@ lemma length_zip {α β : Type} (xs : List α) (ys : List β) :
     case cons y ys' =>
       simp [zip, length, min_add_add, ih]
 
-
 /-!
 The proof above teaches us yet another trick.
 The `induction xs generalizing ys` statement causes Lean to generalize

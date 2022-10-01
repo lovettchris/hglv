@@ -6,6 +6,11 @@ import FunctionalProgramming.Structures
 import FunctionalProgramming.TypeClasses
 import FunctionalProgramming.Lists
 import FunctionalProgramming.BinaryTrees
+import FunctionalProgramming.CaseDistinction
+import FunctionalProgramming.DependentInductiveTypes
+import FunctionalProgramming.Summary
+
+
 /-!
 # Functional Programming
 
