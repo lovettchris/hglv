@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" Offset="-1498.3415222513,-765.329231262207" ZoomLevel="1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="." Category="Dot" Bounds="-936.945190429488,-403.867350538444,50,41.9233333333334" Label="" UseManualLocation="True" />
+    <Node Id=".." Category="Dot" Bounds="-856.945182291467,-400.79107185192,84.6833333333334,41.9233333333334" Label="⬝⬝⬝⬝⬝" UseManualLocation="True" />
+    <Node Id="..1" Category="Dot" Bounds="-1058.94517490897,-403.58074625651,50,41.9233333333334" Label="⬝⬝" />
+    <Node Id="Bool:" Bounds="-1078.94517490897,-443.58084625651,90,101.923533333333" Group="Expanded" Label="bool" UseManualLocation="True" />
+    <Node Id="Prop" Bounds="-956.945174908968,-443.86736120631,204.683333333333,104.999796610869" Group="Expanded" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="Bool:" Target="..1" Category="Contains" Bounds="-895.711616167202,-362.929559686959,0.0050877658736681,21.0001002641333" />
+    <Link Source="Prop" Target="." Category="Contains" />
+    <Link Source="Prop" Target=".." Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="Dot" NodeRadius="24" FontSize="24"/>
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NodeRadius" Label="Node Radius" Description="Node Radius" DataType="System.Double" />
+    <Property Id="Offset" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+</DirectedGraph>

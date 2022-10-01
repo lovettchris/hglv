@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg stroke-linecap="round" font-size="12" font-family="Segoe UI" width="331.999999333334" height="215.61846436360685" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs />
+  <g transform="translate(1018.09985284896,463.58084625651)">
+    <g id="Bool:">
+      <rect x="-998.099852848959" y="-443.58084625651037" rx="5" ry="5" width="90" height="101.92353333333335" fill="#EEEEEE" stroke="#A5A6A9" stroke-width="1" />
+      <text x="-966.099852848959" y="-425.63084625651038" fill="#000000">bool</text>
+      <rect x="-993.099852848959" y="-415.62084625651039" width="80" height="68.963533333333345" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+      <g id="..1">
+        <rect x="-978.099852848959" y="-403.58074625651045" rx="24" ry="24" width="50" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+        <text x="-966.099852848959" y="-372.68074625651047" fill="#3D3D3D" font-size="24">⬝⬝</text>
+      </g>
+    </g>
+    <g id="Prop">
+      <rect x="-878.099852848959" y="-441.80936188151031" rx="5" ry="5" width="171.99999933333402" height="173.84697998860679" fill="#EEEEEE" stroke="#A5A6A9" stroke-width="1" />
+      <text x="-805.099852848959" y="-423.85936188151032" fill="#000000">Prop</text>
+      <rect x="-873.099852848959" y="-413.84936188151033" width="161.99999933333402" height="140.88697998860678" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+      <g id=".">
+        <rect x="-856.09987624968858" y="-401.80925522054042" rx="24" ry="24" width="50" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+        <text x="-838.09987624968858" y="-370.90925522054044" fill="#3D3D3D" font-size="24">⬝</text>
+      </g>
+      <g id="..">
+        <rect x="-776.09987624968858" y="-401.80920084635414" rx="24" ry="24" width="50" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+        <text x="-764.09987624968858" y="-370.90920084635417" fill="#3D3D3D" font-size="24">⬝⬝</text>
+      </g>
+      <g id="...">
+        <text x="-757.09985284895913" y="-307.85922363281242" fill="#3D3D3D">...</text>
+      </g>
+      <g id="88ba0d50-a2fe-416a-b6b1-72eaa93901a01">
+        <rect x="-858.09985284895913" y="-329.8858152262369" rx="24" ry="24" width="50" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+      </g>
+    </g>
+  </g>
+</svg>

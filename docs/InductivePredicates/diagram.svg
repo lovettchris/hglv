@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg stroke-linecap="round" font-size="12" font-family="Segoe UI" width="366.68333333333339" height="144.999796610869" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs />
+  <g transform="translate(1098.94517490897,463.86736120631)">
+    <g id="Bool:">
+      <rect x="-1078.9451749089683" y="-443.58084625651037" rx="5" ry="5" width="90" height="101.92353333333335" fill="#EEEEEE" stroke="#A5A6A9" stroke-width="1" />
+      <text x="-1046.9451749089683" y="-425.63084625651038" fill="#000000">bool</text>
+      <rect x="-1073.9451749089683" y="-415.62084625651039" width="80" height="68.963533333333345" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+      <g id="..1">
+        <rect x="-1058.9451749089683" y="-403.58074625651045" rx="24" ry="24" width="50" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+        <text x="-1046.9451749089683" y="-372.68074625651047" fill="#3D3D3D" font-size="24">⬝⬝</text>
+      </g>
+    </g>
+    <g id="Prop">
+      <rect x="-956.94517490896828" y="-443.86736120630951" rx="5" ry="5" width="204.68333333333339" height="104.999796610869" fill="#EEEEEE" stroke="#A5A6A9" stroke-width="1" />
+      <text x="-867.94517490896828" y="-425.91736120630952" fill="#000000">Prop</text>
+      <rect x="-951.94517490896828" y="-415.90736120630953" width="194.68333333333339" height="72.03979661086899" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+      <g id=".">
+        <rect x="-936.94519042948764" y="-403.8673505384437" rx="24" ry="24" width="50" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+      </g>
+      <g id="..">
+        <rect x="-856.945182291467" y="-400.79107185192026" rx="24" ry="24" width="84.6833333333334" height="41.9233333333334" fill="#FFFFFF" stroke="#A5A6A9" stroke-width="1" />
+        <text x="-846.945182291467" y="-369.89107185192029" fill="#3D3D3D" font-size="24">⬝⬝⬝⬝⬝</text>
+      </g>
+    </g>
+  </g>
+</svg>
